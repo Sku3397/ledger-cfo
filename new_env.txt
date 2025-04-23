@@ -1,0 +1,37 @@
+# QuickBooks API credentials
+QUICKBOOKS_CLIENT_ID=AB0SA2SxZjhMlM1yRyWuBsvyiGLRO3H6cUVUpdWrGuLSUYla
+QUICKBOOKS_CLIENT_SECRET=AHm7b4RYNnPpZ0zrp7AA6k8+TnEVjhVi3pWegy
+QUICKBOOKS_REFRESH_TOKEN=RT-16-H0-1753145357w3g5y3oewrntq9s1yipe
+QUICKBOOKS_REALM_ID=1930553455784546
+QUICKBOOKS_ENVIRONMENT=production
+
+# Company information
+COMPANY_NAME=Beach Handyman LLC.
+COMPANY_TAX_ID=88-4011060
+COMPANY_FISCAL_YEAR=01-01
+
+# Application settings
+LOG_LEVEL=INFO
+DATA_RETENTION_DAYS=365
+
+# Chat interface settings (OpenAI)
+OPENAI_API_KEY=sk-proj-qye6by2TRseMoZrkh-7BojcQPKcMXNW3YaMqtwG_w2REq1ALEb10PRE_F1wxGYryGQxx5CV6T3BobFJXV5J5QRUsLgVB3GREX
+CHAT_MODEL=gpt-4
+MAX_CONTEXT_WINDOW=8192
+
+# Email configuration
+EMAIL_IMAP_SERVER=imap.gmail.com
+EMAIL_SMTP_SERVER=smtp.gmail.com
+EMAIL_USERNAME=cfoledger@gmail.com
+GMAIL_CREDENTIALS_FILE=credentials.json
+GMAIL_TOKEN_FILE=token.pickle
+
+# Security
+JWT_SECRET_KEY=cfo_agent_jwt_secret_key_2024
+
+# Application URL
+APP_URL=http://localhost:8501
+
+# Email monitoring settings
+AUTHORIZED_EMAIL_SENDERS=hello@757handy.com,cfoledger@gmail.com
+EMAIL_CHECK_INTERVAL=1 
