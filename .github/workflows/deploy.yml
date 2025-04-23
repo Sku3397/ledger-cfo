@@ -1,0 +1,40 @@
+name: Deploy "ledger" to Cloud Run
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Authenticate to GCP
+      uses: google-github-actions/auth@v1
+      with:
+        workload_identity_provider: projects/${{ secrets.GCP_PROJECT_NUMBER }}/locations/global/workloadIdentityPools/github-actions-pool/providers/github-provider
+        service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+    
+    - name: Set up Cloud SDK
+      uses: google-github-actions/setup-gcloud@v1
+    
+    - name: Configure Docker for Artifact Registry
+      run: gcloud auth configure-docker us-central1-docker.pkg.dev
+    
+    - name: Build and Push Container
+      run: |
+        docker build -t us-central1-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:latest -t us-central1-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:${{ github.sha }} .
+        docker push us-central1-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:latest
+        docker push us-central1-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:${{ github.sha }}
+    
+    - name: Deploy to Cloud Run
+      uses: google-github-actions/deploy-cloudrun@v1
+      with:
+        service: ledger
+        image: us-central1-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:latest
+        region: us-central1 

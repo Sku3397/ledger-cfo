@@ -398,4 +398,56 @@ Alternatively, the local version of CFO Agent can monitor an inbox directly if d
 
 ## License
 
-This project is proprietary and confidential. 
+This project is proprietary and confidential.
+
+## CI/CD Deployment
+
+This project uses GitHub Actions for continuous deployment to Google Cloud Run.
+
+### Workflow Configuration
+
+The deployment workflow is defined in `.github/workflows/deploy.yml` and automatically deploys the application to Cloud Run when changes are pushed to the `main` branch.
+
+### GitHub Secrets
+
+The following secrets need to be added to your GitHub repository (Settings → Secrets → Actions):
+
+- `GCP_PROJECT_ID`: ledger-457022
+- `GCP_PROJECT_NUMBER`: [Retrieved from Google Cloud Console]
+- `GCP_SERVICE_ACCOUNT`: ledger-deployer@ledger-457022.iam.gserviceaccount.com
+
+### Triggering a Deployment
+
+To trigger a deployment, simply push to the `main` branch:
+
+```bash
+git push origin main
+```
+
+Or use the test script:
+
+```bash
+# Make the script executable (Linux/Mac)
+chmod +x scripts/test_deploy.sh
+./scripts/test_deploy.sh
+
+# Or on Windows
+bash scripts/test_deploy.sh
+
+# Or using PowerShell
+.\scripts\test_deploy.ps1
+```
+
+### Verifying Deployment
+
+To verify the deployment status:
+
+```bash
+gcloud run services describe ledger --platform managed --region us-central1
+```
+
+To check logs:
+
+```bash
+gcloud run logs read ledger --project=ledger-457022
+``` 
