@@ -2,7 +2,7 @@ name: Deploy "ledger" to Cloud Run
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 permissions:
   id-token: write
