@@ -199,4 +199,203 @@ The system will correctly extract:
 - Invoice/PO number
 - Materials description
 - Amount
-- Activity type (if specified) 
+- Activity type (if specified)
+
+# CFO Agent - Cloud Run Edition
+
+CFO Agent is a financial management automation tool that helps with invoice creation, accounting, and tax planning. This version is optimized for deployment to Google Cloud Run.
+
+## Features
+
+- **Email monitoring**: Automatically processes invoice creation requests from email
+- **Invoice automation**: Creates QuickBooks invoices based on email requests 
+- **Financial reporting**: Generates P&L, balance sheets, and other financial reports
+- **Tax planning**: Helps calculate estimated taxes and prepare for filing
+- **Cloud-native**: Fully deployable to Google Cloud Run with scheduled tasks
+
+## Prerequisites
+
+- Google Cloud SDK installed and configured
+- Docker installed (for local testing)
+- Access to the Google Cloud project `ledger-457022`
+- QuickBooks Online API credentials
+- Email account credentials
+
+## Quick Start - Cloud Deployment
+
+1. **Initialize the repository**:
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   ```
+
+2. **Enable required Google Cloud APIs**:
+   ```bash
+   cd cfo_agent
+   chmod +x scripts/*.sh  # Make scripts executable
+   ./scripts/enable_gcp_apis.sh
+   ```
+
+3. **Configure secrets**:
+   ```bash
+   ./scripts/create_secrets.sh
+   ```
+   Follow the prompts to enter your QuickBooks API credentials and other sensitive information.
+
+4. **Build and push the container image**:
+   ```bash
+   ./scripts/build_and_push.sh
+   ```
+
+5. **Deploy to Cloud Run**:
+   ```bash
+   ./scripts/deploy.sh
+   ```
+
+6. **Set up scheduled tasks**:
+   ```bash
+   ./scripts/create_scheduler.sh
+   ```
+
+7. **Test the deployment**:
+   ```bash
+   ./scripts/test_endpoints.sh
+   ```
+
+## Local Development
+
+### Setup
+
+1. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+2. Install dependencies:
+   ```bash
+   pip install -r cfo_agent/requirements.txt
+   ```
+
+3. Create a `.env` file with required environment variables:
+   ```
+   QUICKBOOKS_CLIENT_ID=your_client_id
+   QUICKBOOKS_CLIENT_SECRET=your_client_secret
+   QUICKBOOKS_REFRESH_TOKEN=your_refresh_token
+   QUICKBOOKS_REALM_ID=your_realm_id
+   EMAIL_USERNAME=your_email
+   EMAIL_PASSWORD=your_password
+   JWT_SECRET_KEY=your_secret_key
+   ```
+
+4. Run the application locally:
+   ```bash
+   cd cfo_agent
+   python main.py
+   ```
+
+### Running with Docker
+
+1. Build the container:
+   ```bash
+   cd cfo_agent
+   docker build -t cfo-agent:local .
+   ```
+
+2. Run the container:
+   ```bash
+   docker run -p 8080:8080 --env-file .env cfo-agent:local
+   ```
+
+3. Access the application at http://localhost:8080
+
+## Architecture
+
+The CFO Agent deployed to Google Cloud Run has the following components:
+
+- **Cloud Run Service**: Container running the Flask application
+- **Cloud Scheduler**: Triggers scheduled reports and data refresh operations
+- **Secret Manager**: Stores sensitive credentials securely
+- **Cloud Storage**: Stores generated reports and temporary data
+
+## Endpoints
+
+- **`/trigger`**: Main POST endpoint for triggering the CFO Agent
+- **`/health`**: GET endpoint for checking the health of the service
+
+## Trigger Types
+
+The `/trigger` endpoint accepts the following trigger types:
+
+1. **Email triggers**:
+   ```json
+   {
+     "trigger_type": "email",
+     "email_data": {
+       "message_id": "123456",
+       "sender": "user@example.com",
+       "subject": "Invoice Request",
+       "body": "Please create an invoice for Customer XYZ..."
+     }
+   }
+   ```
+
+2. **Scheduled tasks**:
+   ```json
+   {
+     "trigger_type": "scheduled_task",
+     "task_type": "daily_report",
+     "start_date": "2025-01-01",
+     "end_date": "2025-01-31"
+   }
+   ```
+
+3. **Manual actions**:
+   ```json
+   {
+     "trigger_type": "manual_action",
+     "action": "refresh_data"
+   }
+   ```
+
+## Logs and Monitoring
+
+View Cloud Run logs with:
+```bash
+gcloud run services logs read cfo-agent --region us-central1
+```
+
+## Rollback to Previous Version
+
+List available revisions:
+```bash
+gcloud run revisions list --service cfo-agent --region us-central1
+```
+
+Rollback to a specific revision:
+```bash
+gcloud run services update-traffic cfo-agent --to-revisions=REVISION_ID=100 --region us-central1
+```
+
+## Setting Up Email Triggers
+
+To process emails and send them to the CFO Agent:
+
+1. Set up a Gmail filter to forward specific emails to a Pub/Sub topic
+2. Create a Pub/Sub topic (e.g., `cfo-email-triggers`)
+3. Set up a Cloud Function triggered by Pub/Sub that forwards the email data to your Cloud Run service
+
+Alternatively, the local version of CFO Agent can monitor an inbox directly if deployed with appropriate permissions.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is proprietary and confidential. 

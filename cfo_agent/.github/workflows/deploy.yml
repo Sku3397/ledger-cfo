@@ -1,0 +1,48 @@
+name: Deploy CFO Agent to Cloud Run
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Set up Cloud SDK
+      uses: google-github-actions/setup-gcloud@v1
+      with:
+        project_id: ledger-457022
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+        export_default_credentials: true
+    
+    - name: Authorize Docker push
+      run: gcloud auth configure-docker us-central1-docker.pkg.dev
+    
+    - name: Build and push container image
+      run: |
+        cd cfo_agent
+        chmod +x scripts/build_and_push.sh
+        ./scripts/build_and_push.sh
+    
+    - name: Deploy to Cloud Run
+      run: |
+        cd cfo_agent
+        chmod +x scripts/deploy.sh
+        ./scripts/deploy.sh
+    
+    - name: Run post-deployment setup
+      run: |
+        cd cfo_agent
+        chmod +x scripts/create_scheduler.sh
+        ./scripts/create_scheduler.sh
+    
+    - name: Test deployment
+      run: |
+        cd cfo_agent
+        chmod +x scripts/test_endpoints.sh
+        ./scripts/test_endpoints.sh 

@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Git and version control
+.git
+.gitignore
+.github/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Cache directories
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Logs
+*.log
+logs/
+
+# Local environment files
+.env
+.env.*
+token.pickle
+credentials.json
+
+# Other
+*.md
+LICENSE
+tests/
+docs/
+.streamlit/ 
