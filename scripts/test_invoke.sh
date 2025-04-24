@@ -46,9 +46,9 @@ timeout 5 gcloud logging read "resource.type=cloud_run_revision AND resource.lab
 
 # Final status
 if [ "$ROOT_SUCCESS" = true ] || [ "$TRIGGER_SUCCESS" = true ]; then
-  echo "✓ Test completed successfully - at least one endpoint is working"
+  echo "[OK] Test completed successfully - at least one endpoint is working"
   exit 0
 else
-  echo "✗ Test failed - both endpoints returned errors"
+  echo "[FAIL] Test failed - both endpoints returned errors"
   exit 1
 fi 

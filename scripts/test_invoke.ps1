@@ -50,10 +50,10 @@ Stop-Process -Id $LogProcess.Id -Force -ErrorAction SilentlyContinue
 
 # Final status
 if ($RootSuccess -or $TriggerSuccess) {
-    Write-Host "✓ Test completed successfully - at least one endpoint is working"
+    Write-Host "[OK] Test completed successfully - at least one endpoint is working"
     exit 0
 }
 else {
-    Write-Host "✗ Test failed - both endpoints returned errors"
+    Write-Host "[FAIL] Test failed - both endpoints returned errors"
     exit 1
 } 
