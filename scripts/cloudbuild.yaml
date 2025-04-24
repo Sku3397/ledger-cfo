@@ -1,0 +1,16 @@
+steps:
+  # Build the container image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', '$_IMAGE_NAME', '-f', 'Dockerfile.test', '.']
+  
+  # Push the container image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', '$_IMAGE_NAME']
+
+# Substitution variables
+substitutions:
+  _IMAGE_NAME: us-east4-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:test-global
+
+# Store images in Container Registry
+images:
+  - 'us-east4-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:test-global' 

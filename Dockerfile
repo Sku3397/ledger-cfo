@@ -14,5 +14,5 @@ COPY . .
 # Set environment variables
 ENV PORT=8080
 
-# Run the Flask application
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app 
+# Run the app
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 app:app 

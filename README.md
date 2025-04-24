@@ -455,4 +455,22 @@ gcloud run logs read ledger --project=ledger-457022
 ## Deployment
 
 This application is deployed on Google Cloud Run in the `us-east4` region.
-Last updated: [Current Timestamp] 
+Last updated: [Current Timestamp]
+
+## Cloud Build Requirements
+
+**Important**: Cloud Build must be run in the global region (or a supported multi-regional US region) due to quota restrictions. However, Cloud Run deployments should still use the `us-east4` region.
+
+When running Cloud Build commands, do not specify a region flag:
+
+```bash
+# Correct way to build
+gcloud builds submit --project=ledger-457022 --tag us-east4-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:latest .
+```
+
+If a region flag is necessary, use the global region:
+
+```bash
+# Alternative with explicit global region
+gcloud builds submit --region=global --project=ledger-457022 --tag us-east4-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:latest .
+``` 
