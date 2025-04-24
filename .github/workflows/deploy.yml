@@ -14,6 +14,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
     
     - name: Authenticate to GCP
       id: auth
@@ -25,8 +27,14 @@ jobs:
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v1
     
-    - name: Verify Artifact Registry repository exists
+    - name: Verify repository path
       run: |
+        echo "Repository: ${{ github.repository }}"
+        echo "Expected: Matt/CFO_Agent"
+    
+    - name: Verify Artifact Registry repository
+      run: |
+        echo "Checking if Artifact Registry repository exists..."
         REPO_EXISTS=$(gcloud artifacts repositories describe cfo-agent-repo --location=us-east4 --project=ledger-457022 2>&1 || echo "NOT_FOUND")
         if [[ $REPO_EXISTS == *"NOT_FOUND"* ]]; then
           echo "Creating Artifact Registry repository..."
@@ -40,7 +48,9 @@ jobs:
     
     - name: Build and Push Container
       run: |
+        echo "Building Docker image..."
         docker build -t us-east4-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:latest -t us-east4-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:${{ github.sha }} .
+        echo "Pushing Docker image to Artifact Registry..."
         docker push us-east4-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:latest
         docker push us-east4-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:${{ github.sha }}
     
