@@ -4,7 +4,7 @@
 # Set variables
 PROJECT_ID=ledger-457022
 SERVICE_NAME=cfo-agent
-REGION=us-central1
+REGION=us-east4
 
 # Print banner
 echo "===== Setting up secrets for CFO Agent ====="

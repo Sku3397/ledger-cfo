@@ -1,6 +1,6 @@
 # Configuration
 $ProjectId = "ledger-457022"
-$Region = "us-central1"
+$Region = "us-east4"
 $ServiceName = "ledger"
 $Repository = "cfo-agent-repo"
 $ImageName = "ledger"

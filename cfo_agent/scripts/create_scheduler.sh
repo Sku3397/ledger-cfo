@@ -3,8 +3,9 @@
 
 # Set variables
 PROJECT_ID=ledger-457022
-REGION=us-central1
+REGION=us-east4
 SERVICE_NAME=cfo-agent
+SCHEDULER_ACCOUNT=cfo-scheduler@${PROJECT_ID}.iam.gserviceaccount.com
 
 # Load service information if available
 if [ -f service_info.txt ]; then

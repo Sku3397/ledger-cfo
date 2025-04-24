@@ -9,5 +9,5 @@ echo "Waiting for Actions to complete..."
 echo "Check GitHub Actions at: https://github.com/sku3397/ledger-cfo/actions"
 
 echo "Verify deployment with:"
-echo "gcloud run services describe ledger --platform managed --region us-central1"
+echo "gcloud run services describe ledger --platform managed --region us-east4"
 echo "gcloud run logs read ledger --project=ledger-457022" 

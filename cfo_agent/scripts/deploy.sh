@@ -3,7 +3,7 @@
 
 # Set variables
 PROJECT_ID=ledger-457022
-REGION=us-central1
+REGION=us-east4
 REPO_NAME=cfo-agent-repo
 SERVICE_NAME=cfo-agent
 MIN_INSTANCES=1

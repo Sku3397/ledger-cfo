@@ -3,7 +3,7 @@
 
 # Set variables
 PROJECT_ID=ledger-457022
-REGION=us-central1
+REGION=us-east4
 SERVICE_NAME=cfo-agent
 
 # Load service information if available

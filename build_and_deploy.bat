@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 
 REM Configuration
 set PROJECT_ID=ledger-457022
-set REGION=us-central1
+set REGION=us-east4
 set SERVICE_NAME=ledger
 set REPOSITORY=cfo-agent-repo
 set IMAGE_NAME=ledger
