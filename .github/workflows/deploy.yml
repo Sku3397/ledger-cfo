@@ -34,6 +34,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Debug repository info
       run: |
@@ -66,6 +67,7 @@ jobs:
     - name: Create Cloud Run Job
       run: |
         echo "Creating Cloud Run Job..."
+        # Use a predefined sample image to simplify deployment
         gcloud beta run jobs create ledger-job-${{ github.sha }} \
           --image=gcr.io/google-samples/hello-app:1.0 \
           --region=us-east4 \
