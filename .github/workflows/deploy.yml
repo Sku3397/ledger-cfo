@@ -9,41 +9,18 @@ permissions:
   id-token: write
 
 jobs:
-  debug-repo:
+  debug:
     runs-on: ubuntu-latest
     steps:
-    - name: Debug GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
+    - name: Print GitHub context
       run: |
-        echo "Full GitHub context:"
-        echo "$GITHUB_CONTEXT"
-        echo "Repository path: ${{ github.repository }}"
-        echo "Repository owner: ${{ github.repository_owner }}"
-        echo "Repository name: ${{ github.event.repository.name }}"
-        echo "Actor: ${{ github.actor }}"
-        echo "Event name: ${{ github.event_name }}"
+        echo "Repository: ${{ github.repository }}"
+        echo "Owner: ${{ github.repository_owner }}"
         echo "Ref: ${{ github.ref }}"
-        echo "Job: ${{ github.job }}"
-        
-  deploy:
-    runs-on: ubuntu-latest
-    needs: debug-repo
-    steps:
+        echo "SHA: ${{ github.sha }}"
+    
     - name: Checkout code
       uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-        token: ${{ secrets.GITHUB_TOKEN }}
-    
-    - name: Debug repository info
-      run: |
-        echo "GitHub Repository: ${{ github.repository }}"
-        echo "Expected: sku3397/ledger-cfo or Sku3397/ledger-cfo"
-        echo "Branch: ${{ github.ref }}"
-        echo "Actor: ${{ github.actor }}"
-        echo "Commit SHA: ${{ github.sha }}"
-        echo "Event Name: ${{ github.event_name }}"
     
     - name: Authenticate to GCP
       id: auth
@@ -51,40 +28,22 @@ jobs:
       with:
         workload_identity_provider: projects/479134170399/locations/global/workloadIdentityPools/github-actions-pool/providers/github-provider
         service_account: ledger-deployer@ledger-457022.iam.gserviceaccount.com
-        token_format: access_token
     
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v1
     
-    - name: Debug GCP authentication
-      run: |
-        echo "Checking GCP authentication status..."
-        gcloud auth list
-        gcloud config list
-        echo "List projects to verify auth is working..."
-        gcloud projects list --limit=5
+    - name: Run a simple command to verify authentication
+      run: gcloud info
     
-    - name: Create Cloud Run Job
+    - name: Create and run a Cloud Run job
       run: |
-        echo "Creating Cloud Run Job..."
-        # Use a predefined sample image to simplify deployment
-        gcloud beta run jobs create ledger-job-${{ github.sha }} \
+        echo "Creating a Cloud Run job..."
+        gcloud beta run jobs create simple-job-${{ github.run_id }} \
           --image=gcr.io/google-samples/hello-app:1.0 \
-          --region=us-east4 \
-          --project=ledger-457022 \
-          --tasks=1 \
-          --max-retries=3 \
-          --task-timeout=10m
-    
-    - name: Execute Cloud Run Job
-      run: |
-        echo "Executing Cloud Run Job..."
-        gcloud beta run jobs execute ledger-job-${{ github.sha }} \
           --region=us-east4 \
           --project=ledger-457022
         
-    - name: Display job status
-      run: |
-        echo "Job created and executed!"
-        echo "You can view the job in the Google Cloud Console:"
-        echo "https://console.cloud.google.com/run/jobs/details/us-east4/ledger-job-${{ github.sha }}?project=ledger-457022" 
+        echo "Executing the job..."
+        gcloud beta run jobs execute simple-job-${{ github.run_id }} \
+          --region=us-east4 \
+          --project=ledger-457022 
