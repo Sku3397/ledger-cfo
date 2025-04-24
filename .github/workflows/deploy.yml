@@ -17,12 +17,14 @@ jobs:
       with:
         fetch-depth: 0
     
-    - name: Verify environment
+    - name: Debug repository info
       run: |
         echo "GitHub Repository: ${{ github.repository }}"
+        echo "Expected: sku3397/ledger-cfo"
         echo "Branch: ${{ github.ref }}"
         echo "Actor: ${{ github.actor }}"
         echo "Commit SHA: ${{ github.sha }}"
+        echo "Event Name: ${{ github.event_name }}"
     
     - name: Authenticate to GCP
       id: auth
@@ -43,20 +45,20 @@ jobs:
         echo "List projects to verify auth is working..."
         gcloud projects list --limit=5
     
-    - name: Verify Artifact Registry repository
+    - name: Create Artifact Registry repository if not exists
       run: |
         echo "Checking if Artifact Registry repository exists..."
-        REPO_EXISTS=$(gcloud artifacts repositories describe cfo-agent-repo --location=us-east4 --project=ledger-457022 2>&1 || echo "NOT_FOUND")
-        if [[ $REPO_EXISTS == *"NOT_FOUND"* ]]; then
+        if ! gcloud artifacts repositories describe cfo-agent-repo --location=us-east4 --project=ledger-457022 &>/dev/null; then
           echo "Creating Artifact Registry repository..."
           gcloud artifacts repositories create cfo-agent-repo --repository-format=docker --location=us-east4 --description="Docker repository for CFO Agent" --project=ledger-457022
         else
           echo "Artifact Registry repository already exists."
-          gcloud artifacts repositories list --project=ledger-457022 --location=us-east4
         fi
+        gcloud artifacts repositories list --project=ledger-457022 --location=us-east4
     
     - name: Configure Docker for Artifact Registry
       run: |
+        echo "Configuring Docker authentication..."
         gcloud auth configure-docker us-east4-docker.pkg.dev --quiet
         echo "Docker authentication configured"
     
