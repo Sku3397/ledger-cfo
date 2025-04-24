@@ -363,19 +363,19 @@ The `/trigger` endpoint accepts the following trigger types:
 
 View Cloud Run logs with:
 ```bash
-gcloud run services logs read cfo-agent --region us-central1
+gcloud run services logs read cfo-agent --region us-east4
 ```
 
 ## Rollback to Previous Version
 
 List available revisions:
 ```bash
-gcloud run revisions list --service cfo-agent --region us-central1
+gcloud run revisions list --service cfo-agent --region us-east4
 ```
 
 Rollback to a specific revision:
 ```bash
-gcloud run services update-traffic cfo-agent --to-revisions=REVISION_ID=100 --region us-central1
+gcloud run services update-traffic cfo-agent --to-revisions=REVISION_ID=100 --region us-east4
 ```
 
 ## Setting Up Email Triggers
@@ -443,7 +443,7 @@ bash scripts/test_deploy.sh
 To verify the deployment status:
 
 ```bash
-gcloud run services describe ledger --platform managed --region us-central1
+gcloud run services describe ledger --platform managed --region us-east4
 ```
 
 To check logs:

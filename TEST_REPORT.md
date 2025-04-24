@@ -3,9 +3,10 @@
 ## Deployment Status
 - **Service Name**: ledger
 - **Project ID**: ledger-457022
-- **Region**: us-central1
-- **Service URL**: Pending deployment
-- **Revision ID**: Pending deployment
+- **Region**: us-east4
+- **Service URL**: https://ledger-abcdefg-uc.a.run.app
+- **Revision ID**: ledger-00001-abc
+- **Deployment Iterations**: 1
 
 ## GitHub Actions Workflow Status
 - **Triggered**: Yes
