@@ -13,5 +13,5 @@ COPY . .
 ENV PORT=8080
 
 # Run the application with gunicorn
-# This will directly use the Flask app instance in app.py
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 "app:app" 
+# This will use the Flask app instance imported in main.py
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app 
