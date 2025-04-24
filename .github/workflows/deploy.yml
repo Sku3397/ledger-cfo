@@ -17,11 +17,12 @@ jobs:
       with:
         fetch-depth: 0
     
-    - name: Display repository info
+    - name: Verify environment
       run: |
-        echo "Repository: ${{ github.repository }}"
+        echo "GitHub Repository: ${{ github.repository }}"
+        echo "Branch: ${{ github.ref }}"
         echo "Actor: ${{ github.actor }}"
-        echo "SHA: ${{ github.sha }}"
+        echo "Commit SHA: ${{ github.sha }}"
     
     - name: Authenticate to GCP
       id: auth
@@ -29,14 +30,18 @@ jobs:
       with:
         workload_identity_provider: projects/479134170399/locations/global/workloadIdentityPools/github-actions-pool/providers/github-provider
         service_account: ledger-deployer@ledger-457022.iam.gserviceaccount.com
+        token_format: access_token
     
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v1
     
-    - name: Verify GCP authentication
+    - name: Debug GCP authentication
       run: |
+        echo "Checking GCP authentication status..."
         gcloud auth list
         gcloud config list
+        echo "List projects to verify auth is working..."
+        gcloud projects list --limit=5
     
     - name: Verify Artifact Registry repository
       run: |
@@ -47,6 +52,7 @@ jobs:
           gcloud artifacts repositories create cfo-agent-repo --repository-format=docker --location=us-east4 --description="Docker repository for CFO Agent" --project=ledger-457022
         else
           echo "Artifact Registry repository already exists."
+          gcloud artifacts repositories list --project=ledger-457022 --location=us-east4
         fi
     
     - name: Configure Docker for Artifact Registry
@@ -54,13 +60,18 @@ jobs:
         gcloud auth configure-docker us-east4-docker.pkg.dev --quiet
         echo "Docker authentication configured"
     
-    - name: Build and Push Container
+    - name: Build Docker image
       run: |
         echo "Building Docker image..."
-        docker build -t us-east4-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:latest -t us-east4-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:${{ github.sha }} .
+        docker build -t us-east4-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:latest .
+        docker images
+    
+    - name: Push Docker image
+      run: |
         echo "Pushing Docker image to Artifact Registry..."
         docker push us-east4-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:latest
-        docker push us-east4-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:${{ github.sha }}
+        echo "Verifying image was pushed..."
+        gcloud artifacts docker images list us-east4-docker.pkg.dev/ledger-457022/cfo-agent-repo --project=ledger-457022 --limit=5
     
     - name: Deploy to Cloud Run
       id: deploy
@@ -69,9 +80,16 @@ jobs:
         service: ledger
         image: us-east4-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:latest
         region: us-east4
-        
+    
+    - name: Check deployment status
+      if: always()
+      run: |
+        echo "Deployment status: ${{ steps.deploy.outcome }}"
+        echo "Service URL: ${{ steps.deploy.outputs.url }}"
+        gcloud run services list --platform=managed --region=us-east4 --project=ledger-457022
+    
     - name: Display service URL
       if: steps.deploy.outputs.url != ''
       run: |
         echo "Service URL: ${{ steps.deploy.outputs.url }}"
-        curl -s ${{ steps.deploy.outputs.url }} 
+        curl -s ${{ steps.deploy.outputs.url }} || echo "Could not curl the service URL" 
