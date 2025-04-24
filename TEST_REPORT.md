@@ -22,13 +22,14 @@
 - `GCP_SERVICE_ACCOUNT`: ledger-deployer@ledger-457022.iam.gserviceaccount.com
 
 ## Test Deployment Process
-1. An empty commit was pushed to trigger the workflow
-2. GitHub Actions workflow built and deployed the container
-3. Deployment was verified using the gcloud CLI commands above
+1. ✅ An empty commit was pushed to trigger the workflow
+2. ⏱️ GitHub Actions workflow is building and deploying the container
+3. 🔄 Deployment verification pending using gcloud CLI commands
 
 ## Next Steps
 - Monitor the GitHub Actions workflow for successful deployment
 - Verify the Cloud Run service is operational
 - Confirm all functionality is working as expected in the us-east4 region
 
-*Report generated on 2023-11-12* 
+*Report generated on 2023-11-12*
+*Last updated: 2023-11-12* 
