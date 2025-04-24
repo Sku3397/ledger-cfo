@@ -17,6 +17,12 @@ jobs:
       with:
         fetch-depth: 0
     
+    - name: Display repository info
+      run: |
+        echo "Repository: ${{ github.repository }}"
+        echo "Actor: ${{ github.actor }}"
+        echo "SHA: ${{ github.sha }}"
+    
     - name: Authenticate to GCP
       id: auth
       uses: google-github-actions/auth@v1
@@ -27,10 +33,10 @@ jobs:
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v1
     
-    - name: Verify repository path
+    - name: Verify GCP authentication
       run: |
-        echo "Repository: ${{ github.repository }}"
-        echo "Expected: Matt/CFO_Agent"
+        gcloud auth list
+        gcloud config list
     
     - name: Verify Artifact Registry repository
       run: |
@@ -44,7 +50,9 @@ jobs:
         fi
     
     - name: Configure Docker for Artifact Registry
-      run: gcloud auth configure-docker us-east4-docker.pkg.dev
+      run: |
+        gcloud auth configure-docker us-east4-docker.pkg.dev --quiet
+        echo "Docker authentication configured"
     
     - name: Build and Push Container
       run: |
@@ -63,5 +71,7 @@ jobs:
         region: us-east4
         
     - name: Display service URL
+      if: steps.deploy.outputs.url != ''
       run: |
-        echo "Service URL: ${{ steps.deploy.outputs.url }}" 
+        echo "Service URL: ${{ steps.deploy.outputs.url }}"
+        curl -s ${{ steps.deploy.outputs.url }} 
