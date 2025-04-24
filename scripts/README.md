@@ -10,6 +10,7 @@ The orchestration system consists of several components:
 2. **Mypy Daemon Manager**: Manages the mypy daemon for improved type checking performance.
 3. **Ledger Pipeline**: Defines the deployment pipeline for the ledger project.
 4. **Master Orchestration Script**: Brings everything together into a single, cohesive system.
+5. **Component Deployment Script**: Allows deploying specific components individually.
 
 ## Scripts
 
@@ -95,6 +96,24 @@ Example:
 python scripts/orchestrate.py --skip-tests --start-from 2
 ```
 
+### Component Deployment Script (`deploy_component.py`)
+
+Deploys a specific component or runs a specific step using the terminal orchestrator.
+
+```bash
+python scripts/deploy_component.py [component] [options]
+```
+
+Options:
+- `--list`: List available components
+- `--timeout <seconds>`: Timeout in seconds (default: 300)
+
+Example:
+```bash
+python scripts/deploy_component.py api
+python scripts/deploy_component.py --list
+```
+
 ## Log Files
 
 All orchestration logs are stored in the `scripts/logs` directory:
@@ -123,4 +142,10 @@ All orchestration logs are stored in the `scripts/logs` directory:
    ```bash
    python scripts/ledger_pipeline.py --list  # List available steps
    python scripts/ledger_pipeline.py --start-from 2 --end-at 4  # Run steps 2-4
+   ```
+   
+   Or to deploy a specific component:
+   ```bash
+   python scripts/deploy_component.py --list  # List available components
+   python scripts/deploy_component.py api  # Deploy the API component
    ``` 
