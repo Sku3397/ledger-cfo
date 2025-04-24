@@ -321,41 +321,71 @@ The CFO Agent deployed to Google Cloud Run has the following components:
 
 ## Endpoints
 
-- **`/trigger`**: Main POST endpoint for triggering the CFO Agent
-- **`/health`**: GET endpoint for checking the health of the service
+- **`/`**: Supports both GET and POST methods
+  - GET: Health check endpoint returning service status (HTTP 200)
+  - POST: Main endpoint for triggering the CFO Agent audit process
+- **`/trigger`**: Alternative POST endpoint for triggering the CFO Agent
+
+## Usage/Testing
+
+To test the service using cURL:
+
+```bash
+# Get service URL
+SERVICE_URL=$(gcloud run services describe ledger --platform managed --region us-east4 --format="value(status.url)")
+
+# Get identity token for authentication
+TOKEN=$(gcloud auth print-identity-token)
+
+# Trigger the audit via the root endpoint
+curl -X POST "$SERVICE_URL/" \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"action":"run_audit"}'
+
+# Or via the /trigger endpoint
+curl -X POST "$SERVICE_URL/trigger" \
+  -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{"action":"run_audit"}'
+```
+
+Using PowerShell:
+
+```powershell
+# Get service URL
+$SERVICE_URL = (gcloud run services describe ledger --platform managed --region us-east4 --format="value(status.url)")
+
+# Get identity token for authentication
+$TOKEN = (gcloud auth print-identity-token)
+
+# Trigger the audit via the root endpoint
+$Headers = @{ Authorization = "Bearer $TOKEN" }
+$Body = @{ action = "run_audit" } | ConvertTo-Json
+Invoke-RestMethod -Method Post -Uri "$SERVICE_URL/" -Headers $Headers -ContentType "application/json" -Body $Body
+
+# Or via the /trigger endpoint
+Invoke-RestMethod -Method Post -Uri "$SERVICE_URL/trigger" -Headers $Headers -ContentType "application/json" -Body $Body
+```
+
+For automated testing, use the provided scripts:
+
+```bash
+# Bash/Linux
+bash scripts/test_invoke.sh
+
+# Windows PowerShell
+.\scripts\test_invoke.ps1
+```
 
 ## Trigger Types
 
-The `/trigger` endpoint accepts the following trigger types:
+The API endpoints accept the following action types in the JSON body:
 
-1. **Email triggers**:
+1. **Run audit**:
    ```json
    {
-     "trigger_type": "email",
-     "email_data": {
-       "message_id": "123456",
-       "sender": "user@example.com",
-       "subject": "Invoice Request",
-       "body": "Please create an invoice for Customer XYZ..."
-     }
-   }
-   ```
-
-2. **Scheduled tasks**:
-   ```json
-   {
-     "trigger_type": "scheduled_task",
-     "task_type": "daily_report",
-     "start_date": "2025-01-01",
-     "end_date": "2025-01-31"
-   }
-   ```
-
-3. **Manual actions**:
-   ```json
-   {
-     "trigger_type": "manual_action",
-     "action": "refresh_data"
+     "action": "run_audit"
    }
    ```
 
