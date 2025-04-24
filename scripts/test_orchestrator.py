@@ -7,7 +7,14 @@ This script runs various tests to verify the functionality of the orchestrator.
 import os
 import time
 import json
+import platform
 from pathlib import Path
+
+# Determine the appropriate sleep command based on the platform
+if platform.system() == 'Windows':
+    sleep_cmd = "powershell -Command Start-Sleep"
+else:
+    sleep_cmd = "sleep"
 
 # Test cases:
 # 1. Quick success - command that completes quickly and successfully
@@ -42,13 +49,13 @@ def main():
     run_test("test-quick-success", "echo OK && exit 0")
     
     # Test 2: Slow success
-    run_test("test-slow-success", "echo Starting && sleep 5 && echo DONE")
+    run_test("test-slow-success", f"echo Starting && {sleep_cmd} 5 && echo DONE")
     
     # Test 3: Failure
     run_test("test-failure", "echo 'This will fail' && exit 1")
     
     # Test 4: Pattern Match
-    run_test("test-pattern-match", "echo 'Starting work' && sleep 2 && echo 'OK' && sleep 10")
+    run_test("test-pattern-match", f"echo 'Starting work' && {sleep_cmd} 2 && echo 'OK' && {sleep_cmd} 10")
     
     # Test 5: Timeout (reduced timeout for testing)
     # This would normally timeout after 300s, but we want to see it within our test
@@ -65,7 +72,7 @@ def main():
     
     # Run timeout test with modified orchestrator
     print("Running timeout test (modified orchestrator with 10s timeout)")
-    os.system(f"python {temp_path} --name test-timeout --cmd \"echo 'Starting long process' && sleep 30 && echo 'Done'\"")
+    os.system(f"python {temp_path} --name test-timeout --cmd \"echo 'Starting long process' && {sleep_cmd} 30 && echo 'Done'\"")
     
     # Restore original file
     os.unlink(temp_path)
