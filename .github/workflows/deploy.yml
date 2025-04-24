@@ -5,8 +5,8 @@ on:
     branches: [ main, master ]
 
 permissions:
-  id-token: write
   contents: read
+  id-token: write
 
 jobs:
   deploy:
@@ -17,8 +17,8 @@ jobs:
     - name: Authenticate to GCP
       uses: google-github-actions/auth@v1
       with:
-        workload_identity_provider: projects/${{ secrets.GCP_PROJECT_NUMBER }}/locations/global/workloadIdentityPools/github-actions-pool/providers/github-provider
-        service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+        workload_identity_provider: projects/479134170399/locations/global/workloadIdentityPools/github-actions-pool/providers/github-provider
+        service_account: ledger-deployer@ledger-457022.iam.gserviceaccount.com
     
     - name: Set up Cloud SDK
       uses: google-github-actions/setup-gcloud@v1

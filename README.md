@@ -450,4 +450,8 @@ To check logs:
 
 ```bash
 gcloud run logs read ledger --project=ledger-457022
-``` 
+```
+
+## Deployment
+
+This application is deployed on Google Cloud Run in the `us-east4` region. 
