@@ -9,8 +9,26 @@ permissions:
   id-token: write
 
 jobs:
+  debug-repo:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Debug GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        echo "Full GitHub context:"
+        echo "$GITHUB_CONTEXT"
+        echo "Repository path: ${{ github.repository }}"
+        echo "Repository owner: ${{ github.repository_owner }}"
+        echo "Repository name: ${{ github.event.repository.name }}"
+        echo "Actor: ${{ github.actor }}"
+        echo "Event name: ${{ github.event_name }}"
+        echo "Ref: ${{ github.ref }}"
+        echo "Job: ${{ github.job }}"
+        
   deploy:
     runs-on: ubuntu-latest
+    needs: debug-repo
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -20,7 +38,7 @@ jobs:
     - name: Debug repository info
       run: |
         echo "GitHub Repository: ${{ github.repository }}"
-        echo "Expected: sku3397/ledger-cfo"
+        echo "Expected: sku3397/ledger-cfo or Sku3397/ledger-cfo"
         echo "Branch: ${{ github.ref }}"
         echo "Actor: ${{ github.actor }}"
         echo "Commit SHA: ${{ github.sha }}"
