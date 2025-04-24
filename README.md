@@ -473,4 +473,35 @@ If a region flag is necessary, use the global region:
 ```bash
 # Alternative with explicit global region
 gcloud builds submit --region=global --project=ledger-457022 --tag us-east4-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:latest .
-``` 
+```
+
+## IAM Updates
+
+The following service accounts require specific roles to successfully build and deploy the application:
+
+- **Compute Engine default service account**: `{PROJECT_NUMBER}-compute@developer.gserviceaccount.com`
+  - Needs `roles/artifactregistry.writer` to push images to Artifact Registry
+  - Needs `roles/logging.logWriter` to write logs to Cloud Logging
+
+- **Cloud Build service account**: `{PROJECT_NUMBER}@cloudbuild.gserviceaccount.com`
+  - Needs `roles/artifactregistry.writer` to push images to Artifact Registry
+  - Needs `roles/logging.logWriter` to write logs to Cloud Logging
+
+To automatically grant these permissions, run the appropriate script for your platform:
+
+```bash
+# For Linux/Mac
+bash scripts/grant_iam_permissions.sh
+
+# For Windows using Bash
+bash scripts/grant_iam_permissions.sh
+# or
+sh scripts/grant_iam_permissions.sh
+
+# For Windows using PowerShell
+./scripts/grant_iam_permissions.ps1
+```
+
+After running this script, the build and deployment process should work without permission errors.
+
+Last updated: [Current Timestamp] 
