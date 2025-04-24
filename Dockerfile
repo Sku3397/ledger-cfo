@@ -6,15 +6,13 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt gunicorn flask
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the application code
 COPY . .
 
 # Set environment variables
 ENV PORT=8080
-ENV FLASK_PORT=8080
-ENV STREAMLIT_PORT=8501
 
-# Run the combined Flask + Streamlit application
-CMD python app.py 
+# Run the Flask application
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 app:app 
