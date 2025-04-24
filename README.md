@@ -454,4 +454,8 @@ gcloud run logs read ledger --project=ledger-457022
 
 ## Deployment
 
-This application is deployed on Google Cloud Run in the `us-east4` region. 
+This application is deployed on Google Cloud Run in the `us-east4` region.
+
+### Deployment Configuration 
+
+The deployment is managed via GitHub Actions and uses Workload Identity Federation for secure authentication to Google Cloud Platform. 
