@@ -1,0 +1,12 @@
+FROM python:3.9-slim
+
+WORKDIR /app
+
+COPY simple_requirements.txt .
+RUN pip install --no-cache-dir -r simple_requirements.txt
+
+COPY simple_app.py .
+
+ENV PORT=8080
+
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 simple_app:app 

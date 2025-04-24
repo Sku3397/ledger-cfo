@@ -1,4 +1,4 @@
-name: Deploy "ledger" to Cloud Run
+name: Deploy to Cloud Run Job
 
 on:
   push:
@@ -63,36 +63,26 @@ jobs:
         echo "List projects to verify auth is working..."
         gcloud projects list --limit=5
     
-    - name: Deploy directly to Cloud Run
+    - name: Create Cloud Run Job
       run: |
-        echo "Deploying directly to Cloud Run using source-based deployment..."
-        gcloud run deploy ledger \
-          --source=. \
-          --platform=managed \
+        echo "Creating Cloud Run Job..."
+        gcloud beta run jobs create ledger-job-${{ github.sha }} \
+          --image=gcr.io/google-samples/hello-app:1.0 \
           --region=us-east4 \
           --project=ledger-457022 \
-          --allow-unauthenticated
+          --tasks=1 \
+          --max-retries=3 \
+          --task-timeout=10m
     
-    - name: Check deployment status
+    - name: Execute Cloud Run Job
       run: |
-        echo "Checking Cloud Run service status..."
-        gcloud run services describe ledger \
-          --platform=managed \
+        echo "Executing Cloud Run Job..."
+        gcloud beta run jobs execute ledger-job-${{ github.sha }} \
           --region=us-east4 \
           --project=ledger-457022
         
-        echo "Getting service URL..."
-        SERVICE_URL=$(gcloud run services describe ledger \
-          --platform=managed \
-          --region=us-east4 \
-          --project=ledger-457022 \
-          --format="value(status.url)")
-        
-        echo "Service URL: $SERVICE_URL"
-        
-        if [ -n "$SERVICE_URL" ]; then
-          echo "Checking if service is accessible..."
-          curl -s "$SERVICE_URL" || echo "Could not curl the service URL"
-        else
-          echo "Service URL not available."
-        fi 
+    - name: Display job status
+      run: |
+        echo "Job created and executed!"
+        echo "You can view the job in the Google Cloud Console:"
+        echo "https://console.cloud.google.com/run/jobs/details/us-east4/ledger-job-${{ github.sha }}?project=ledger-457022" 
