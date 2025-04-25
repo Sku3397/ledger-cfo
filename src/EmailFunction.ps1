@@ -32,9 +32,12 @@ $listener = New-Object System.Net.HttpListener
 $listener.Prefixes.Add($prefix)
 
 Write-Host "Listening on $prefix..."
+"Attempting listener start at $(Get-Date -Format o)" | Out-File -FilePath /app/startup.log -Append -Encoding UTF8
 try {
     $listener.Start()
+    "Listener started successfully at $(Get-Date -Format o)" | Out-File -FilePath /app/startup.log -Append -Encoding UTF8
 } catch {
+    "Listener start FAILED at $(Get-Date -Format o) - Error: $_" | Out-File -FilePath /app/startup.log -Append -Encoding UTF8
     Write-Error "Failed to start listener: $_"
     exit 1 # Exit if listener fails to start
 }
