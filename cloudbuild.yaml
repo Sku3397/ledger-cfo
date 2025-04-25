@@ -1,0 +1,45 @@
+steps:
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/ledger-cfo:$COMMIT_SHA', '.']
+
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/ledger-cfo:$COMMIT_SHA']
+
+# Deploy container image to Cloud Run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args:
+    - 'run'
+    - 'deploy'
+    - 'ledger-cfo' # Your Cloud Run service name
+    - '--image=gcr.io/$PROJECT_ID/ledger-cfo:$COMMIT_SHA'
+    - '--region=us-east1' # Specify your desired region
+    - '--platform=managed'
+    - '--allow-unauthenticated' # Necessary for Cloud Scheduler HTTP triggers
+    # Map Secrets to Environment Variables
+    # Replace secret-name and version with your actual Secret Manager secret names/versions
+    - '--set-secrets=/secrets/qbo-client-id=QUICKBOOKS_CLIENT_ID:latest,/secrets/qbo-client-secret=QUICKBOOKS_CLIENT_SECRET:latest,/secrets/qbo-refresh-token=QUICKBOOKS_REFRESH_TOKEN:latest,/secrets/qbo-realm-id=QUICKBOOKS_REALM_ID:latest'
+    - '--update-secrets=/secrets/gmail-client-id=GMAIL_CLIENT_ID:latest,/secrets/gmail-client-secret=GMAIL_CLIENT_SECRET:latest,/secrets/gmail-refresh-token=GMAIL_REFRESH_TOKEN:latest'
+    # Set non-secret environment variables
+    - '--set-env-vars=QUICKBOOKS_ENVIRONMENT=sandbox' # Or 'production'
+    - '--set-env-vars=CFO_AGENT_EMAIL=your-agent-email@gmail.com' # Set agent's own email
+    - '--set-env-vars=AUTHORIZED_EMAIL_SENDERS=user1@example.com,user2@example.com' # List authorized users
+
+# Optional: Run Pester Tests (Requires Pester module in a base image or installed here)
+# - name: 'mcr.microsoft.com/powershell:latest' # Or your custom image with Pester
+#   entrypoint: 'pwsh'
+#   args:
+#     - -Command
+#     - |
+#         Install-Module -Name Pester -Force -SkipPublisherCheck -Scope CurrentUser; # Install if not present
+#         Import-Module Pester -Force;
+#         Invoke-Pester -Path tests/EmailWorkflow.Tests.ps1 -OutputFile tests/TestResults.xml -OutputFormat NUnitXml; 
+#         # Add logic to fail build if tests fail based on exit code or results file
+
+images:
+- 'gcr.io/$PROJECT_ID/ledger-cfo:$COMMIT_SHA'
+
+options:
+  logging: CLOUD_LOGGING_ONLY 
