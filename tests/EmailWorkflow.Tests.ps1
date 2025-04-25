@@ -127,78 +127,128 @@ Describe "Email Parsing (Parse-GmailMessage)" {
 Describe "Email Command Dispatching (Dispatch-EmailCommand)" {
     # Set environment variable for authorized senders
     $env:AUTHORIZED_EMAIL_SENDERS = 'auth@example.com,another@example.com'
+    $env:CFO_AGENT_EMAIL = 'agent@example.com' # Needed for Send-CfoReplyEmail mock checks
 
     # Setup common mock message
-    $mockRawMessage = @{ 
+    $mockRawMessageBase = @{ 
         id = 'dispatch_test_1'; threadId = 'thread_dispatch_1'; 
         payload = @{ 
             headers = @(
-                @{ name = 'Subject'; value = 'Generate invoice for estimate #777 deposit 25%' },
-                @{ name = 'From'; value = 'Authorized User <auth@example.com>' }
+                @{ name = 'Subject'; value = 'placeholder subject' },
+                @{ name = 'From'; value = 'Authorized User <auth@example.com>' },
+                @{ name = 'Message-ID'; value = '<original_msg_id_123>' } # For reply headers
             );
             mimeType = 'text/plain';
-            body = @{ data = ([System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes('Please process this.'))) }
+            body = @{ data = ([System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes('placeholder body'))) }
         }
-    } | ConvertTo-Json | ConvertFrom-Json
+    } 
 
-    # Mock QBO responses needed by InvoiceManager
-    # Assume InvoiceManager calls Get-QBOEstimate then New-QBOInvoice
-    $mockResponses["qbo_get_estimate_777"] = @{ Estimate = @{ Id = '777'; TotalAmt = 1000 } }
-    $mockResponses["qbo_create_invoice"] = @{ Invoice = @{ Id = 'qbo-inv-12345'; TotalAmt = 250 } }
-
-    # Reset sent emails before each test
+    # Reset mocks and captures before each test
     BeforeEach {
+        $global:mockResponses = @{}
         $global:sentEmails = @()
     }
 
-    It "Should dispatch GenerateInvoice to InvoiceManager and mock reply" {
+    It "Should dispatch GenerateInvoice, call QBO, and send success reply" {
+        # Arrange
+        $mockRawMessage = $mockRawMessageBase | ConvertTo-Json | ConvertFrom-Json # Clone
+        $mockRawMessage.payload.headers[0].value = 'Generate invoice for estimate #777 deposit 25%' # Set Subject
+        $mockRawMessage.payload.body.data = ([System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes('Please process this.')))
+
+        # Mock QBO responses needed by InvoiceManager
+        $mockResponses["qbo_get_estimate_777"] = @{ Estimate = @{ Id = '777'; TotalAmt = 1000; CustomerRef = @{ value = 'cust_1' } } }
+        $mockResponses["qbo_create_invoice"] = @{ Invoice = @{ Id = 'qbo-inv-12345'; TotalAmt = 750 } } # Assuming 25% deposit = 750
+
+        # Act
         InModuleScope 'EmailFunction' {
             Dispatch-EmailCommand -RawMessage $mockRawMessage
         }
 
-        # Check that Send-ReplyEmail mock was called with success
+        # Assert
+        # Check that Send-CfoReplyEmail mock was called with success
         $sentEmails.Count | Should -Be 1
         $sentEmails[0].To | Should -Be 'Authorized User <auth@example.com>'
         $sentEmails[0].Subject | Should -Match 'Success'
-        $sentEmails[0].Body | Should -Match 'Command executed successfully'
-        # We'd need deeper mocking/spying in InvoiceManager/QBOClient to verify QBO calls were attempted
+        $sentEmails[0].Subject | Should -Be 'Re: Generate invoice for estimate #777 deposit 25% - Success'
+        $sentEmails[0].Body | Should -Match 'Invoice qbo-inv-12345 created successfully'
+        $sentEmails[0].Body | Should -Match 'Invoice URL: https://app.qbo.intuit.com/app/invoice?txnId=qbo-inv-12345'
+        $sentEmails[0].ThreadId | Should -Be 'thread_dispatch_1'
+        # Verify reply headers (via raw MIME check in mock)
+        $sentEmails[0].RawMime | Should -Match 'In-Reply-To: <original_msg_id_123>'
+        $sentEmails[0].RawMime | Should -Match 'References: <original_msg_id_123>'
+        # TODO: Deeper mocking/spying in InvoiceManager/QBOClient needed to verify QBO calls *parameters* were correct
+    }
+
+    It "Should handle QBO failure during Invoice generation and send failure reply" {
+         # Arrange
+        $mockRawMessage = $mockRawMessageBase | ConvertTo-Json | ConvertFrom-Json # Clone
+        $mockRawMessage.payload.headers[0].value = 'Generate invoice for estimate #888 deposit 10%'
+        $mockRawMessage.payload.body.data = ([System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes('Try this one.')))
+
+        # Mock QBO Get Estimate success, but Create Invoice failure
+        $mockResponses["qbo_get_estimate_888"] = @{ Estimate = @{ Id = '888'; TotalAmt = 500; CustomerRef = @{ value = 'cust_2' } } }
+        # Simulate failure by not providing a mock response for qbo_create_invoice, mock will return $null
+        # $mockResponses["qbo_create_invoice"] = $null # Implicitly null
+
+        # Act
+        InModuleScope 'EmailFunction' {
+            Dispatch-EmailCommand -RawMessage $mockRawMessage
+        }
+
+        # Assert
+        $sentEmails.Count | Should -Be 1
+        $sentEmails[0].Subject | Should -Match 'Failed'
+        $sentEmails[0].Body | Should -Match 'Failed to generate invoice from Estimate 888'
+        # Check for specific error from QBOClient if possible (e.g., the throw message)
+        $sentEmails[0].Body | Should -Match 'Failed to create Invoice in QBO' 
     }
 
     It "Should skip email from unauthorized sender" {
-         $unauthMessage = $mockRawMessage | ConvertTo-Json | ConvertFrom-Json # Clone
+         # Arrange
+         $unauthMessage = $mockRawMessageBase | ConvertTo-Json | ConvertFrom-Json # Clone
          $unauthMessage.payload.headers = @(
                 @{ name = 'Subject'; value = 'Test' },
-                @{ name = 'From'; value = 'Unauthorized <unauth@example.com>' }
+                @{ name = 'From'; value = 'Unauthorized <unauth@example.com>' },
+                @{ name = 'Message-ID'; value = '<original_msg_id_unauth>' }
             )
         
+         # Act
          InModuleScope 'EmailFunction' {
             Dispatch-EmailCommand -RawMessage $unauthMessage
         }
-        # Check that Send-ReplyEmail mock was NOT called
+
+        # Assert
+        # Check that Send-CfoReplyEmail mock was NOT called
         $sentEmails.Count | Should -Be 0
     }
 
      It "Should send failure reply if command is not recognized" {
-         $unknownCommandMessage = $mockRawMessage | ConvertTo-Json | ConvertFrom-Json # Clone
+         # Arrange
+         $unknownCommandMessage = $mockRawMessageBase | ConvertTo-Json | ConvertFrom-Json # Clone
          $unknownCommandMessage.payload.headers = @(
                 @{ name = 'Subject'; value = 'What is this?' },
-                @{ name = 'From'; value = 'Authorized User <auth@example.com>' }
+                @{ name = 'From'; value = 'Authorized User <auth@example.com>' },
+                @{ name = 'Message-ID'; value = '<original_msg_id_unknown>' }
             )
          $unknownCommandMessage.payload.body.data = ([System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes('Some unknown request')))
 
+         # Act
          InModuleScope 'EmailFunction' {
             Dispatch-EmailCommand -RawMessage $unknownCommandMessage
         }
-        # Check that Send-ReplyEmail mock was called with failure
+
+        # Assert
         $sentEmails.Count | Should -Be 1
         $sentEmails[0].Subject | Should -Match 'Failed'
-        $sentEmails[0].Body | Should -Match 'Could not determine command'
+        $sentEmails[0].Subject | Should -Be 'Re: What is this? - Failed'
+        $sentEmails[0].Body | Should -Match 'Unrecognized command or parsing failed'
     }
 
     # TODO: Add tests for:
-    # - Different commands (Reporting, Bookkeeping) when implemented
-    # - Errors during QBO/Service execution and the resulting failure email
-    # - Errors during email parsing
+    # - GetReport command flow
+    # - ReconcileBooks command flow (when implemented)
+    # - Specific error conditions (e.g., Gmail API errors during fetch/mark read - requires more mock complexity)
+    # - Email parsing errors (e.g., missing body, bad encoding)
 }
 
 # Cleanup environment variable
