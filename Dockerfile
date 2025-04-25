@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy the application source code to the container
 COPY ./src /app
 
+# Ensure the entrypoint script is executable
+RUN chmod +x /app/EmailFunction.ps1
+
 # Install required PowerShell modules
 RUN pwsh -Command "Install-Module -Name ThreadJob -RequiredVersion 2.0.3 -Force -SkipPublisherCheck -AcceptLicense"
 
