@@ -5,7 +5,7 @@ WORKDIR /app
 COPY src/ /app
 
 # Install required PowerShell modules
-RUN pwsh -Command "Install-Module -Name Pode -Force -SkipPublisherCheck -AcceptLicense"
+# RUN pwsh -Command "Install-Module -Name Pode -Force -SkipPublisherCheck -AcceptLicense"
 # RUN pwsh -Command "Install-Module -Name ThreadJob -RequiredVersion 2.0.3 -Force -SkipPublisherCheck -AcceptLicense" # No longer needed for basic listener
 
 # (Optional) Install any modules ahead of time:
