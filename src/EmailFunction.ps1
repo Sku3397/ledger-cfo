@@ -10,12 +10,21 @@ if (Test-Path "/app/Dispatch-EmailCommand.ps1") {
     . "/app/Dispatch-EmailCommand.ps1"
 } else {
     Write-Error "Dispatch-EmailCommand.ps1 not found in /app."
-    # Define a dummy function if the real one is missing, to allow listener startup
+    # Define a dummy function if the real one is missing, to allow server startup
     function Dispatch-EmailCommand {
         param()
         Write-Warning "Dispatch-EmailCommand.ps1 was not found. Using dummy implementation."
         return "Dummy Dispatch: No command processed."
     }
+}
+
+# Import Pode module
+try {
+    Import-Module Pode
+    Write-Host "Pode module imported successfully."
+} catch {
+    Write-Error "Failed to import Pode module: $_"
+    exit 1
 }
 
 Write-Host "Simplified Entrypoint Script Started."
@@ -27,65 +36,45 @@ if (-not $port) {
     Write-Host "PORT environment variable not set. Defaulting to $port."
 }
 
-$prefix = "http://0.0.0.0:$($port)/"
-$listener = New-Object System.Net.HttpListener
-$listener.Prefixes.Add($prefix)
+# Pode Server Configuration
+$endpoint = @{ Address = '0.0.0.0'; Port = $port; Protocol = 'Http' }
 
-Write-Host "Listening on $prefix..."
-"Attempting listener start at $(Get-Date -Format o)" | Out-File -FilePath /app/startup.log -Append -Encoding UTF8
-try {
-    $listener.Start()
-    "Listener started successfully at $(Get-Date -Format o)" | Out-File -FilePath /app/startup.log -Append -Encoding UTF8
-} catch {
-    "Listener start FAILED at $(Get-Date -Format o) - Error: $_" | Out-File -FilePath /app/startup.log -Append -Encoding UTF8
-    Write-Error "Failed to start listener: $_"
-    exit 1 # Exit if listener fails to start
-}
+Write-Host "Starting Pode server on $($endpoint.Address):$($endpoint.Port)..."
 
-Write-Host "Listener started successfully. Waiting for requests..."
-
-while ($listener.IsListening) {
-    try {
-        $context = $listener.GetContext()
-        $request = $context.Request
-        $response = $context.Response
-
-        Write-Host "Received request: $($request.HttpMethod) $($request.Url.AbsolutePath)"
-
-        # Simplified Response - Always OK
-        $output = "OK - Simplified Listener"
-        $buffer = [System.Text.Encoding]::UTF8.GetBytes($output)
-
-        $response.StatusCode = 200
-        $response.ContentType = 'text/plain'
-        $response.ContentLength64 = $buffer.Length
-        $response.OutputStream.Write($buffer, 0, $buffer.Length)
-        $response.Close()
-
-        Write-Host "Sent simplified OK response."
-
-    } catch [System.Net.HttpListenerException] {
-        Write-Error "HttpListenerException encountered: $_. Stopping listener."
-        break # Exit loop on listener error
-    } catch {
-        Write-Error "An error occurred processing request: $_"
-        # Attempt to send a 500 response if possible, but keep it simple
-        try {
-            if ($response -ne $null -and $response.OutputStream.CanWrite) {
-                 $errorMessage = "Internal Server Error"
-                 $buffer = [System.Text.Encoding]::UTF8.GetBytes($errorMessage)
-                 $response.StatusCode = 500
-                 $response.ContentType = 'text/plain'
-                 $response.ContentLength64 = $buffer.Length
-                 $response.OutputStream.Write($buffer, 0, $buffer.Length)
-                 $response.Close()
-            }
-        } catch {
-             Write-Error "Failed to send error response: $_"
-        }
-        # Continue listening unless it was an HttpListenerException
+Start-PodeServer -Endpoint $endpoint -ScriptBlock {
+    # Middleware for basic logging
+    Add-PodeMiddleware -Name 'RequestLogger' -ScriptBlock {
+        param($Request, $Response)
+        Write-Host "Pode Request: $($Request.HttpMethod) $($Request.Url.AbsolutePath)"
+        # Note: File logging removed for simplicity, relying on stdout/stderr now
     }
+    Use-PodeMiddleware -Name 'RequestLogger'
+
+    # Define Route for /process-email
+    Add-PodeRoute -Method Get -Path '/process-email' -ScriptBlock {
+        param($Request, $Response)
+        try {
+            Write-Host "Executing Dispatch-EmailCommand..."
+            $result = Dispatch-EmailCommand
+            $output = @{ status = 'success'; data = $result }
+            Write-PodeJsonResponse -Value $output
+        } catch {
+            Write-Error "Error executing Dispatch-EmailCommand via Pode: $_"
+            $errorMessage = @{ status = 'error'; message = "Internal Server Error: $($_.Exception.Message)" }
+            $Response.StatusCode = 500
+            Write-PodeJsonResponse -Value $errorMessage
+        }
+    }
+
+    # Default route for 404 (optional, Pode handles this by default but can customize)
+    # Add-PodeRoute -Method * -Path '*' -ScriptBlock {
+    #     param($Request, $Response)
+    #     $Response.StatusCode = 404
+    #     Write-PodeJsonResponse -Value @{ status = 'error'; message = 'Not Found' }
+    # }
+
+    Write-Host "Pode server configured and running."
 }
 
-Write-Host "Listener stopped."
-$listener.Close()
+# Start-PodeServer blocks execution, so script effectively ends here unless server stops.
+Write-Host "Pode server stopped."
