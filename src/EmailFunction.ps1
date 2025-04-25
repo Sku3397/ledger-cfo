@@ -1,4 +1,5 @@
-#Requires -Modules @{ModuleName = 'ThreadJob'; ModuleVersion = '2.0.3'}
+# Commenting out #Requires as a test
+# #Requires -Modules @{ModuleName = 'ThreadJob'; ModuleVersion = '2.0.3'}
 
 # Import necessary modules if Dispatch-EmailCommand requires them
 # Import-Module PnP.PowerShell -ErrorAction SilentlyContinue
