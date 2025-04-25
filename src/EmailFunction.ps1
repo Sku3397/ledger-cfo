@@ -11,6 +11,7 @@ Import-Module ../Services/InvoiceManager.psm1 -Force
 Import-Module ../Services/Bookkeeper.psm1 -Force
 Import-Module ../Services/Reporting.psm1 -Force
 Import-Module ../Services/QBOClient.psm1 -Force # Needed by InvoiceManager, etc.
+Import-Module ../Services/EmailSender.psm1 -Force # <-- Add this
 
 # Cloud Run Port
 $Port = $env:PORT
@@ -71,32 +72,6 @@ function Invoke-RestMethodWithRetry {
             Start-Sleep -Seconds $DelaySeconds
         }
     }
-}
-
-# Placeholder for sending replies via Gmail API
-function Send-ReplyEmail {
-    param(
-        [string]$To,
-        [string]$Subject,
-        [string]$Body,
-        [string]$ThreadId # Important for threading replies
-    )
-    Write-CLog "Sending reply to '$To' with subject '$Subject' (Thread: $ThreadId)" -Level INFO
-    
-    # TODO: Implement actual Gmail API send
-    # 1. Get Access Token
-    # 2. Construct MIME message (base64url encoded)
-    #    From: $env:CFO_AGENT_EMAIL
-    #    To: $To
-    #    Subject: $Subject
-    #    Content-Type: text/plain; charset="UTF-8"
-    #    In-Reply-To: <Original Message ID>
-    #    References: <Original Message ID>
-    #    ThreadId: $ThreadId
-    # 3. Call Invoke-RestMethod -Method Post -Uri "https://gmail.googleapis.com/gmail/v1/users/me/messages/send" -Body ...
-
-    Write-CLog "Placeholder: Email sending not implemented." -Level WARN
-    return $true # Placeholder
 }
 
 # Parses Gmail Full Message Format
@@ -173,13 +148,17 @@ function Dispatch-EmailCommand {
 
     if ($parsedEmail.Error) {
         Write-CLog "Failed to parse email $($RawMessage.id): $($parsedEmail.Error)" -Level ERROR
-        # TODO: Send error reply? Maybe too noisy.
+        # Don't send reply on parsing errors to avoid loops/noise
         return
     }
 
+    # Extract original message ID for threading headers
+    $originalMessageIdHeader = $RawMessage.payload.headers | Where-Object { $_.name -eq 'Message-ID' } | Select-Object -First 1
+    $originalMessageId = if ($originalMessageIdHeader) { $originalMessageIdHeader.value } else { $null }
+
     # Check Authorized Senders
     $AuthorizedSenders = ($env:AUTHORIZED_EMAIL_SENDERS -split ',').Trim()
-    $senderEmail = ($parsedEmail.From -split '[<>]')[1] # Extract email from 'Name <email@domain.com>'
+    $senderEmail = ($parsedEmail.From -split '[<>]')[-1] # Extract email from 'Name <email@domain.com>'
     if ($AuthorizedSenders -notcontains $senderEmail) {
         Write-CLog "Skipping email from unauthorized sender: $($parsedEmail.From) ($senderEmail)" -Level WARN
         # Mark as read later, but don't process or reply
@@ -190,43 +169,82 @@ function Dispatch-EmailCommand {
 
     # Use CommandParser
     $commandDetails = Parse-EmailCommand -Subject $parsedEmail.Subject -Body $parsedEmail.Body
+    $result = $null
+    $serviceInvoked = $false
 
-    if ($commandDetails.Command -eq 'GenerateInvoice') {
-        Write-CLog "Invoking InvoiceManager for estimate $($commandDetails.Parameters.EstimateID)" -Level DEBUG
-        $result = New-CfoInvoice -CommandParameters $commandDetails.Parameters
-    }
-    elseif ($commandDetails.Command -eq 'RecordPayment') { # Assuming CommandParser might return this
-         Write-CLog "Invoking Bookkeeper for payment processing" -Level DEBUG
-         $result = Record-CfoPayment -CommandParameters $commandDetails.Parameters
-    }
-     elseif ($commandDetails.Command -eq 'GetReport') { # Assuming CommandParser might return this
-         Write-CLog "Invoking Reporting for report generation" -Level DEBUG
-         $result = Get-CfoReport -CommandParameters $commandDetails.Parameters
+    try {
+        # Switch based on command
+        switch ($commandDetails.Command) {
+            'GenerateInvoice' {
+                Write-CLog "Invoking InvoiceManager for estimate $($commandDetails.Parameters.EstimateID)" -Level DEBUG
+                # TODO: Update InvoiceManager signature if needed
+                $result = Invoke-NewInvoice -CommandParameters $commandDetails.Parameters
+                $serviceInvoked = $true
+            }
+            'RecordPayment' { # Assuming CommandParser might return this
+                 Write-CLog "Invoking Bookkeeper for payment processing" -Level DEBUG
+                 # TODO: Update Bookkeeper signature if needed
+                 $result = Invoke-RecordPayment -CommandParameters $commandDetails.Parameters
+                 $serviceInvoked = $true
+            }
+             'GetReport' { # Assuming CommandParser might return this
+                 Write-CLog "Invoking Reporting for report generation" -Level DEBUG
+                 # TODO: Update Reporting signature if needed
+                 $result = Invoke-GetPnl -CommandParameters $commandDetails.Parameters
+                 $serviceInvoked = $true
+            }
+            default {
+                Write-CLog "Command '$($commandDetails.Command)' not recognized or failed parsing." -Level WARN
+                $tmpMessage = $commandDetails.Error # Use error from parser if available
+                # Ensure Message is not null/empty
+                if (-not $tmpMessage) { $tmpMessage = "Unrecognized command or parsing failed." }
+                $result = [PSCustomObject]@{
+                    Success = $false
+                    Message = $tmpMessage # Corrected assignment
+                }
+                # Indicate that processing was attempted for unknown commands to trigger a reply
+                $serviceInvoked = $true 
+            }
+        }
+    } # <-- End of Try block
+    catch {
+        # Catch errors from the service module invocation
+        Write-CLog "Error invoking service for command '$($commandDetails.Command)': $($_.Exception.Message)" -Level ERROR
+        $result = [PSCustomObject]@{ 
+            Success = $false; 
+            Message = "Internal error processing command: $($_.Exception.Message)" 
+        }
+        # Ensure we still try to send a reply for service errors
+        $serviceInvoked = $true 
+    } # <-- End of Catch block
+
+    # Send Reply only if a service was invoked (successfully or with error)
+    if ($serviceInvoked -and $result) { # Ensure $result is populated
+        $replySubject = "Re: $($parsedEmail.Subject)"
+        $replyBody = ""
+        if ($result.Success) {
+            $replySubject += " - Success"
+            $replyBody = "Command executed successfully. `n`nDetails: $($result.Message)"
+             # Add specific details if available (e.g., Invoice URL/ID)
+             if ($result.InvoiceID) { $replyBody += "`nInvoice ID: $($result.InvoiceID)" }
+             if ($result.InvoiceUrl) { $replyBody += "`nInvoice URL: $($result.InvoiceUrl)" }
+             if ($result.ReportUrl) { $replyBody += "`nReport URL: $($result.ReportUrl)" }
+        } else {
+            $replySubject += " - Failed"
+            $replyBody = "Command execution failed. `n`nReason: $($result.Message)"
+            # TODO: Consider including a request ID or partial log safely?
+        }
+
+        # Use the new EmailSender module
+        Send-CfoReplyEmail -To $parsedEmail.From `
+                           -Subject $replySubject `
+                           -Body $replyBody `
+                           -ThreadId $parsedEmail.ThreadId `
+                           -OriginalMessageId $originalMessageId # Pass Original Message ID
     }
     else {
-        Write-CLog "Command '$($commandDetails.Command)' not recognized or failed parsing." -Level WARN
-        $result = [PSCustomObject]@{
-            Success = $false
-            Message = $commandDetails.Error # Use error from parser
-            InvoiceID = $null
-        }
+         Write-CLog "No reply sent for message ID: $($RawMessage.id) (likely unauthorized sender or no service invoked)." -Level INFO
     }
-
-    # Send Reply
-    $replySubject = "Re: $($parsedEmail.Subject)"
-    $replyBody = ""
-    if ($result.Success) {
-        $replySubject += " - Success"
-        $replyBody = "Command executed successfully. `n`nDetails: $($result.Message)"
-         if ($result.InvoiceID) { $replyBody += "`nInvoice ID: $($result.InvoiceID)" }
-    } else {
-        $replySubject += " - Failed"
-        $replyBody = "Command execution failed. `n`nReason: $($result.Message)"
-        # TODO: Include logs? Be careful about sensitive data.
-    }
-
-    Send-ReplyEmail -To $parsedEmail.From -Subject $replySubject -Body $replyBody -ThreadId $parsedEmail.ThreadId
-
 }
 
 #endregion
@@ -273,7 +291,7 @@ while ($Listener.IsListening) {
                 foreach ($msgHeader in $messageIds) {
                     $messageId = $msgHeader.id
                     Write-CLog "Fetching full message ID: $messageId" -Level DEBUG
-                    $getUri = "https://gmail.googleapis.com/gmail/v1/users/me/messages/{0}?format=full" -f $messageId
+                    $getUri = "https://gmail.googleapis.com/gmail/v1/users/me/messages/$($messageId)?format=full"
                     $getHeaders = @{ Authorization = "Bearer $AccessToken" }
                     $fullMessage = $null
                     $dispatchError = $null
