@@ -482,10 +482,52 @@ To check logs:
 gcloud run logs read ledger --project=ledger-457022
 ```
 
-## Deployment
+## Deployment (Cloud Run)
 
-This application is deployed on Google Cloud Run in the `us-east4` region.
-Last updated: [Current Timestamp]
+This service is designed to be deployed to Google Cloud Run.
+
+1.  **Prerequisites**:
+    *   Google Cloud Project with Billing Enabled.
+    *   `gcloud` CLI installed and configured.
+    *   Cloud Build API, Cloud Run API, Secret Manager API, Cloud Scheduler API enabled.
+    *   Secrets created in Secret Manager for:
+        *   `QUICKBOOKS_CLIENT_ID`
+        *   `QUICKBOOKS_CLIENT_SECRET`
+        *   `QUICKBOOKS_REFRESH_TOKEN`
+        *   `QUICKBOOKS_REALM_ID`
+        *   `GMAIL_CLIENT_ID`
+        *   `GMAIL_CLIENT_SECRET`
+        *   `GMAIL_REFRESH_TOKEN`
+2.  **Cloud Build Trigger**:
+    *   Connect your GitHub repository to Cloud Build.
+    *   Create a trigger that fires on pushes to the `main` (or `feature/email-commands` for testing) branch, using `cloudbuild.yaml` as the build configuration.
+3.  **Initial Deployment**:
+    *   Push your code to trigger the first build and deployment.
+4.  **Cloud Scheduler Setup**:
+    *   Once the service is deployed, obtain its URL:
+        ```bash
+        gcloud run services describe ledger-cfo --platform managed --region us-east1 --format 'value(status.url)'
+        ```
+    *   Create a Cloud Scheduler job to invoke the `/process-email` endpoint every minute (replace `<SERVICE_URL>` and potentially `<YOUR_SERVICE_ACCOUNT_EMAIL>`):
+        ```bash
+        gcloud scheduler jobs create http process-ledger-cfo-email \
+            --schedule="* * * * *" \
+            --uri="<SERVICE_URL>/process-email" \
+            --http-method=GET \
+            --time-zone="Etc/UTC" \
+            --description="Trigger CFO Ledger email processing every minute" 
+            # Add --oidc-service-account-email="<YOUR_SERVICE_ACCOUNT_EMAIL>" if your service requires authentication
+        ```
+
+## Testing
+
+Pester tests are located in the `/tests` directory. Run them using:
+
+```powershell
+Invoke-Pester -Path ./tests
+```
+
+Tests should be run as part of the CI/CD pipeline (see commented section in `cloudbuild.yaml`).
 
 ## Cloud Build Requirements
 

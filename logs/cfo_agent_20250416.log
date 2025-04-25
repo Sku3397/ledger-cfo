@@ -1,0 +1,1342 @@
+2025-04-16 19:06:49,369 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 19:08:54,028 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 19:08:54,030 - CFOAgentLogger - ERROR - Error loading configuration: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\config.py", line 20, in __init__
+    load_dotenv(env_file)
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 356, in load_dotenv
+    return dotenv.set_as_environment_variables()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 92, in set_as_environment_variables
+    if not self.dict():
+           ^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 76, in dict
+    self._dict = OrderedDict(resolve_variables(raw_values, override=self.override))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 238, in resolve_variables
+    for (name, value) in values:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 84, in parse
+    for mapping in with_warn_for_invalid_lines(parse_stream(stream)):
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 26, in with_warn_for_invalid_lines
+    for mapping in mappings:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 173, in parse_stream
+    reader = Reader(stream)
+             ^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 64, in __init__
+    self.string = stream.read()
+                  ^^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-04-16 19:08:54,049 - CFOAgentLogger - CRITICAL - Failed to initialize configuration: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\config.py", line 162, in <module>
+    config = Config()
+             ^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\config.py", line 20, in __init__
+    load_dotenv(env_file)
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 356, in load_dotenv
+    return dotenv.set_as_environment_variables()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 92, in set_as_environment_variables
+    if not self.dict():
+           ^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 76, in dict
+    self._dict = OrderedDict(resolve_variables(raw_values, override=self.override))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 238, in resolve_variables
+    for (name, value) in values:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 84, in parse
+    for mapping in with_warn_for_invalid_lines(parse_stream(stream)):
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 26, in with_warn_for_invalid_lines
+    for mapping in mappings:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 173, in parse_stream
+    reader = Reader(stream)
+             ^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 64, in __init__
+    self.string = stream.read()
+                  ^^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-04-16 19:18:47,374 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 19:18:47,374 - CFOAgentLogger - ERROR - Error loading configuration: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\config.py", line 20, in __init__
+    load_dotenv(env_file)
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 356, in load_dotenv
+    return dotenv.set_as_environment_variables()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 92, in set_as_environment_variables
+    if not self.dict():
+           ^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 76, in dict
+    self._dict = OrderedDict(resolve_variables(raw_values, override=self.override))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 238, in resolve_variables
+    for (name, value) in values:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 84, in parse
+    for mapping in with_warn_for_invalid_lines(parse_stream(stream)):
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 26, in with_warn_for_invalid_lines
+    for mapping in mappings:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 173, in parse_stream
+    reader = Reader(stream)
+             ^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 64, in __init__
+    self.string = stream.read()
+                  ^^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-04-16 19:18:47,390 - CFOAgentLogger - CRITICAL - Failed to initialize configuration: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\config.py", line 162, in <module>
+    config = Config()
+             ^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\config.py", line 20, in __init__
+    load_dotenv(env_file)
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 356, in load_dotenv
+    return dotenv.set_as_environment_variables()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 92, in set_as_environment_variables
+    if not self.dict():
+           ^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 76, in dict
+    self._dict = OrderedDict(resolve_variables(raw_values, override=self.override))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 238, in resolve_variables
+    for (name, value) in values:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 84, in parse
+    for mapping in with_warn_for_invalid_lines(parse_stream(stream)):
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 26, in with_warn_for_invalid_lines
+    for mapping in mappings:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 173, in parse_stream
+    reader = Reader(stream)
+             ^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 64, in __init__
+    self.string = stream.read()
+                  ^^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-04-16 19:38:40,441 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 19:38:40,445 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 19:38:40,446 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 19:44:07,012 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 19:44:07,016 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 19:44:07,021 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 19:44:09,501 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 19:44:09,501 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 19:44:09,501 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 19:44:09,501 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 19:44:09,501 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 19:44:09,501 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 19:44:09,501 - CFOAgentLogger - ERROR - Error initializing application components: 'Config' object has no attribute 'get_env'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\main.py", line 48, in <module>
+    approval_workflow = ApprovalWorkflow(config)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\approval_workflow.py", line 28, in __init__
+    self.smtp_server = config.get_env("EMAIL_SMTP_SERVER")
+                       ^^^^^^^^^^^^^^
+AttributeError: 'Config' object has no attribute 'get_env'. Did you mean: '_get_env'?
+2025-04-16 19:46:02,160 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 19:46:02,162 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 19:46:02,166 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 19:46:04,459 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 19:46:04,459 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 19:46:04,459 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 19:46:04,459 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 19:46:04,459 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 19:46:04,459 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 19:46:04,459 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 19:46:04,459 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 19:46:04,459 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 19:46:04,459 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 19:48:11,518 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 19:48:11,519 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 19:48:11,536 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 19:48:11,541 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 19:48:11,543 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 19:48:11,548 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 19:48:11,551 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 19:48:11,553 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 19:48:11,554 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 19:48:11,557 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 19:54:31,638 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 19:54:31,638 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 19:54:31,654 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 19:54:33,670 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 19:54:33,672 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 19:54:33,673 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 19:54:33,674 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 19:54:33,675 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 19:54:33,676 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 19:54:33,677 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 19:54:33,678 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 19:54:33,679 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 19:54:33,680 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 19:54:38,821 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 19:54:38,821 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 19:54:38,821 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 19:54:38,821 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 19:54:38,832 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 19:54:38,840 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 19:54:38,843 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 19:54:38,843 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 19:54:38,845 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 19:54:38,846 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 21:10:09,923 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 21:10:09,938 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 21:10:09,938 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 21:10:09,959 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 21:10:09,961 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 21:10:09,962 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 21:10:09,963 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 21:10:09,964 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 21:10:09,964 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 21:10:09,965 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 21:10:09,967 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 21:10:09,968 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 21:10:09,968 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 21:11:40,932 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 21:11:40,932 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 21:11:40,951 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 21:12:14,749 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 21:12:14,756 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 21:12:14,759 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 21:12:17,229 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 21:12:17,229 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 21:12:17,229 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 21:12:17,245 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 21:12:17,245 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 21:12:17,245 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 21:12:17,245 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 21:12:17,245 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 21:12:17,245 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 21:12:17,245 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 21:12:54,193 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 21:12:54,194 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 21:12:54,195 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 21:12:54,196 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 21:12:54,197 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 21:12:54,198 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 21:12:54,198 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 21:12:54,199 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 21:12:54,199 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 21:12:54,201 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 21:12:54,224 - CFOAgentLogger - ERROR - Gmail API connection validation failed: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\email_monitor.py", line 391, in validate_connection
+    creds = self.gmail_auth.authenticate()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\gmail_auth.py", line 54, in authenticate
+    creds = flow.run_local_server(port=8080)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\google_auth_oauthlib\flow.py", line 432, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\wsgiref\simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "F:\Program Files\PYTHON\Lib\wsgiref\simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "F:\Program Files\PYTHON\Lib\http\server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "F:\Program Files\PYTHON\Lib\socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2025-04-16 21:13:00,799 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 21:13:00,799 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 21:13:00,799 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 21:13:00,799 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 21:13:00,799 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 21:13:00,810 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 21:13:00,812 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 21:13:00,816 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 21:13:00,819 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 21:13:00,821 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 21:13:00,830 - CFOAgentLogger - INFO - Refreshing financial data from QuickBooks (lookback: 90 days)
+2025-04-16 21:13:00,833 - CFOAgentLogger - INFO - Successfully loaded accounts data
+2025-04-16 21:13:00,834 - CFOAgentLogger - INFO - Successfully loaded transactions data
+2025-04-16 21:13:00,836 - CFOAgentLogger - INFO - Successfully loaded invoices data
+2025-04-16 21:13:00,838 - CFOAgentLogger - INFO - Successfully loaded bills data
+2025-04-16 21:13:00,839 - CFOAgentLogger - INFO - Successfully refreshed financial data
+2025-04-16 21:13:06,774 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 21:13:06,775 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 21:13:06,778 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 21:13:06,780 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 21:13:06,786 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 21:13:06,791 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 21:13:06,794 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 21:13:06,795 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 21:13:06,796 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 21:13:06,797 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 21:13:10,400 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 21:13:10,400 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 21:13:10,400 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 21:13:10,409 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 21:13:10,411 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 21:13:10,414 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 21:13:10,416 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 21:13:10,419 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 21:13:10,419 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 21:13:10,422 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 21:13:10,436 - CFOAgentLogger - ERROR - Gmail API connection validation failed: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\email_monitor.py", line 391, in validate_connection
+    creds = self.gmail_auth.authenticate()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\gmail_auth.py", line 54, in authenticate
+    creds = flow.run_local_server(port=8080)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\google_auth_oauthlib\flow.py", line 432, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\wsgiref\simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "F:\Program Files\PYTHON\Lib\wsgiref\simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "F:\Program Files\PYTHON\Lib\http\server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "F:\Program Files\PYTHON\Lib\socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2025-04-16 21:13:29,316 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 21:13:29,318 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 21:13:29,321 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 21:13:29,324 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 21:13:29,333 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 21:13:29,334 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 21:13:29,335 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 21:13:29,335 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 21:13:29,337 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 21:13:29,337 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 21:13:29,347 - CFOAgentLogger - ERROR - Gmail API connection validation failed: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\email_monitor.py", line 391, in validate_connection
+    creds = self.gmail_auth.authenticate()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\gmail_auth.py", line 54, in authenticate
+    creds = flow.run_local_server(port=8080)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\google_auth_oauthlib\flow.py", line 432, in run_local_server
+    local_server = wsgiref.simple_server.make_server(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\wsgiref\simple_server.py", line 154, in make_server
+    server = server_class((host, port), handler_class)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "F:\Program Files\PYTHON\Lib\wsgiref\simple_server.py", line 50, in server_bind
+    HTTPServer.server_bind(self)
+  File "F:\Program Files\PYTHON\Lib\http\server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "F:\Program Files\PYTHON\Lib\socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+2025-04-16 21:17:54,989 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 21:17:54,989 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 21:17:54,989 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 21:17:55,013 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 21:17:55,014 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 21:17:55,015 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 21:17:55,016 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 21:17:55,016 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 21:17:55,016 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 21:17:55,016 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 21:17:55,016 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 21:17:55,020 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 21:17:55,021 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 21:31:18,627 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 21:31:18,652 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 21:31:18,653 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 21:31:21,683 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 21:31:21,683 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 21:31:21,683 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 21:31:21,683 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 21:31:21,683 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 21:31:21,698 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 21:31:21,698 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 21:31:21,700 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 21:31:21,701 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 21:31:21,703 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 21:31:26,935 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 21:31:26,935 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 21:31:26,935 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 21:31:26,935 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 21:31:26,935 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 21:31:26,935 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 21:31:26,935 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 21:31:26,935 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 21:31:26,953 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 21:31:26,954 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 21:31:26,960 - CFOAgentLogger - INFO - Refreshing financial data from QuickBooks (lookback: 90 days)
+2025-04-16 21:31:26,962 - CFOAgentLogger - INFO - Successfully loaded accounts data
+2025-04-16 21:31:26,963 - CFOAgentLogger - INFO - Successfully loaded transactions data
+2025-04-16 21:31:26,965 - CFOAgentLogger - INFO - Successfully loaded invoices data
+2025-04-16 21:31:26,967 - CFOAgentLogger - INFO - Successfully loaded bills data
+2025-04-16 21:31:26,969 - CFOAgentLogger - INFO - Successfully refreshed financial data
+2025-04-16 21:31:30,200 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 21:31:30,203 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 21:31:30,205 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 21:31:30,206 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 21:31:30,207 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 21:31:30,209 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 21:31:30,212 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 21:31:30,219 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 21:31:30,221 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 21:31:30,222 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:09:24,429 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 22:09:24,433 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 22:09:24,435 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 22:09:26,431 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:09:26,431 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:09:26,432 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:09:26,433 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:09:26,434 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:09:26,434 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:09:26,435 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:09:26,436 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:09:26,437 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:09:26,438 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:09:35,553 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:09:35,557 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:09:35,559 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:09:35,561 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:09:35,562 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:09:35,564 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:09:35,567 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:09:35,570 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:09:35,572 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:09:35,575 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:09:35,585 - CFOAgentLogger - ERROR - Gmail API connection validation failed: 'InstalledAppFlow' object has no attribute 'run_console'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\email_monitor.py", line 391, in validate_connection
+    creds = self.gmail_auth.authenticate()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\gmail_auth.py", line 54, in authenticate
+    creds = flow.run_console()
+            ^^^^^^^^^^^^^^^^
+AttributeError: 'InstalledAppFlow' object has no attribute 'run_console'
+2025-04-16 22:10:42,868 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 22:10:42,881 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 22:10:42,882 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 22:10:42,900 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:10:42,900 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:10:42,900 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:10:42,900 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:10:42,906 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:10:42,907 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:10:42,908 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:10:42,909 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:10:42,910 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:10:42,911 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:13:18,921 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 22:13:18,921 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 22:13:18,921 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 22:13:18,946 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:13:18,947 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:13:18,949 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:13:18,949 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:13:18,949 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:13:18,949 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:13:18,953 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:13:18,953 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:13:18,954 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:13:18,956 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:13:18,965 - CFOAgentLogger - ERROR - Gmail API connection validation failed: oauthlib.oauth2.rfc6749.clients.web_application.WebApplicationClient.prepare_request_uri() got multiple values for keyword argument 'redirect_uri'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\email_monitor.py", line 391, in validate_connection
+    creds = self.gmail_auth.authenticate()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\gmail_auth.py", line 55, in authenticate
+    auth_url, _ = flow.authorization_url(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\google_auth_oauthlib\flow.py", line 254, in authorization_url
+    url, state = self.oauth2session.authorization_url(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\requests_oauthlib\oauth2_session.py", line 192, in authorization_url
+    self._client.prepare_request_uri(
+TypeError: oauthlib.oauth2.rfc6749.clients.web_application.WebApplicationClient.prepare_request_uri() got multiple values for keyword argument 'redirect_uri'
+2025-04-16 22:13:49,147 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 22:13:49,151 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 22:13:49,153 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 22:13:51,189 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:13:51,190 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:13:51,191 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:13:51,191 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:13:51,192 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:13:51,193 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:13:51,194 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:13:51,195 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:13:51,196 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:13:51,197 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:13:54,845 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:13:54,845 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:13:54,845 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:13:54,845 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:13:54,845 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:13:54,845 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:13:54,857 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:13:54,859 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:13:54,862 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:13:54,866 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:13:54,880 - CFOAgentLogger - ERROR - Gmail API connection validation failed: oauthlib.oauth2.rfc6749.clients.web_application.WebApplicationClient.prepare_request_uri() got multiple values for keyword argument 'redirect_uri'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\email_monitor.py", line 391, in validate_connection
+    creds = self.gmail_auth.authenticate()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\gmail_auth.py", line 55, in authenticate
+    auth_url, _ = flow.authorization_url(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\google_auth_oauthlib\flow.py", line 254, in authorization_url
+    url, state = self.oauth2session.authorization_url(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\requests_oauthlib\oauth2_session.py", line 192, in authorization_url
+    self._client.prepare_request_uri(
+TypeError: oauthlib.oauth2.rfc6749.clients.web_application.WebApplicationClient.prepare_request_uri() got multiple values for keyword argument 'redirect_uri'
+2025-04-16 22:14:54,958 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 22:14:55,005 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 22:14:55,005 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 22:14:55,021 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:14:55,021 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:14:55,021 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:14:55,021 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:14:55,021 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:14:55,036 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:14:55,036 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:14:55,036 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:14:55,043 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:14:55,046 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:20:55,828 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 22:20:55,838 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 22:20:55,840 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 22:20:57,795 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:20:57,795 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:20:57,795 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:20:57,795 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:20:57,795 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:20:57,795 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:20:57,795 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:20:57,807 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:20:57,808 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:20:57,809 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:21:02,748 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:21:02,748 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:21:02,753 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:21:02,755 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:21:02,757 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:21:02,758 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:21:02,760 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:21:02,765 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:21:02,766 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:21:02,767 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:21:02,784 - CFOAgentLogger - ERROR - Gmail API connection validation failed: oauthlib.oauth2.rfc6749.clients.web_application.WebApplicationClient.prepare_request_uri() got multiple values for keyword argument 'redirect_uri'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\email_monitor.py", line 391, in validate_connection
+    creds = self.gmail_auth.authenticate()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\gmail_auth.py", line 55, in authenticate
+    auth_url, _ = flow.authorization_url(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\google_auth_oauthlib\flow.py", line 254, in authorization_url
+    url, state = self.oauth2session.authorization_url(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\requests_oauthlib\oauth2_session.py", line 192, in authorization_url
+    self._client.prepare_request_uri(
+TypeError: oauthlib.oauth2.rfc6749.clients.web_application.WebApplicationClient.prepare_request_uri() got multiple values for keyword argument 'redirect_uri'
+2025-04-16 22:21:45,483 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 22:21:45,483 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 22:21:45,483 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 22:21:45,510 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:21:45,511 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:21:45,512 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:21:45,512 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:21:45,513 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:21:45,513 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:21:45,514 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:21:45,514 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:21:45,515 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:21:45,517 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:23:51,396 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 22:23:51,396 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 22:23:51,396 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 22:23:53,346 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:23:53,346 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:23:53,346 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:23:53,346 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:23:53,346 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:23:53,346 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:23:53,346 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:23:53,362 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:23:53,362 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:23:53,362 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:23:56,886 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:23:56,886 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:23:56,886 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:23:56,886 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:23:56,886 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:23:56,886 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:23:56,886 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:23:56,886 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:23:56,897 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:23:56,899 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:23:56,915 - CFOAgentLogger - ERROR - Gmail API connection validation failed: oauthlib.oauth2.rfc6749.clients.web_application.WebApplicationClient.prepare_request_uri() got multiple values for keyword argument 'redirect_uri'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\email_monitor.py", line 391, in validate_connection
+    creds = self.gmail_auth.authenticate()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\gmail_auth.py", line 55, in authenticate
+    auth_url, _ = flow.authorization_url(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\google_auth_oauthlib\flow.py", line 254, in authorization_url
+    url, state = self.oauth2session.authorization_url(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\requests_oauthlib\oauth2_session.py", line 192, in authorization_url
+    self._client.prepare_request_uri(
+TypeError: oauthlib.oauth2.rfc6749.clients.web_application.WebApplicationClient.prepare_request_uri() got multiple values for keyword argument 'redirect_uri'
+2025-04-16 22:25:00,169 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 22:25:00,169 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 22:25:00,169 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 22:25:02,142 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:25:02,143 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:25:02,144 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:25:02,145 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:25:02,145 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:25:02,146 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:25:02,146 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:25:02,147 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:25:02,147 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:25:02,149 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:25:11,662 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:25:11,662 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:25:11,670 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:25:11,671 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:25:11,672 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:25:11,673 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:25:11,674 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:25:11,681 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:25:11,684 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:25:11,688 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:25:11,698 - CFOAgentLogger - ERROR - Gmail API connection validation failed: oauthlib.oauth2.rfc6749.clients.web_application.WebApplicationClient.prepare_request_uri() got multiple values for keyword argument 'redirect_uri'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\email_monitor.py", line 391, in validate_connection
+    creds = self.gmail_auth.authenticate()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\gmail_auth.py", line 55, in authenticate
+    auth_url, _ = flow.authorization_url(
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\google_auth_oauthlib\flow.py", line 254, in authorization_url
+    url, state = self.oauth2session.authorization_url(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\requests_oauthlib\oauth2_session.py", line 192, in authorization_url
+    self._client.prepare_request_uri(
+TypeError: oauthlib.oauth2.rfc6749.clients.web_application.WebApplicationClient.prepare_request_uri() got multiple values for keyword argument 'redirect_uri'
+2025-04-16 22:25:47,872 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:25:47,873 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:25:47,875 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:25:47,876 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:25:47,876 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:25:47,878 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:25:47,879 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:25:47,883 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:25:47,891 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:25:47,893 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:25:51,075 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:25:51,075 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:25:51,075 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:25:51,075 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:25:51,085 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:25:51,088 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:25:51,089 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:25:51,091 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:25:51,094 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:25:51,095 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:25:51,113 - CFOAgentLogger - ERROR - Gmail API connection validation failed: oauthlib.oauth2.rfc6749.clients.web_application.WebApplicationClient.prepare_request_uri() got multiple values for keyword argument 'redirect_uri'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\email_monitor.py", line 391, in validate_connection
+    creds = self.gmail_auth.authenticate()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\gmail_auth.py", line 55, in authenticate
+    auth_url, _ = flow.authorization_url(prompt='consent') # Removed explicit redirect_uri
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\google_auth_oauthlib\flow.py", line 254, in authorization_url
+    url, state = self.oauth2session.authorization_url(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\requests_oauthlib\oauth2_session.py", line 192, in authorization_url
+    self._client.prepare_request_uri(
+TypeError: oauthlib.oauth2.rfc6749.clients.web_application.WebApplicationClient.prepare_request_uri() got multiple values for keyword argument 'redirect_uri'
+2025-04-16 22:26:27,124 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:26:27,126 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:26:27,127 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:26:27,128 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:26:27,129 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:26:27,129 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:26:27,135 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:26:27,136 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:26:27,139 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:26:27,140 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:26:31,609 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:26:31,611 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:26:31,613 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:26:31,618 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:26:31,626 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:26:31,627 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:26:31,630 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:26:31,631 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:26:31,632 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:26:31,633 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:26:31,646 - CFOAgentLogger - ERROR - Gmail API connection validation failed: oauthlib.oauth2.rfc6749.clients.web_application.WebApplicationClient.prepare_request_uri() got multiple values for keyword argument 'redirect_uri'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\email_monitor.py", line 391, in validate_connection
+    creds = self.gmail_auth.authenticate()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\gmail_auth.py", line 55, in authenticate
+    auth_url, _ = flow.authorization_url(prompt='consent') # Removed explicit redirect_uri
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\google_auth_oauthlib\flow.py", line 254, in authorization_url
+    url, state = self.oauth2session.authorization_url(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\requests_oauthlib\oauth2_session.py", line 192, in authorization_url
+    self._client.prepare_request_uri(
+TypeError: oauthlib.oauth2.rfc6749.clients.web_application.WebApplicationClient.prepare_request_uri() got multiple values for keyword argument 'redirect_uri'
+2025-04-16 22:26:39,770 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:26:39,772 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:26:39,773 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:26:39,776 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:26:39,786 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:26:39,787 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:26:39,789 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:26:39,790 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:26:39,792 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:26:39,802 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:26:39,812 - CFOAgentLogger - INFO - Refreshing financial data from QuickBooks (lookback: 90 days)
+2025-04-16 22:26:39,813 - CFOAgentLogger - INFO - Successfully loaded accounts data
+2025-04-16 22:26:39,815 - CFOAgentLogger - INFO - Successfully loaded transactions data
+2025-04-16 22:26:39,818 - CFOAgentLogger - INFO - Successfully loaded invoices data
+2025-04-16 22:26:39,819 - CFOAgentLogger - INFO - Successfully loaded bills data
+2025-04-16 22:26:39,824 - CFOAgentLogger - INFO - Successfully refreshed financial data
+2025-04-16 22:26:41,952 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:26:41,952 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:26:41,952 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:26:41,952 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:26:41,960 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:26:41,961 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:26:41,970 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:26:41,971 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:26:41,972 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:26:41,973 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:26:41,985 - CFOAgentLogger - ERROR - Gmail API connection validation failed: oauthlib.oauth2.rfc6749.clients.web_application.WebApplicationClient.prepare_request_uri() got multiple values for keyword argument 'redirect_uri'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\email_monitor.py", line 391, in validate_connection
+    creds = self.gmail_auth.authenticate()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\gmail_auth.py", line 55, in authenticate
+    auth_url, _ = flow.authorization_url(prompt='consent') # Removed explicit redirect_uri
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\google_auth_oauthlib\flow.py", line 254, in authorization_url
+    url, state = self.oauth2session.authorization_url(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\requests_oauthlib\oauth2_session.py", line 192, in authorization_url
+    self._client.prepare_request_uri(
+TypeError: oauthlib.oauth2.rfc6749.clients.web_application.WebApplicationClient.prepare_request_uri() got multiple values for keyword argument 'redirect_uri'
+2025-04-16 22:28:11,852 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:28:11,852 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:28:11,852 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:28:11,852 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:28:11,867 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:28:11,868 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:28:11,869 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:28:11,870 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:28:11,871 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:28:11,872 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:28:18,059 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:28:18,059 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:28:18,059 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:28:18,068 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:28:18,069 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:28:18,070 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:28:18,071 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:28:18,074 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:28:18,077 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:28:18,079 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:28:18,091 - CFOAgentLogger - ERROR - Gmail API connection validation failed: oauthlib.oauth2.rfc6749.clients.web_application.WebApplicationClient.prepare_request_uri() got multiple values for keyword argument 'redirect_uri'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\email_monitor.py", line 391, in validate_connection
+    creds = self.gmail_auth.authenticate()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\gmail_auth.py", line 55, in authenticate
+    creds = flow.run_local_server(port=8080)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\google_auth_oauthlib\flow.py", line 254, in authorization_url
+    url, state = self.oauth2session.authorization_url(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\requests_oauthlib\oauth2_session.py", line 192, in authorization_url
+    self._client.prepare_request_uri(
+TypeError: oauthlib.oauth2.rfc6749.clients.web_application.WebApplicationClient.prepare_request_uri() got multiple values for keyword argument 'redirect_uri'
+2025-04-16 22:28:56,082 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 22:28:56,082 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 22:28:56,082 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 22:28:58,197 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:28:58,198 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:28:58,199 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:28:58,199 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:28:58,200 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:28:58,200 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:28:58,200 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:28:58,200 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:28:58,203 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:28:58,204 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:29:01,234 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:29:01,235 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:29:01,238 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:29:01,239 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:29:01,240 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:29:01,240 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:29:01,242 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:29:01,250 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:29:01,251 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:29:01,252 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:56:40,105 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 22:56:40,108 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 22:56:40,108 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 22:56:42,003 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:56:42,003 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:56:42,003 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:56:42,003 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:56:42,003 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:56:42,003 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:56:42,003 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:56:42,003 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:56:42,003 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:56:42,003 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:56:46,527 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 22:56:46,528 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 22:56:46,530 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 22:56:46,531 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 22:56:46,532 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 22:56:46,533 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 22:56:46,543 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 22:56:46,545 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 22:56:46,547 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 22:56:46,547 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 22:57:07,995 - CFOAgentLogger - INFO - Gmail API connection validated successfully for hello@757handy.com
+2025-04-16 22:57:08,724 - CFOAgentLogger - INFO - Gmail API connection validated successfully for hello@757handy.com
+2025-04-16 22:57:08,727 - CFOAgentLogger - INFO - Starting email monitoring loop
+2025-04-16 22:57:08,727 - CFOAgentLogger - INFO - Email monitoring started in background thread
+2025-04-16 22:57:09,741 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: Nicholas Kowalski <conversation-nicholaskowalski-tis38@indeedemail.com>
+2025-04-16 22:57:10,237 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: Squarespace <form-submission@squarespace.info>
+2025-04-16 22:57:10,720 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: American Express <americanexpress@feedbackemail.americanexpress.com>
+2025-04-16 22:57:11,292 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: Google Ads <ads-noreply@google.com>
+2025-04-16 22:57:11,796 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: The PyCharm team <news@jetbrains.com>
+2025-04-16 22:57:12,324 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: Superiority Roofing <superiorityroofing6@gmail.com>
+2025-04-16 22:57:12,870 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: Felipe Aguilar <conversation-felipeaguilar-1vkpi@indeedemail.com>
+2025-04-16 22:57:13,442 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: DigiKey <reply-to@e.digikey.com>
+2025-04-16 22:57:13,935 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: Google Analytics <analytics-noreply@google.com>
+2025-04-16 22:57:14,442 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: Monisha <smonisham@xwf.google.com>
+2025-04-16 22:57:15,027 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: Cecil Ward <cecil@wccarpenter.com>
+2025-04-16 22:57:15,514 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: Roughaina Tahir <creativeretailworksoperations@gmail.com>
+2025-04-16 22:57:16,042 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: Kate at Make <info@make.com>
+2025-04-16 22:57:16,626 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: Kenneth from Relevance AI <kenneth@relevanceai.com>
+2025-04-16 22:57:17,164 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: eBay <ebay@reply.ebay.com>
+2025-04-16 22:57:17,670 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: eBay <ebay@ebay.com>
+2025-04-16 22:57:18,286 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: Tony Hamad <tony.hamad@scorevolunteer.org>
+2025-04-16 22:57:18,875 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: Tony Hamad <tony.hamad@scorevolunteer.org>
+2025-04-16 22:57:19,472 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: Isaac Fletcher <issac@advrencld.info>
+2025-04-16 22:57:19,954 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: The Google Workspace Team <workspace-noreply@google.com>
+2025-04-16 23:02:41,656 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 23:02:41,656 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 23:02:41,672 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 23:02:43,613 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 23:02:43,615 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 23:02:43,616 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 23:02:43,617 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 23:02:43,617 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 23:02:43,618 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:02:43,619 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:02:43,620 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 23:02:43,621 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 23:02:43,624 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 23:02:46,644 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 23:02:46,644 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 23:02:46,644 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 23:02:46,644 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 23:02:46,644 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 23:02:46,644 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:02:46,644 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:02:46,657 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 23:02:46,661 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 23:02:46,663 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 23:08:36,938 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 23:08:36,955 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 23:08:36,957 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 23:08:39,388 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 23:08:39,388 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 23:08:39,388 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 23:08:39,388 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 23:08:39,388 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 23:08:39,388 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:08:39,388 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:08:39,388 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 23:08:39,388 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 23:08:39,388 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 23:08:43,181 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 23:08:43,183 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 23:08:43,191 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 23:08:43,196 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 23:08:43,199 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 23:08:43,200 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:08:43,201 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:08:43,203 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 23:08:43,205 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 23:08:43,207 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 23:08:59,384 - CFOAgentLogger - INFO - Gmail API connection validated successfully for cfoledger@gmail.com
+2025-04-16 23:09:00,071 - CFOAgentLogger - INFO - Gmail API connection validated successfully for cfoledger@gmail.com
+2025-04-16 23:09:00,071 - CFOAgentLogger - INFO - Starting email monitoring loop
+2025-04-16 23:09:00,071 - CFOAgentLogger - INFO - Email monitoring started in background thread
+2025-04-16 23:09:00,174 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 23:09:00,176 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 23:09:00,177 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 23:09:00,179 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 23:09:00,180 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 23:09:00,182 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:09:00,183 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:09:00,184 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 23:09:00,185 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 23:09:00,188 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 23:10:00,725 - CFOAgentLogger - WARNING - Skipped email from unauthorized sender: Google <no-reply@accounts.google.com>
+2025-04-16 23:12:01,287 - CFOAgentLogger - INFO - Processing new email from Beach Handyman LLC <hello@757handy.com> with subject: new request #1
+2025-04-16 23:12:01,287 - CFOAgentLogger - INFO - Processing new email from Beach Handyman LLC <hello@757handy.com>
+2025-04-16 23:12:01,287 - CFOAgentLogger - ERROR - Error handling new email: st.session_state has no attribute "processed_emails". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+Traceback (most recent call last):
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\session_state.py", line 454, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\session_state.py", line 499, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\session_state_proxy.py", line 130, in __getattr__
+    return self[key]
+           ~~~~^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\session_state_proxy.py", line 101, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\safe_session_state.py", line 96, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\session_state.py", line 456, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "processed_emails". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\main.py", line 152, in handle_new_email
+    st.session_state.processed_emails.append({
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\session_state_proxy.py", line 132, in __getattr__
+    raise AttributeError(_missing_attr_error_message(key))
+AttributeError: st.session_state has no attribute "processed_emails". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+2025-04-16 23:12:01,337 - CFOAgentLogger - ERROR - Error in email callback processing: st.session_state has no attribute "processed_emails". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+Traceback (most recent call last):
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\session_state.py", line 454, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\session_state.py", line 499, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\session_state_proxy.py", line 130, in __getattr__
+    return self[key]
+           ~~~~^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\session_state_proxy.py", line 101, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\safe_session_state.py", line 96, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\session_state.py", line 456, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "processed_emails". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\main.py", line 152, in handle_new_email
+    st.session_state.processed_emails.append({
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\session_state_proxy.py", line 132, in __getattr__
+    raise AttributeError(_missing_attr_error_message(key))
+AttributeError: st.session_state has no attribute "processed_emails". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\session_state.py", line 454, in __getitem__
+    return self._getitem(widget_id, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\session_state.py", line 499, in _getitem
+    raise KeyError
+KeyError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\session_state_proxy.py", line 130, in __getattr__
+    return self[key]
+           ~~~~^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\session_state_proxy.py", line 101, in __getitem__
+    return get_session_state()[key]
+           ~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\safe_session_state.py", line 96, in __getitem__
+    return self._state[key]
+           ~~~~~~~~~~~^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\session_state.py", line 456, in __getitem__
+    raise KeyError(_missing_key_error_message(key))
+KeyError: 'st.session_state has no key "processed_emails". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\email_monitor.py", line 343, in _monitor_loop
+    callback(email_data)
+  File "C:\Users\Matt\CFO_Agent\main.py", line 205, in handle_new_email
+    if st.session_state.processed_emails:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\streamlit\runtime\state\session_state_proxy.py", line 132, in __getattr__
+    raise AttributeError(_missing_attr_error_message(key))
+AttributeError: st.session_state has no attribute "processed_emails". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+2025-04-16 23:15:36,450 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 23:15:36,450 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 23:15:36,450 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 23:15:38,503 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 23:15:38,503 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 23:15:38,503 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 23:15:38,503 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 23:15:38,503 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 23:15:38,503 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:15:38,503 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:15:38,503 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 23:15:38,503 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 23:15:38,503 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 23:40:02,508 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 23:40:02,513 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 23:40:02,514 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 23:40:04,460 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 23:40:04,460 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 23:40:04,460 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 23:40:04,460 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 23:40:04,460 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 23:40:04,460 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:40:04,460 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:40:04,460 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 23:40:04,460 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 23:40:04,460 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 23:40:07,568 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 23:40:07,568 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 23:40:07,568 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 23:40:07,568 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 23:40:07,568 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 23:40:07,568 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:40:07,578 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:40:07,581 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 23:40:07,586 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 23:40:07,587 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 23:40:08,329 - CFOAgentLogger - INFO - Gmail API connection validated successfully for cfoledger@gmail.com
+2025-04-16 23:40:08,962 - CFOAgentLogger - INFO - Gmail API connection validated successfully for cfoledger@gmail.com
+2025-04-16 23:40:08,962 - CFOAgentLogger - INFO - Starting email monitoring loop
+2025-04-16 23:40:08,962 - CFOAgentLogger - INFO - Email monitoring started in background thread
+2025-04-16 23:40:09,046 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 23:40:09,046 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 23:40:09,046 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 23:40:09,061 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 23:40:09,061 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 23:40:09,061 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:40:09,064 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:40:09,065 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 23:40:09,066 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 23:40:09,067 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 23:40:14,296 - CFOAgentLogger - INFO - Using MockQuickBooksAPI for demo mode
+2025-04-16 23:40:14,296 - CFOAgentLogger - INFO - Initializing Mock QuickBooks API
+2025-04-16 23:40:14,296 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-16 23:40:14,296 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-16 23:40:14,296 - CFOAgentLogger - INFO - OpenAI API initialized successfully
+2025-04-16 23:40:14,296 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:40:14,296 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:40:14,308 - CFOAgentLogger - INFO - Initializing Gmail authenticator
+2025-04-16 23:40:14,314 - CFOAgentLogger - INFO - Email monitor initialized with Gmail API
+2025-04-16 23:40:14,319 - CFOAgentLogger - INFO - Application components initialized successfully
+2025-04-16 23:40:14,337 - CFOAgentLogger - INFO - Refreshing financial data from QuickBooks (lookback: 90 days)
+2025-04-16 23:40:14,338 - CFOAgentLogger - INFO - Successfully loaded accounts data
+2025-04-16 23:40:14,339 - CFOAgentLogger - INFO - Successfully loaded transactions data
+2025-04-16 23:40:14,341 - CFOAgentLogger - INFO - Successfully loaded invoices data
+2025-04-16 23:40:14,342 - CFOAgentLogger - INFO - Successfully loaded bills data
+2025-04-16 23:40:14,345 - CFOAgentLogger - INFO - Successfully refreshed financial data
+2025-04-16 23:41:09,641 - CFOAgentLogger - INFO - Processing new email from Beach Handyman LLC <hello@757handy.com> with subject: Fwd: new request #1
+2025-04-16 23:41:09,641 - CFOAgentLogger - INFO - Processing new email from Beach Handyman LLC <hello@757handy.com>
+2025-04-16 23:41:09,641 - CFOAgentLogger - WARNING - Unauthorized sender: Beach Handyman LLC <hello@757handy.com>
+2025-04-16 23:52:14,888 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 23:52:14,893 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 23:52:14,897 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 23:52:16,193 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:52:16,209 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:52:16,596 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:52:16,597 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:52:16,607 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:52:16,608 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:52:16,611 - CFOAgentLogger - INFO - Successfully parsed invoice request for Angie Hutchins
+2025-04-16 23:52:16,612 - CFOAgentLogger - INFO - Email doesn't appear to be an invoice request
+2025-04-16 23:52:16,614 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:52:16,614 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:52:16,615 - CFOAgentLogger - INFO - Successfully parsed invoice request for Angie Hutchins
+2025-04-16 23:52:16,615 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:52:16,617 - CFOAgentLogger - ERROR - Error creating draft invoice: type object 'datetime.datetime' has no attribute 'datetime'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\invoice_creator.py", line 72, in create_draft_invoice
+    'invoice_date': datetime.datetime.now().strftime('%Y-%m-%d'),
+                    ^^^^^^^^^^^^^^^^^
+AttributeError: type object 'datetime.datetime' has no attribute 'datetime'
+2025-04-16 23:52:16,632 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:52:16,632 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:52:16,724 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:52:16,724 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:52:16,724 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:52:16,724 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:52:16,724 - CFOAgentLogger - WARNING - Could not extract customer name from email
+2025-04-16 23:52:16,724 - CFOAgentLogger - WARNING - Could not extract invoice amount from email
+2025-04-16 23:52:16,741 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:52:16,741 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:54:55,851 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 23:54:55,855 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 23:54:55,856 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 23:54:57,187 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:54:57,187 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:54:57,187 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:54:57,187 - CFOAgentLogger - WARNING - Customer not found: Angie Hutchins
+2025-04-16 23:54:57,187 - CFOAgentLogger - ERROR - Customer not found: Angie Hutchins
+NoneType: None
+2025-04-16 23:54:57,187 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:54:57,187 - CFOAgentLogger - ERROR - Error creating draft invoice: type object 'datetime.datetime' has no attribute 'timedelta'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\invoice_creator.py", line 73, in create_draft_invoice
+    'due_date': (datetime.now() + datetime.timedelta(days=30)).strftime('%Y-%m-%d')
+                                  ^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'datetime.datetime' has no attribute 'timedelta'
+2025-04-16 23:54:57,208 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:54:57,209 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:54:57,210 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:54:57,211 - CFOAgentLogger - ERROR - Error creating draft invoice: type object 'datetime.datetime' has no attribute 'timedelta'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\invoice_creator.py", line 73, in create_draft_invoice
+    'due_date': (datetime.now() + datetime.timedelta(days=30)).strftime('%Y-%m-%d')
+                                  ^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'datetime.datetime' has no attribute 'timedelta'
+2025-04-16 23:54:57,213 - CFOAgentLogger - ERROR - No invoice data provided for approval email
+NoneType: None
+2025-04-16 23:54:57,580 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:54:57,580 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:54:57,580 - CFOAgentLogger - INFO - Successfully parsed invoice request for Angie Hutchins
+2025-04-16 23:54:57,580 - CFOAgentLogger - INFO - Email doesn't appear to be an invoice request
+2025-04-16 23:54:57,580 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:54:57,580 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:54:57,580 - CFOAgentLogger - INFO - Successfully parsed invoice request for Angie Hutchins
+2025-04-16 23:54:57,580 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:54:57,580 - CFOAgentLogger - ERROR - Error creating draft invoice: type object 'datetime.datetime' has no attribute 'timedelta'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\invoice_creator.py", line 73, in create_draft_invoice
+    'due_date': (datetime.now() + datetime.timedelta(days=30)).strftime('%Y-%m-%d')
+                                  ^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'datetime.datetime' has no attribute 'timedelta'
+2025-04-16 23:54:57,608 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:54:57,608 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:54:57,614 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:54:57,614 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:54:57,615 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:54:57,615 - CFOAgentLogger - ERROR - Error creating draft invoice: type object 'datetime.datetime' has no attribute 'timedelta'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\invoice_creator.py", line 73, in create_draft_invoice
+    'due_date': (datetime.now() + datetime.timedelta(days=30)).strftime('%Y-%m-%d')
+                                  ^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'datetime.datetime' has no attribute 'timedelta'
+2025-04-16 23:54:57,623 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:54:57,623 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:54:57,623 - CFOAgentLogger - WARNING - Could not extract customer name from email
+2025-04-16 23:54:57,623 - CFOAgentLogger - WARNING - Could not extract invoice amount from email
+2025-04-16 23:54:57,623 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:54:57,623 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:54:57,623 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:54:57,623 - CFOAgentLogger - ERROR - Error creating draft invoice: type object 'datetime.datetime' has no attribute 'timedelta'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\invoice_creator.py", line 73, in create_draft_invoice
+    'due_date': (datetime.now() + datetime.timedelta(days=30)).strftime('%Y-%m-%d')
+                                  ^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'datetime.datetime' has no attribute 'timedelta'
+2025-04-16 23:56:29,172 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 23:56:29,187 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 23:56:29,187 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 23:56:30,446 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:56:30,446 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:56:30,446 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:56:30,446 - CFOAgentLogger - WARNING - Customer not found: Angie Hutchins
+2025-04-16 23:56:30,446 - CFOAgentLogger - ERROR - Customer not found: Angie Hutchins
+NoneType: None
+2025-04-16 23:56:30,446 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:56:30,446 - CFOAgentLogger - ERROR - Failed to create draft invoice in QuickBooks
+NoneType: None
+2025-04-16 23:56:30,446 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:56:30,446 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:56:30,461 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:56:30,461 - CFOAgentLogger - INFO - Draft invoice created successfully: INV-20250416-1
+2025-04-16 23:56:30,462 - CFOAgentLogger - ERROR - Error sending approval email: 'dict' object has no attribute 'invoice_id'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\approval_workflow.py", line 92, in send_approval_email
+    token = self.generate_approval_token(invoice)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\approval_workflow.py", line 41, in generate_approval_token
+    'invoice_id': invoice.invoice_id,
+                  ^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'invoice_id'
+2025-04-16 23:56:30,813 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:56:30,813 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:56:30,813 - CFOAgentLogger - INFO - Successfully parsed invoice request for Angie Hutchins
+2025-04-16 23:56:30,813 - CFOAgentLogger - INFO - Email doesn't appear to be an invoice request
+2025-04-16 23:56:30,813 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:56:30,813 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:56:30,813 - CFOAgentLogger - INFO - Successfully parsed invoice request for Angie Hutchins
+2025-04-16 23:56:30,813 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:56:30,813 - CFOAgentLogger - INFO - Draft invoice created successfully: INV-20250416-1
+2025-04-16 23:56:30,813 - CFOAgentLogger - ERROR - Error sending approval email: 'dict' object has no attribute 'invoice_id'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\approval_workflow.py", line 92, in send_approval_email
+    token = self.generate_approval_token(invoice)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\approval_workflow.py", line 41, in generate_approval_token
+    'invoice_id': invoice.invoice_id,
+                  ^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'invoice_id'
+2025-04-16 23:56:30,837 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:56:30,837 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:56:30,840 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:56:30,840 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:56:30,841 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:56:30,842 - CFOAgentLogger - INFO - Draft invoice created successfully: INV-20250416-1
+2025-04-16 23:56:30,849 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:56:30,855 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:56:30,856 - CFOAgentLogger - WARNING - Could not extract customer name from email
+2025-04-16 23:56:30,856 - CFOAgentLogger - WARNING - Could not extract invoice amount from email
+2025-04-16 23:56:30,856 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:56:30,856 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:56:30,856 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:56:30,856 - CFOAgentLogger - INFO - Draft invoice created successfully: INV-20250416-1
+2025-04-16 23:56:30,879 - CFOAgentLogger - ERROR - Invalid approval token (JWTError): Not enough segments
+Traceback (most recent call last):
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\jose\jws.py", line 180, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\jose\jwt.py", line 154, in decode
+    payload = jws.verify(token, key, algorithms, verify=verify_signature)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\jose\jws.py", line 74, in verify
+    header, payload, signing_input, signature = _load(token)
+                                                ^^^^^^^^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\jose\jws.py", line 184, in _load
+    raise JWSError("Not enough segments")
+jose.exceptions.JWSError: Not enough segments
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\approval_workflow.py", line 52, in verify_approval_token
+    payload = jwt.decode(
+              ^^^^^^^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\jose\jwt.py", line 156, in decode
+    raise JWTError(e)
+jose.exceptions.JWTError: Not enough segments
+2025-04-16 23:58:15,855 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-16 23:58:15,855 - CFOAgentLogger - INFO - Loaded configuration from .env
+2025-04-16 23:58:15,855 - CFOAgentLogger - INFO - Configuration loaded successfully
+2025-04-16 23:58:17,203 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:58:17,203 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:58:17,203 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:58:17,203 - CFOAgentLogger - WARNING - Customer not found: Angie Hutchins
+2025-04-16 23:58:17,203 - CFOAgentLogger - ERROR - Customer not found: Angie Hutchins
+NoneType: None
+2025-04-16 23:58:17,203 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:58:17,203 - CFOAgentLogger - ERROR - Failed to create draft invoice in QuickBooks
+NoneType: None
+2025-04-16 23:58:17,203 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:58:17,219 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:58:17,221 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:58:17,222 - CFOAgentLogger - INFO - Draft invoice created successfully: INV-20250416-1
+2025-04-16 23:58:17,228 - CFOAgentLogger - INFO - Approval email sent for invoice INV-20250416-1
+2025-04-16 23:58:17,669 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:58:17,669 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:58:17,669 - CFOAgentLogger - INFO - Successfully parsed invoice request for Angie Hutchins
+2025-04-16 23:58:17,669 - CFOAgentLogger - INFO - Email doesn't appear to be an invoice request
+2025-04-16 23:58:17,669 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:58:17,669 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:58:17,669 - CFOAgentLogger - INFO - Successfully parsed invoice request for Angie Hutchins
+2025-04-16 23:58:17,685 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:58:17,686 - CFOAgentLogger - INFO - Draft invoice created successfully: INV-20250416-1
+2025-04-16 23:58:17,688 - CFOAgentLogger - INFO - Approval email sent for invoice INV-20250416-1
+2025-04-16 23:58:17,701 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:58:17,702 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:58:17,705 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:58:17,705 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:58:17,706 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:58:17,707 - CFOAgentLogger - INFO - Draft invoice created successfully: INV-20250416-1
+2025-04-16 23:58:17,707 - CFOAgentLogger - INFO - Creating draft invoice for Unknown Customer
+2025-04-16 23:58:17,707 - CFOAgentLogger - WARNING - Customer not found: Unknown Customer
+2025-04-16 23:58:17,708 - CFOAgentLogger - ERROR - Customer not found: Unknown Customer
+NoneType: None
+2025-04-16 23:58:17,710 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:58:17,711 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:58:17,714 - CFOAgentLogger - WARNING - Could not extract customer name from email
+2025-04-16 23:58:17,716 - CFOAgentLogger - WARNING - Could not extract invoice amount from email
+2025-04-16 23:58:17,719 - CFOAgentLogger - INFO - Invoice creator initialized
+2025-04-16 23:58:17,720 - CFOAgentLogger - INFO - Approval workflow initialized
+2025-04-16 23:58:17,720 - CFOAgentLogger - INFO - Creating draft invoice for Angie Hutchins
+2025-04-16 23:58:17,721 - CFOAgentLogger - INFO - Draft invoice created successfully: INV-20250416-1
+2025-04-16 23:58:17,743 - CFOAgentLogger - ERROR - Invalid approval token (JWTError): Not enough segments
+Traceback (most recent call last):
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\jose\jws.py", line 180, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\jose\jwt.py", line 154, in decode
+    payload = jws.verify(token, key, algorithms, verify=verify_signature)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\jose\jws.py", line 74, in verify
+    header, payload, signing_input, signature = _load(token)
+                                                ^^^^^^^^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\jose\jws.py", line 184, in _load
+    raise JWSError("Not enough segments")
+jose.exceptions.JWSError: Not enough segments
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\approval_workflow.py", line 53, in verify_approval_token
+    payload = jwt.decode(
+              ^^^^^^^^^^^
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\jose\jwt.py", line 156, in decode
+    raise JWTError(e)
+jose.exceptions.JWTError: Not enough segments

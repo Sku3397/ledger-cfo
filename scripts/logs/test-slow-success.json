@@ -1,0 +1,9 @@
+{
+  "name": "test-slow-success",
+  "exit_code": 0,
+  "status": "success",
+  "output": "Starting \nDONE\n",
+  "start_time": "2025-04-24T00:11:29.270366",
+  "end_time": "2025-04-24T00:11:36.282437",
+  "duration_seconds": 7.012071
+}

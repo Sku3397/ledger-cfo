@@ -1,0 +1,42 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+.venv
+venv/
+ENV/
+env/
+
+# Sensitive credentials
+credentials.json
+token.pickle
+*.secret
+
+# IDE/Editor folders
+.vscode/
+.idea/
+.project
+.classpath
+*.swp
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Logs
+logs/
+*.log
+
+# Pester test results
+tests/TestResults.xml
+
+# OS generated files
+.DS_Store
+Thumbs.db credentials.json
+token.pickle
+credentials.json
+token.pickle

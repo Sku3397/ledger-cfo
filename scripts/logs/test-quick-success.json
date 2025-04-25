@@ -1,0 +1,9 @@
+{
+  "name": "test-quick-success",
+  "exit_code": 0,
+  "status": "success",
+  "output": "OK \n",
+  "start_time": "2025-04-24T00:11:27.071143",
+  "end_time": "2025-04-24T00:11:29.085039",
+  "duration_seconds": 2.013896
+}
