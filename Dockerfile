@@ -8,4 +8,4 @@ COPY src/ /app
 # RUN pwsh -Command "Install-Package MailKit -Source PSGallery -Force"
 
 EXPOSE 8080
-CMD ["pwsh","-File","/app/EmailFunction.ps1"] 
+CMD ["pwsh", "-Command", ". /app/EmailFunction.ps1"] 
