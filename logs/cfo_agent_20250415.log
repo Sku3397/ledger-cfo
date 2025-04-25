@@ -1,0 +1,1202 @@
+2025-04-15 00:08:58,536 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-15 00:08:58,536 - CFOAgentLogger - ERROR - Error loading configuration: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\config.py", line 20, in __init__
+    load_dotenv(env_file)
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 356, in load_dotenv
+    return dotenv.set_as_environment_variables()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 92, in set_as_environment_variables
+    if not self.dict():
+           ^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 76, in dict
+    self._dict = OrderedDict(resolve_variables(raw_values, override=self.override))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 238, in resolve_variables
+    for (name, value) in values:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 84, in parse
+    for mapping in with_warn_for_invalid_lines(parse_stream(stream)):
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 26, in with_warn_for_invalid_lines
+    for mapping in mappings:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 173, in parse_stream
+    reader = Reader(stream)
+             ^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 64, in __init__
+    self.string = stream.read()
+                  ^^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-04-15 00:08:58,588 - CFOAgentLogger - CRITICAL - Failed to initialize configuration: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\config.py", line 103, in <module>
+    config = Config()
+             ^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\config.py", line 20, in __init__
+    load_dotenv(env_file)
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 356, in load_dotenv
+    return dotenv.set_as_environment_variables()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 92, in set_as_environment_variables
+    if not self.dict():
+           ^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 76, in dict
+    self._dict = OrderedDict(resolve_variables(raw_values, override=self.override))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 238, in resolve_variables
+    for (name, value) in values:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 84, in parse
+    for mapping in with_warn_for_invalid_lines(parse_stream(stream)):
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 26, in with_warn_for_invalid_lines
+    for mapping in mappings:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 173, in parse_stream
+    reader = Reader(stream)
+             ^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 64, in __init__
+    self.string = stream.read()
+                  ^^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-04-15 00:18:43,446 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-15 00:18:43,446 - CFOAgentLogger - ERROR - Error loading configuration: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\config.py", line 20, in __init__
+    load_dotenv(env_file)
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 356, in load_dotenv
+    return dotenv.set_as_environment_variables()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 92, in set_as_environment_variables
+    if not self.dict():
+           ^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 76, in dict
+    self._dict = OrderedDict(resolve_variables(raw_values, override=self.override))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 238, in resolve_variables
+    for (name, value) in values:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 84, in parse
+    for mapping in with_warn_for_invalid_lines(parse_stream(stream)):
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 26, in with_warn_for_invalid_lines
+    for mapping in mappings:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 173, in parse_stream
+    reader = Reader(stream)
+             ^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 64, in __init__
+    self.string = stream.read()
+                  ^^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-04-15 00:18:43,460 - CFOAgentLogger - CRITICAL - Failed to initialize configuration: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\config.py", line 103, in <module>
+    config = Config()
+             ^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\config.py", line 20, in __init__
+    load_dotenv(env_file)
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 356, in load_dotenv
+    return dotenv.set_as_environment_variables()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 92, in set_as_environment_variables
+    if not self.dict():
+           ^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 76, in dict
+    self._dict = OrderedDict(resolve_variables(raw_values, override=self.override))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 238, in resolve_variables
+    for (name, value) in values:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 84, in parse
+    for mapping in with_warn_for_invalid_lines(parse_stream(stream)):
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 26, in with_warn_for_invalid_lines
+    for mapping in mappings:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 173, in parse_stream
+    reader = Reader(stream)
+             ^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 64, in __init__
+    self.string = stream.read()
+                  ^^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-04-15 00:18:48,946 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:18:49,014 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:18:49,051 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:18:56,215 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:18:56,218 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:18:56,240 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:18:56,291 - CFOAgentLogger - INFO - Refreshing financial data from QuickBooks (lookback: 90 days)
+2025-04-15 00:18:56,730 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:18:56,747 - CFOAgentLogger - ERROR - Error loading accounts data: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 42, in refresh_data
+    self.accounts = self.qb_api.get_accounts()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 179, in get_accounts
+    return self._make_api_request("query", params={"query": "SELECT * FROM Account WHERE Active = true ORDER BY Name"})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:18:57,166 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:18:57,166 - CFOAgentLogger - ERROR - Error loading transactions data: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 49, in refresh_data
+    self.transactions = self.qb_api.get_transactions(start_date, end_date)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 204, in get_transactions
+    return self._make_api_request("query", params={"query": query})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:18:57,614 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:18:57,614 - CFOAgentLogger - ERROR - Error loading invoices data: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 56, in refresh_data
+    self.invoices = self.qb_api.get_invoices(start_date, end_date)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 239, in get_invoices
+    return self._make_api_request("query", params={"query": query})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:18:58,045 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:18:58,047 - CFOAgentLogger - ERROR - Error loading bills data: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 63, in refresh_data
+    self.bills = self.qb_api.get_bills(start_date, end_date)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 274, in get_bills
+    return self._make_api_request("query", params={"query": query})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:18:58,047 - CFOAgentLogger - WARNING - No financial data was loaded. Verify API credentials and connectivity.
+2025-04-15 00:18:58,479 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:18:58,482 - CFOAgentLogger - ERROR - Error generating balance sheet report: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 174, in get_balance_sheet
+    bs_data = self.qb_api.get_balance_sheet(as_of_date)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 312, in get_balance_sheet
+    return self._make_api_request(report_endpoint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:18:58,485 - CFOAgentLogger - ERROR - Error calculating financial KPIs: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 284, in get_financial_kpis
+    bs = self.get_balance_sheet(format="raw")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 174, in get_balance_sheet
+    bs_data = self.qb_api.get_balance_sheet(as_of_date)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 312, in get_balance_sheet
+    return self._make_api_request(report_endpoint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:18:58,932 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:18:58,934 - CFOAgentLogger - ERROR - Error in cash flow forecast: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 436, in forecast_cash_flow
+    invoices = self.qb_api.get_invoices(start_date, end_date)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 239, in get_invoices
+    return self._make_api_request("query", params={"query": query})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:08,522 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:19:08,523 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:19:08,524 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:19:10,231 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:19:10,232 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:19:10,237 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:19:10,766 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:10,768 - CFOAgentLogger - ERROR - Error generating profit and loss report: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 106, in get_profit_and_loss
+    pl_data = self.qb_api.get_profit_and_loss(start_date, end_date)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 299, in get_profit_and_loss
+    return self._make_api_request(report_endpoint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:21,383 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:19:21,384 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:19:21,392 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:19:22,598 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:19:22,598 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:19:22,598 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:19:23,046 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:23,046 - CFOAgentLogger - ERROR - Error in cash flow forecast: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 436, in forecast_cash_flow
+    invoices = self.qb_api.get_invoices(start_date, end_date)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 239, in get_invoices
+    return self._make_api_request("query", params={"query": query})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:28,731 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:19:28,731 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:19:28,731 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:19:29,297 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:29,300 - CFOAgentLogger - ERROR - Error in cash flow forecast: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 436, in forecast_cash_flow
+    invoices = self.qb_api.get_invoices(start_date, end_date)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 239, in get_invoices
+    return self._make_api_request("query", params={"query": query})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:31,027 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:19:31,032 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:19:31,060 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:19:32,465 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:19:32,535 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:19:32,585 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:19:33,046 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:33,049 - CFOAgentLogger - ERROR - Error generating profit and loss report: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 106, in get_profit_and_loss
+    pl_data = self.qb_api.get_profit_and_loss(start_date, end_date)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 299, in get_profit_and_loss
+    return self._make_api_request(report_endpoint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:33,053 - CFOAgentLogger - ERROR - Error calculating estimated taxes: 'list' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\tax_module.py", line 75, in calculate_estimated_taxes
+    pl_data.get("Rows", {}).get("Row", []),
+    ^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'
+2025-04-15 00:19:35,159 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:19:35,160 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:19:35,161 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:19:35,630 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:19:35,632 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:19:35,634 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:19:36,110 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:36,112 - CFOAgentLogger - ERROR - Error generating profit and loss report: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 106, in get_profit_and_loss
+    pl_data = self.qb_api.get_profit_and_loss(start_date, end_date)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 299, in get_profit_and_loss
+    return self._make_api_request(report_endpoint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:36,117 - CFOAgentLogger - ERROR - Error calculating estimated taxes: 'list' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\tax_module.py", line 75, in calculate_estimated_taxes
+    pl_data.get("Rows", {}).get("Row", []),
+    ^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'
+2025-04-15 00:19:38,642 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:19:38,643 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:19:38,643 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:19:49,884 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:19:49,884 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:19:49,884 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:19:50,355 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:50,358 - CFOAgentLogger - ERROR - Error generating balance sheet report: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 174, in get_balance_sheet
+    bs_data = self.qb_api.get_balance_sheet(as_of_date)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 312, in get_balance_sheet
+    return self._make_api_request(report_endpoint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:50,362 - CFOAgentLogger - ERROR - Error calculating financial KPIs: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 284, in get_financial_kpis
+    bs = self.get_balance_sheet(format="raw")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 174, in get_balance_sheet
+    bs_data = self.qb_api.get_balance_sheet(as_of_date)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 312, in get_balance_sheet
+    return self._make_api_request(report_endpoint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:50,782 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:50,784 - CFOAgentLogger - ERROR - Error getting recent invoices for context: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\chat_interface_cfo.py", line 116, in get_financial_context
+    invoices = self.accounting_engine.qb_api.get_invoices(start_date, today)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 239, in get_invoices
+    return self._make_api_request("query", params={"query": query})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:51,198 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:51,200 - CFOAgentLogger - ERROR - Error generating profit and loss report: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 106, in get_profit_and_loss
+    pl_data = self.qb_api.get_profit_and_loss(start_date, end_date)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 299, in get_profit_and_loss
+    return self._make_api_request(report_endpoint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:51,205 - CFOAgentLogger - ERROR - Error calculating estimated taxes: 'list' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\tax_module.py", line 75, in calculate_estimated_taxes
+    pl_data.get("Rows", {}).get("Row", []),
+    ^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'
+2025-04-15 00:19:51,207 - CFOAgentLogger - ERROR - Error getting tax payment info for context: 'NoneType' object has no attribute 'get'
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\chat_interface_cfo.py", line 138, in get_financial_context
+    for payment in tax_estimate.get("payment_schedule", []):
+                   ^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'get'
+2025-04-15 00:19:51,615 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:19:51,617 - CFOAgentLogger - ERROR - Error in cash flow forecast: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 436, in forecast_cash_flow
+    invoices = self.qb_api.get_invoices(start_date, end_date)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 239, in get_invoices
+    return self._make_api_request("query", params={"query": query})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:27:29,113 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-15 00:27:29,115 - CFOAgentLogger - ERROR - Error loading configuration: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\config.py", line 20, in __init__
+    load_dotenv(env_file)
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 356, in load_dotenv
+    return dotenv.set_as_environment_variables()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 92, in set_as_environment_variables
+    if not self.dict():
+           ^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 76, in dict
+    self._dict = OrderedDict(resolve_variables(raw_values, override=self.override))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 238, in resolve_variables
+    for (name, value) in values:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 84, in parse
+    for mapping in with_warn_for_invalid_lines(parse_stream(stream)):
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 26, in with_warn_for_invalid_lines
+    for mapping in mappings:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 173, in parse_stream
+    reader = Reader(stream)
+             ^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 64, in __init__
+    self.string = stream.read()
+                  ^^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-04-15 00:27:29,123 - CFOAgentLogger - CRITICAL - Failed to initialize configuration: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\config.py", line 103, in <module>
+    config = Config()
+             ^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\config.py", line 20, in __init__
+    load_dotenv(env_file)
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 356, in load_dotenv
+    return dotenv.set_as_environment_variables()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 92, in set_as_environment_variables
+    if not self.dict():
+           ^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 76, in dict
+    self._dict = OrderedDict(resolve_variables(raw_values, override=self.override))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 238, in resolve_variables
+    for (name, value) in values:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 84, in parse
+    for mapping in with_warn_for_invalid_lines(parse_stream(stream)):
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 26, in with_warn_for_invalid_lines
+    for mapping in mappings:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 173, in parse_stream
+    reader = Reader(stream)
+             ^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 64, in __init__
+    self.string = stream.read()
+                  ^^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-04-15 00:27:30,839 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:27:30,839 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:27:30,841 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:27:38,969 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:27:38,970 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:27:38,971 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:27:40,949 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:27:40,949 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:27:40,949 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:27:44,688 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:27:44,689 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:27:44,697 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:27:50,446 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:27:50,447 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:27:50,450 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:27:50,479 - CFOAgentLogger - INFO - Refreshing financial data from QuickBooks (lookback: 90 days)
+2025-04-15 00:27:50,911 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:27:50,914 - CFOAgentLogger - ERROR - Error loading accounts data: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 42, in refresh_data
+    self.accounts = self.qb_api.get_accounts()
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 179, in get_accounts
+    return self._make_api_request("query", params={"query": "SELECT * FROM Account WHERE Active = true ORDER BY Name"})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:27:51,315 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:27:51,326 - CFOAgentLogger - ERROR - Error loading transactions data: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 49, in refresh_data
+    self.transactions = self.qb_api.get_transactions(start_date, end_date)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 204, in get_transactions
+    return self._make_api_request("query", params={"query": query})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:27:51,749 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:27:51,750 - CFOAgentLogger - ERROR - Error loading invoices data: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 56, in refresh_data
+    self.invoices = self.qb_api.get_invoices(start_date, end_date)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 239, in get_invoices
+    return self._make_api_request("query", params={"query": query})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:27:52,166 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:27:52,168 - CFOAgentLogger - ERROR - Error loading bills data: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 63, in refresh_data
+    self.bills = self.qb_api.get_bills(start_date, end_date)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 274, in get_bills
+    return self._make_api_request("query", params={"query": query})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:27:52,172 - CFOAgentLogger - WARNING - No financial data was loaded. Verify API credentials and connectivity.
+2025-04-15 00:27:52,589 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:27:52,592 - CFOAgentLogger - ERROR - Error generating balance sheet report: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 174, in get_balance_sheet
+    bs_data = self.qb_api.get_balance_sheet(as_of_date)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 312, in get_balance_sheet
+    return self._make_api_request(report_endpoint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:27:52,596 - CFOAgentLogger - ERROR - Error calculating financial KPIs: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 284, in get_financial_kpis
+    bs = self.get_balance_sheet(format="raw")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 174, in get_balance_sheet
+    bs_data = self.qb_api.get_balance_sheet(as_of_date)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 312, in get_balance_sheet
+    return self._make_api_request(report_endpoint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:27:53,028 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:27:53,030 - CFOAgentLogger - ERROR - Error in cash flow forecast: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 436, in forecast_cash_flow
+    invoices = self.qb_api.get_invoices(start_date, end_date)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 239, in get_invoices
+    return self._make_api_request("query", params={"query": query})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:27:55,162 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:27:55,164 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:27:55,166 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:27:57,063 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:27:57,066 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:27:57,067 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:27:57,543 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:27:57,545 - CFOAgentLogger - ERROR - Error generating profit and loss report: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 106, in get_profit_and_loss
+    pl_data = self.qb_api.get_profit_and_loss(start_date, end_date)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 299, in get_profit_and_loss
+    return self._make_api_request(report_endpoint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:28:01,066 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:28:01,068 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:28:01,071 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:28:02,782 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:28:02,782 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:28:02,782 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:28:03,330 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:28:03,333 - CFOAgentLogger - ERROR - Error in cash flow forecast: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 436, in forecast_cash_flow
+    invoices = self.qb_api.get_invoices(start_date, end_date)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 239, in get_invoices
+    return self._make_api_request("query", params={"query": query})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:28:07,668 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:28:07,670 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:28:07,672 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:28:08,730 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:28:08,733 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:28:08,734 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:28:09,197 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:28:09,200 - CFOAgentLogger - ERROR - Error generating profit and loss report: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 106, in get_profit_and_loss
+    pl_data = self.qb_api.get_profit_and_loss(start_date, end_date)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 299, in get_profit_and_loss
+    return self._make_api_request(report_endpoint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:28:09,205 - CFOAgentLogger - ERROR - Error retrieving profit and loss data: Invalid profit and loss data returned - type: <class 'list'>
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\tax_module.py", line 74, in calculate_estimated_taxes
+    raise ValueError(f"Invalid profit and loss data returned - type: {type(pl_data)}")
+ValueError: Invalid profit and loss data returned - type: <class 'list'>
+2025-04-15 00:28:13,244 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:28:13,245 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:28:13,247 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:28:26,001 - CFOAgentLogger - INFO - Accounting engine initialized successfully
+2025-04-15 00:28:26,002 - CFOAgentLogger - INFO - Tax module initialized successfully
+2025-04-15 00:28:26,002 - CFOAgentLogger - WARNING - OpenAI API key not set. Chat functionality will be limited to rule-based responses.
+2025-04-15 00:28:26,472 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:28:26,475 - CFOAgentLogger - ERROR - Error generating balance sheet report: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 174, in get_balance_sheet
+    bs_data = self.qb_api.get_balance_sheet(as_of_date)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 312, in get_balance_sheet
+    return self._make_api_request(report_endpoint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:28:26,479 - CFOAgentLogger - ERROR - Error calculating financial KPIs: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 284, in get_financial_kpis
+    bs = self.get_balance_sheet(format="raw")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 174, in get_balance_sheet
+    bs_data = self.qb_api.get_balance_sheet(as_of_date)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 312, in get_balance_sheet
+    return self._make_api_request(report_endpoint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:28:26,890 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:28:26,893 - CFOAgentLogger - ERROR - Error getting recent invoices for context: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\chat_interface_cfo.py", line 116, in get_financial_context
+    invoices = self.accounting_engine.qb_api.get_invoices(start_date, today)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 239, in get_invoices
+    return self._make_api_request("query", params={"query": query})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:28:27,302 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:28:27,306 - CFOAgentLogger - ERROR - Error generating profit and loss report: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 106, in get_profit_and_loss
+    pl_data = self.qb_api.get_profit_and_loss(start_date, end_date)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 299, in get_profit_and_loss
+    return self._make_api_request(report_endpoint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:28:27,312 - CFOAgentLogger - ERROR - Error retrieving profit and loss data: Invalid profit and loss data returned - type: <class 'list'>
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\tax_module.py", line 74, in calculate_estimated_taxes
+    raise ValueError(f"Invalid profit and loss data returned - type: {type(pl_data)}")
+ValueError: Invalid profit and loss data returned - type: <class 'list'>
+2025-04-15 00:28:27,726 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:28:27,728 - CFOAgentLogger - ERROR - Error in cash flow forecast: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\accounting_engine.py", line 436, in forecast_cash_flow
+    invoices = self.qb_api.get_invoices(start_date, end_date)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 239, in get_invoices
+    return self._make_api_request("query", params={"query": query})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 00:32:29,737 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-15 00:32:29,738 - CFOAgentLogger - ERROR - Error loading configuration: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\config.py", line 20, in __init__
+    load_dotenv(env_file)
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 356, in load_dotenv
+    return dotenv.set_as_environment_variables()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 92, in set_as_environment_variables
+    if not self.dict():
+           ^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 76, in dict
+    self._dict = OrderedDict(resolve_variables(raw_values, override=self.override))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 238, in resolve_variables
+    for (name, value) in values:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 84, in parse
+    for mapping in with_warn_for_invalid_lines(parse_stream(stream)):
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 26, in with_warn_for_invalid_lines
+    for mapping in mappings:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 173, in parse_stream
+    reader = Reader(stream)
+             ^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 64, in __init__
+    self.string = stream.read()
+                  ^^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-04-15 00:32:29,744 - CFOAgentLogger - CRITICAL - Failed to initialize configuration: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\config.py", line 108, in <module>
+    config = Config()
+             ^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\config.py", line 20, in __init__
+    load_dotenv(env_file)
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 356, in load_dotenv
+    return dotenv.set_as_environment_variables()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 92, in set_as_environment_variables
+    if not self.dict():
+           ^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 76, in dict
+    self._dict = OrderedDict(resolve_variables(raw_values, override=self.override))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 238, in resolve_variables
+    for (name, value) in values:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 84, in parse
+    for mapping in with_warn_for_invalid_lines(parse_stream(stream)):
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 26, in with_warn_for_invalid_lines
+    for mapping in mappings:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 173, in parse_stream
+    reader = Reader(stream)
+             ^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 64, in __init__
+    self.string = stream.read()
+                  ^^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-04-15 23:27:49,702 - CFOAgentLogger - INFO - Logger initialized successfully
+2025-04-15 23:27:49,705 - CFOAgentLogger - ERROR - Error loading configuration: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\config.py", line 20, in __init__
+    load_dotenv(env_file)
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 356, in load_dotenv
+    return dotenv.set_as_environment_variables()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 92, in set_as_environment_variables
+    if not self.dict():
+           ^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 76, in dict
+    self._dict = OrderedDict(resolve_variables(raw_values, override=self.override))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 238, in resolve_variables
+    for (name, value) in values:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 84, in parse
+    for mapping in with_warn_for_invalid_lines(parse_stream(stream)):
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 26, in with_warn_for_invalid_lines
+    for mapping in mappings:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 173, in parse_stream
+    reader = Reader(stream)
+             ^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 64, in __init__
+    self.string = stream.read()
+                  ^^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-04-15 23:27:49,726 - CFOAgentLogger - CRITICAL - Failed to initialize configuration: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\config.py", line 115, in <module>
+    config = Config()
+             ^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\config.py", line 20, in __init__
+    load_dotenv(env_file)
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 356, in load_dotenv
+    return dotenv.set_as_environment_variables()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 92, in set_as_environment_variables
+    if not self.dict():
+           ^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 76, in dict
+    self._dict = OrderedDict(resolve_variables(raw_values, override=self.override))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 238, in resolve_variables
+    for (name, value) in values:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 84, in parse
+    for mapping in with_warn_for_invalid_lines(parse_stream(stream)):
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\main.py", line 26, in with_warn_for_invalid_lines
+    for mapping in mappings:
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 173, in parse_stream
+    reader = Reader(stream)
+             ^^^^^^^^^^^^^^
+  File "F:\Program Files\PYTHON\Lib\site-packages\dotenv\parser.py", line 64, in __init__
+    self.string = stream.read()
+                  ^^^^^^^^^^^^^
+  File "<frozen codecs>", line 322, in decode
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+2025-04-15 23:27:50,187 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 23:27:50,210 - CFOAgentLogger - ERROR - Error querying customers: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 349, in query_customers
+    response = self._make_api_request("query", params={"query": query})
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 23:27:50,839 - CFOAgentLogger - ERROR - Error refreshing QuickBooks access token: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 23:27:50,841 - CFOAgentLogger - ERROR - Error creating invoice: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+Traceback (most recent call last):
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 382, in create_invoice
+    response = self._make_api_request("invoice", method="POST", data=invoice_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 84, in _make_api_request
+    self._ensure_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 80, in _ensure_token
+    self._refresh_access_token()
+  File "C:\Users\Matt\CFO_Agent\quickbooks_api.py", line 61, in _refresh_access_token
+    response.raise_for_status()
+  File "C:\Users\Matt\AppData\Roaming\Python\Python312\site-packages\requests\models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer
+2025-04-15 23:27:50,845 - CFOAgentLogger - ERROR - Failed to create test invoice - missing invoice ID in response
+NoneType: None

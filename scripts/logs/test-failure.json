@@ -1,0 +1,9 @@
+{
+  "name": "test-failure",
+  "exit_code": 1,
+  "status": "failure",
+  "output": "'This will fail' \n",
+  "start_time": "2025-04-24T00:11:36.438844",
+  "end_time": "2025-04-24T00:11:38.448582",
+  "duration_seconds": 2.009738
+}

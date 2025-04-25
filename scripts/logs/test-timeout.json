@@ -1,0 +1,9 @@
+{
+  "name": "test-timeout",
+  "exit_code": 1,
+  "status": "timeout",
+  "output": "'Starting long process' \n",
+  "start_time": "2025-04-24T00:11:53.382118",
+  "end_time": "2025-04-24T00:12:03.409310",
+  "duration_seconds": 10.027192
+}
