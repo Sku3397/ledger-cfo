@@ -38,3 +38,5 @@ tests/TestResults.xml
 .DS_Store
 Thumbs.db credentials.json
 token.pickle
+credentials.json
+token.pickle
