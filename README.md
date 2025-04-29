@@ -181,10 +181,12 @@ If using the Streamlit UI, use the "Invoice Automation" tab (or similar) to:
 (Paths reflect the refactored structure)
 
 - **Main Entry Point**: `src/ledger_cfo/__main__.py` (Handles CLI and potentially launches UI)
-- **CLI Logic**: `src/ledger_cfo/cli.py`, `src/ledger_cfo/simple_cli.py`
-- **Email Processing**: `src/ledger_cfo/email.py` (Monitoring, Parsing)
-- **Invoice Logic**: `src/ledger_cfo/invoice.py` (Creation, Approval Workflow)
-- **QuickBooks Integration**: `src/ledger_cfo/qbo.py`
+- **CLI Logic**: [`src/ledger_cfo/cli.py`](src/ledger_cfo/cli_README.md), [`src/ledger_cfo/simple_cli.py`](src/ledger_cfo/simple_cli_README.md)
+- **Core Logic**: [`src/ledger_cfo/core/`](src/ledger_cfo/core/README.md)
+- **Email Processing**: `src/ledger_cfo/email.py` (Placeholder README needed)
+- **Invoice Logic**: `src/ledger_cfo/invoice.py` (Placeholder README needed)
+- **QuickBooks Integration**: `src/ledger_cfo/qbo.py` (Placeholder README needed)
+- **Google Ads Integration**: [`src/ledger_cfo/google_ads_agent/`](src/ledger_cfo/google_ads_agent/README.md)
 - **UI**: Potentially integrated within `__main__.py` or a separate module if complex.
 
 ## Error Handling
