@@ -1,191 +1,262 @@
-# CFO/Accounting Agent - Invoice Automation
+# CFO Agent - Ledger CFO
 
-A comprehensive accounting automation system with automated invoice generation from email requests.
+[Placeholder for project description/overview. This system automates accounting tasks, focusing on invoice processing from email requests and integration with QuickBooks, deployable to Google Cloud Run.]
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Architecture](#architecture)
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [Testing](#testing)
+- [System Components](#system-components)
+- [Error Handling](#error-handling)
+- [Security Considerations](#security-considerations)
+- [Cloud Deployment (Cloud Run Edition)](#cloud-deployment-cloud-run-edition)
+- [License](#license)
+- [Contact](#contact)
+- [Recent Updates](#recent-updates)
 
 ## Overview
 
-This system extends a CFO/Accounting Agent to handle end-to-end invoice processing:
+[Placeholder: High-level description of the project, its goals, and primary functionalities.]
 
-1. Monitors a designated email inbox for invoice requests from authorized senders
-2. Parses the email content to extract customer name, materials, and amount
-3. Creates a draft invoice in QuickBooks
-4. Sends the invoice for approval via email
-5. Provides an approval interface to finalize the invoice
-6. Handles error cases gracefully with extensive logging
+This system extends a CFO/Accounting Agent to handle end-to-end invoice processing, optimized for deployment to Google Cloud Run. It monitors a designated email inbox, parses invoice requests, creates draft invoices in QuickBooks, manages an approval workflow, and provides comprehensive logging and error handling.
+
+## Architecture
+
+[Placeholder: Description of the system architecture, key components (like email monitor, parser, QBO integration, CLI/UI), and their interactions.]
 
 ## Features
 
-- **Email Monitoring**: Continuously checks for new emails from authorized senders
-- **Natural Language Parsing**: Extracts invoice details from freeform email text
-- **QuickBooks Integration**: Creates and manages invoices through the QuickBooks API
-- **Secure Approval Workflow**: JWT-based secure approval links
-- **Comprehensive UI**: Streamlit interface to monitor and manage the workflow
-- **Robust Error Handling**: Graceful handling of all error scenarios
-- **Extensive Logging**: Detailed UTF-8 logging of all activities
+- **Email Monitoring**: Continuously checks for new emails from authorized senders for invoice requests.
+- **Natural Language Parsing**: Extracts invoice details (customer, materials, amount, PO number) from freeform email text.
+- **QuickBooks Integration**: Creates and manages invoices through the QuickBooks API.
+- **Secure Approval Workflow**: JWT-based secure approval links for invoices.
+- **Comprehensive UI**: Streamlit interface to monitor and manage the workflow (if applicable).
+- **Robust Error Handling**: Graceful handling of connection failures, parsing errors, API issues, etc.
+- **Extensive Logging**: Detailed UTF-8 logging of all activities.
+- **Financial reporting**: Generates P&L, balance sheets, and other financial reports.
+- **Tax planning**: Helps calculate estimated taxes and prepare for filing.
+- **Cloud-native**: Designed for deployment to Google Cloud Run with scheduled tasks.
+
+## Quick Start
+
+[Placeholder: Minimal steps to get the project running locally or deployed.]
+
+```bash
+# Clone the repository
+git clone https://github.com/your-org/cfo-agent.git
+cd cfo-agent
+
+# Install dependencies (adjust based on final setup)
+pip install -r requirements.txt 
+# or: poetry install
+
+# Configure environment variables (create .env file)
+cp .env.example .env 
+# (Edit .env with your credentials)
+
+# Run the application (example)
+streamlit run src/ledger_cfo/__main__.py 
+# or: python src/ledger_cfo/__main__.py --help (for CLI usage)
+```
 
 ## Installation
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/your-org/cfo-agent.git
-   cd cfo-agent
-   ```
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/your-org/cfo-agent.git
+    cd cfo-agent
+    ```
 
-2. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+2.  **Install dependencies**:
+    ```bash
+    # Using pip:
+    pip install -r requirements.txt
+    # Or using Poetry (if setup):
+    # poetry install
+    ```
 
-3. Create a `.env` file with the following settings:
-   ```
-   # QuickBooks API settings
-   QUICKBOOKS_CLIENT_ID=your_client_id
-   QUICKBOOKS_CLIENT_SECRET=your_client_secret
-   QUICKBOOKS_REFRESH_TOKEN=your_refresh_token
-   QUICKBOOKS_REALM_ID=your_realm_id
-   QUICKBOOKS_ENVIRONMENT=production
+3.  **Configure environment variables**:
+    Create a `.env` file in the project root. You can copy the structure from `.env.example` (if available) or use the list below. Fill in your specific credentials and settings.
+    ```dotenv
+    # QuickBooks API settings
+    QUICKBOOKS_CLIENT_ID=your_client_id
+    QUICKBOOKS_CLIENT_SECRET=your_client_secret
+    QUICKBOOKS_REFRESH_TOKEN=your_refresh_token
+    QUICKBOOKS_REALM_ID=your_realm_id
+    QUICKBOOKS_ENVIRONMENT=sandbox # or production
 
-   # Email settings
-   EMAIL_IMAP_SERVER=imap.yourserver.com
-   EMAIL_SMTP_SERVER=smtp.yourserver.com
-   EMAIL_USERNAME=your_email@domain.com
-   EMAIL_PASSWORD=your_password
-   AUTHORIZED_EMAIL_SENDERS=hello@757handy.com,another@example.com
+    # Email settings
+    EMAIL_IMAP_SERVER=imap.yourserver.com
+    EMAIL_SMTP_SERVER=smtp.yourserver.com
+    EMAIL_USERNAME=your_email@domain.com
+    EMAIL_PASSWORD=your_password
+    AUTHORIZED_EMAIL_SENDERS=sender1@example.com,sender2@example.com
 
-   # Security settings
-   JWT_SECRET_KEY=your_jwt_secret_key
-   
-   # Application settings
-   APP_URL=http://your-app-url.com
-   DEMO_MODE=False
-   ```
+    # Security settings
+    JWT_SECRET_KEY=your_very_secret_jwt_key
+
+    # Application settings
+    APP_URL=http://localhost:8501 # or your deployed URL
+    DEMO_MODE=False # Use True for mock QBO API
+    # Add other settings like EMAIL_CHECK_INTERVAL, JWT_TOKEN_EXPIRY_DAYS if needed
+    ```
 
 ## Usage
 
 ### Starting the Application
 
-Run the Streamlit application:
-
+Run the Streamlit application (if configured):
+```bash
+streamlit run src/ledger_cfo/__main__.py # Adjust path if entry point differs
 ```
-streamlit run main.py
-```
-
-### Email Monitoring
-
-The system will monitor the specified email account for messages from authorized senders. When an email is received with content like:
-
-```
-Please create a new invoice for Angie Hutchins. Customer specified materials: Virginia Highlands carpet tile for all offices on second floor of ROB. It costs $12,915.
+Or use the command-line interface:
+```bash
+python src/ledger_cfo/__main__.py [command] [options]
+# Example: python src/ledger_cfo/__main__.py check-emails
 ```
 
+### Email Monitoring and Invoice Workflow
+
+The system monitors the specified email account for messages from authorized senders. When an email is received with content like:
+```
+Subject: new invoice "PO-123"
+Body: Please create a new invoice for Example Corp, invoice/PO number "PO-123" for: materials: Product A and Service B. total amount is $5,432.10.
+```
 The system will automatically:
-1. Parse the email to extract the customer name, materials description, and amount
-2. Create a draft invoice in QuickBooks
-3. Send an approval email to the administrator
+1. Parse the email to extract customer name, PO number, materials description, and amount.
+2. Create a draft invoice in QuickBooks.
+3. Send an approval email (if configured) or log the action.
 
 ### Invoice Approval
 
-When you receive an approval email, you can:
-1. Click the "Approve Invoice" button in the email to open the approval interface
-2. Review the invoice details
-3. Click "Approve Invoice" to finalize the invoice in QuickBooks
-4. Alternatively, click "Reject Invoice" to delete the draft invoice
-
-### Testing
-
-To run the test suite:
-
-```
-python test_invoice_workflow.py
-```
-
-### Manual Testing
-
-You can also use the "Invoice Automation" tab in the UI to:
-1. View processed emails
-2. Check pending invoices
-3. Test the invoice creation process without sending an email
+If an approval workflow is enabled:
+1. An approval email with a secure link (using JWT) is sent.
+2. Clicking the link opens an interface to review and approve/reject the invoice.
+3. Approval finalizes the invoice in QuickBooks; rejection deletes the draft.
 
 ## Configuration
 
-### Email Monitoring Settings
+Configuration is primarily managed through environment variables loaded from the `.env` file.
 
-- `EMAIL_CHECK_INTERVAL`: How often to check for new emails (in seconds)
-- `AUTHORIZED_EMAIL_SENDERS`: Comma-separated list of email addresses authorized to request invoices
+Key settings include:
+- **QuickBooks API**: Client ID, Secret, Refresh Token, Realm ID, Environment (sandbox/production).
+- **Email**: IMAP/SMTP server details, username, password, authorized sender list.
+- **Security**: `JWT_SECRET_KEY` for approval tokens, `JWT_TOKEN_EXPIRY_DAYS`.
+- **Application**: `APP_URL`, `DEMO_MODE`, `EMAIL_CHECK_INTERVAL`, `AUTO_START_EMAIL_MONITORING`.
 
-### Security Settings
+Refer to the `.env` or `.env.example` file for a complete list.
 
-- `JWT_TOKEN_EXPIRY_DAYS`: Number of days before an approval token expires
-- `JWT_SECRET_KEY`: Secret key for JWT token generation and verification
+## Testing
 
-### Application Settings
+### Automated Tests
 
-- `DEMO_MODE`: If True, uses mock QuickBooks API instead of the real one
-- `AUTO_START_EMAIL_MONITORING`: If True, automatically starts email monitoring when the application launches
+Run the automated test suite using pytest:
+```bash
+pytest
+```
+Ensure necessary test dependencies are installed (check `requirements-dev.txt` or `pyproject.toml`).
+
+### Manual Testing (`test_invoice_workflow.py`)
+
+The script `test_invoice_workflow.py` (if still applicable) might provide specific workflow tests:
+```bash
+python test_invoice_workflow.py
+```
+
+### UI Testing
+
+If using the Streamlit UI, use the "Invoice Automation" tab (or similar) to:
+1. View processed emails.
+2. Check pending invoices.
+3. Test invoice creation manually.
 
 ## System Components
 
-### 1. Email Monitor (`email_monitor.py`)
+(Paths reflect the refactored structure)
 
-Continuously monitors an email inbox for new messages from authorized senders.
-
-### 2. Email Parser (`email_parser.py`)
-
-Extracts invoice details from email content using NLP techniques.
-
-### 3. Invoice Creator (`invoice_creator.py`)
-
-Creates draft invoices in QuickBooks based on parsed invoice requests.
-
-### 4. Approval Workflow (`approval_workflow.py`)
-
-Handles the invoice approval process, including:
-- Sending approval emails with secure tokens
-- Verifying approval tokens
-- Processing approval/rejection actions
-
-### 5. Main Application (`main.py`)
-
-Streamlit-based UI that integrates all components and provides a dashboard for users.
+- **Main Entry Point**: `src/ledger_cfo/__main__.py` (Handles CLI and potentially launches UI)
+- **CLI Logic**: `src/ledger_cfo/cli.py`, `src/ledger_cfo/simple_cli.py`
+- **Email Processing**: `src/ledger_cfo/email.py` (Monitoring, Parsing)
+- **Invoice Logic**: `src/ledger_cfo/invoice.py` (Creation, Approval Workflow)
+- **QuickBooks Integration**: `src/ledger_cfo/qbo.py`
+- **UI**: Potentially integrated within `__main__.py` or a separate module if complex.
 
 ## Error Handling
 
-The system has robust error handling throughout:
+The system implements robust error handling for:
+- Email server connection/authentication issues.
+- Email parsing failures (malformed content, missing details).
+- QuickBooks API errors (authentication, invalid requests, rate limits).
+- Approval workflow problems (invalid/expired tokens).
 
-1. **Email Monitoring Errors**: Connection failures, authentication issues
-2. **Parsing Errors**: Malformed emails, missing information
-3. **API Errors**: QuickBooks API failures, network issues
-4. **Approval Errors**: Invalid tokens, token expiration
-
-All errors are logged with detailed information to help with troubleshooting.
+Errors are logged comprehensively to aid debugging.
 
 ## Security Considerations
 
-- JWT tokens are used for secure approval links
-- Email authentication ensures only authorized senders can request invoices
-- HTTPS is recommended for production deployment
-- Sensitive information is stored in environment variables, not in code
+- **Credentials**: Store sensitive data (API keys, passwords) securely using environment variables and potentially a secret manager (like Google Secret Manager for cloud deployments). Do not commit secrets to Git.
+- **Approval Tokens**: Use strong, short-lived JWTs for approval links.
+- **Email Validation**: Strictly enforce the `AUTHORIZED_EMAIL_SENDERS` list.
+- **Input Sanitization**: Sanitize data extracted from emails before using it in API calls.
+- **HTTPS**: Ensure the application (especially any web UI or approval endpoints) is served over HTTPS.
+- **Dependencies**: Keep libraries updated to patch security vulnerabilities.
+
+## Cloud Deployment (Cloud Run Edition)
+
+This version is optimized for deployment to Google Cloud Run.
+
+### Prerequisites
+
+- Google Cloud SDK (`gcloud`) installed and authenticated.
+- Docker installed locally.
+- A Google Cloud Project with necessary APIs enabled (Cloud Build, Cloud Run, Secret Manager, Cloud Scheduler).
+- Project ID: `ledger-457022` (or your project)
+
+### Deployment Scripts
+
+Scripts are provided in the `./scripts/` directory:
+
+1.  **Enable GCP APIs**: `./scripts/enable_gcp_apis.sh`
+2.  **Create/Update Secrets**: `./scripts/create_secrets.sh` (Stores `.env` contents in Google Secret Manager)
+3.  **Build & Push Container**: `./scripts/build_and_push.sh` (Builds Docker image using Cloud Build and pushes to Artifact Registry)
+4.  **Deploy to Cloud Run**: `./scripts/deploy_cloud_run.sh` (Deploys the container to Cloud Run)
+5.  **Schedule Jobs**: `./scripts/schedule_jobs.sh` (Sets up Cloud Scheduler jobs, e.g., for periodic email checks)
+
+**General Workflow:**
+```bash
+cd cfo_agent # Or project root
+chmod +x scripts/*.sh 
+./scripts/enable_gcp_apis.sh
+./scripts/create_secrets.sh # Follow prompts
+./scripts/build_and_push.sh
+./scripts/deploy_cloud_run.sh
+./scripts/schedule_jobs.sh # If using scheduled tasks
+```
 
 ## License
 
-[Your License Here]
+[Specify Your License Here - e.g., MIT, Apache 2.0]
 
 ## Contact
 
-For support or questions, please contact [Your Contact Information].
+For support or questions, please contact [Your Name/Email/Project Link].
 
 ## Recent Updates
 
+[Keep existing recent updates or add new ones.]
+
 ### Improved Invoice Parsing (April 2025)
-
 The email parsing system has been enhanced to better extract information from invoice requests:
-
 - Added support for extracting invoice/PO numbers (now used as DocNumber in QuickBooks)
 - Added detection of activity type (e.g., "Customer Specified Materials")
 - Improved customer name detection, especially for common customers
 - Better materials description extraction with support for specific formats
 - Fixed formatting of line items to preserve activity type information
-
 These improvements allow the system to more accurately create invoices from email requests without requiring manual editing afterward.
 
 Example email format now supported:
@@ -193,387 +264,4 @@ Example email format now supported:
 Subject: new invoice "INVOICE-NUMBER"
 Body: create a new invoice for existing customer Customer Name, invoice/PO number "INVOICE-NUMBER" for: materials: Description of materials. total amount is $1,234.56.
 ```
-
-The system will correctly extract:
-- Customer name
-- Invoice/PO number
-- Materials description
-- Amount
-- Activity type (if specified)
-
-# CFO Agent - Cloud Run Edition
-
-CFO Agent is a financial management automation tool that helps with invoice creation, accounting, and tax planning. This version is optimized for deployment to Google Cloud Run.
-
-## Features
-
-- **Email monitoring**: Automatically processes invoice creation requests from email
-- **Invoice automation**: Creates QuickBooks invoices based on email requests 
-- **Financial reporting**: Generates P&L, balance sheets, and other financial reports
-- **Tax planning**: Helps calculate estimated taxes and prepare for filing
-- **Cloud-native**: Fully deployable to Google Cloud Run with scheduled tasks
-
-## Prerequisites
-
-- Google Cloud SDK installed and configured
-- Docker installed (for local testing)
-- Access to the Google Cloud project `ledger-457022`
-- QuickBooks Online API credentials
-- Email account credentials
-
-## Quick Start - Cloud Deployment
-
-1. **Initialize the repository**:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   ```
-
-2. **Enable required Google Cloud APIs**:
-   ```bash
-   cd cfo_agent
-   chmod +x scripts/*.sh  # Make scripts executable
-   ./scripts/enable_gcp_apis.sh
-   ```
-
-3. **Configure secrets**:
-   ```bash
-   ./scripts/create_secrets.sh
-   ```
-   Follow the prompts to enter your QuickBooks API credentials and other sensitive information.
-
-4. **Build and push the container image**:
-   ```bash
-   ./scripts/build_and_push.sh
-   ```
-
-5. **Deploy to Cloud Run**:
-   ```bash
-   ./scripts/deploy.sh
-   ```
-
-6. **Set up scheduled tasks**:
-   ```bash
-   ./scripts/create_scheduler.sh
-   ```
-
-7. **Test the deployment**:
-   ```bash
-   ./scripts/test_endpoints.sh
-   ```
-
-## Local Development
-
-### Setup
-
-1. Create a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-2. Install dependencies:
-   ```bash
-   pip install -r cfo_agent/requirements.txt
-   ```
-
-3. Create a `.env` file with required environment variables:
-   ```
-   QUICKBOOKS_CLIENT_ID=your_client_id
-   QUICKBOOKS_CLIENT_SECRET=your_client_secret
-   QUICKBOOKS_REFRESH_TOKEN=your_refresh_token
-   QUICKBOOKS_REALM_ID=your_realm_id
-   EMAIL_USERNAME=your_email
-   EMAIL_PASSWORD=your_password
-   JWT_SECRET_KEY=your_secret_key
-   ```
-
-4. Run the application locally:
-   ```bash
-   cd cfo_agent
-   python main.py
-   ```
-
-### Running with Docker
-
-1. Build the container:
-   ```bash
-   cd cfo_agent
-   docker build -t cfo-agent:local .
-   ```
-
-2. Run the container:
-   ```bash
-   docker run -p 8080:8080 --env-file .env cfo-agent:local
-   ```
-
-3. Access the application at http://localhost:8080
-
-## Architecture
-
-The CFO Agent deployed to Google Cloud Run has the following components:
-
-- **Cloud Run Service**: Container running the Flask application
-- **Cloud Scheduler**: Triggers scheduled reports and data refresh operations
-- **Secret Manager**: Stores sensitive credentials securely
-- **Cloud Storage**: Stores generated reports and temporary data
-
-## Endpoints
-
-- **`/`**: Supports both GET and POST methods
-  - GET: Health check endpoint returning service status (HTTP 200)
-  - POST: Main endpoint for triggering the CFO Agent audit process
-- **`/trigger`**: Alternative POST endpoint for triggering the CFO Agent
-
-## Usage/Testing
-
-To test the service using cURL:
-
-```bash
-# Get service URL
-SERVICE_URL=$(gcloud run services describe ledger --platform managed --region us-east4 --format="value(status.url)")
-
-# Get identity token for authentication
-TOKEN=$(gcloud auth print-identity-token)
-
-# Trigger the audit via the root endpoint
-curl -X POST "$SERVICE_URL/" \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"action":"run_audit"}'
-
-# Or via the /trigger endpoint
-curl -X POST "$SERVICE_URL/trigger" \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"action":"run_audit"}'
-```
-
-Using PowerShell:
-
-```powershell
-# Get service URL
-$SERVICE_URL = (gcloud run services describe ledger --platform managed --region us-east4 --format="value(status.url)")
-
-# Get identity token for authentication
-$TOKEN = (gcloud auth print-identity-token)
-
-# Trigger the audit via the root endpoint
-$Headers = @{ Authorization = "Bearer $TOKEN" }
-$Body = @{ action = "run_audit" } | ConvertTo-Json
-Invoke-RestMethod -Method Post -Uri "$SERVICE_URL/" -Headers $Headers -ContentType "application/json" -Body $Body
-
-# Or via the /trigger endpoint
-Invoke-RestMethod -Method Post -Uri "$SERVICE_URL/trigger" -Headers $Headers -ContentType "application/json" -Body $Body
-```
-
-For automated testing, use the provided scripts:
-
-```bash
-# Bash/Linux
-bash scripts/test_invoke.sh
-
-# Windows PowerShell
-.\scripts\test_invoke.ps1
-```
-
-## Trigger Types
-
-The API endpoints accept the following action types in the JSON body:
-
-1. **Run audit**:
-   ```json
-   {
-     "action": "run_audit"
-   }
-   ```
-
-## Logs and Monitoring
-
-View Cloud Run logs with:
-```bash
-gcloud run services logs read cfo-agent --region us-east4
-```
-
-## Rollback to Previous Version
-
-List available revisions:
-```bash
-gcloud run revisions list --service cfo-agent --region us-east4
-```
-
-Rollback to a specific revision:
-```bash
-gcloud run services update-traffic cfo-agent --to-revisions=REVISION_ID=100 --region us-east4
-```
-
-## Setting Up Email Triggers
-
-To process emails and send them to the CFO Agent:
-
-1. Set up a Gmail filter to forward specific emails to a Pub/Sub topic
-2. Create a Pub/Sub topic (e.g., `cfo-email-triggers`)
-3. Set up a Cloud Function triggered by Pub/Sub that forwards the email data to your Cloud Run service
-
-Alternatively, the local version of CFO Agent can monitor an inbox directly if deployed with appropriate permissions.
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is proprietary and confidential.
-
-## CI/CD Deployment
-
-This project uses GitHub Actions for continuous deployment to Google Cloud Run.
-
-### Workflow Configuration
-
-The deployment workflow is defined in `.github/workflows/deploy.yml` and automatically deploys the application to Cloud Run when changes are pushed to the `main` branch.
-
-### GitHub Secrets
-
-The following secrets need to be added to your GitHub repository (Settings → Secrets → Actions):
-
-- `GCP_PROJECT_ID`: ledger-457022
-- `GCP_PROJECT_NUMBER`: [Retrieved from Google Cloud Console]
-- `GCP_SERVICE_ACCOUNT`: ledger-deployer@ledger-457022.iam.gserviceaccount.com
-
-### Triggering a Deployment
-
-To trigger a deployment, simply push to the `main` branch:
-
-```bash
-git push origin main
-```
-
-Or use the test script:
-
-```bash
-# Make the script executable (Linux/Mac)
-chmod +x scripts/test_deploy.sh
-./scripts/test_deploy.sh
-
-# Or on Windows
-bash scripts/test_deploy.sh
-
-# Or using PowerShell
-.\scripts\test_deploy.ps1
-```
-
-### Verifying Deployment
-
-To verify the deployment status:
-
-```bash
-gcloud run services describe ledger --platform managed --region us-east4
-```
-
-To check logs:
-
-```bash
-gcloud run logs read ledger --project=ledger-457022
-```
-
-## Deployment (Cloud Run)
-
-This service is designed to be deployed to Google Cloud Run.
-
-1.  **Prerequisites**:
-    *   Google Cloud Project with Billing Enabled.
-    *   `gcloud` CLI installed and configured.
-    *   Cloud Build API, Cloud Run API, Secret Manager API, Cloud Scheduler API enabled.
-    *   Secrets created in Secret Manager for:
-        *   `QUICKBOOKS_CLIENT_ID`
-        *   `QUICKBOOKS_CLIENT_SECRET`
-        *   `QUICKBOOKS_REFRESH_TOKEN`
-        *   `QUICKBOOKS_REALM_ID`
-        *   `GMAIL_CLIENT_ID`
-        *   `GMAIL_CLIENT_SECRET`
-        *   `GMAIL_REFRESH_TOKEN`
-2.  **Cloud Build Trigger**:
-    *   Connect your GitHub repository to Cloud Build.
-    *   Create a trigger that fires on pushes to the `main` (or `feature/email-commands` for testing) branch, using `cloudbuild.yaml` as the build configuration.
-3.  **Initial Deployment**:
-    *   Push your code to trigger the first build and deployment.
-4.  **Cloud Scheduler Setup**:
-    *   Once the service is deployed, obtain its URL:
-        ```bash
-        gcloud run services describe ledger-cfo --platform managed --region us-east1 --format 'value(status.url)'
-        ```
-    *   Create a Cloud Scheduler job to invoke the `/process-email` endpoint every minute (replace `<SERVICE_URL>` and potentially `<YOUR_SERVICE_ACCOUNT_EMAIL>`):
-        ```bash
-        gcloud scheduler jobs create http process-ledger-cfo-email \
-            --schedule="* * * * *" \
-            --uri="<SERVICE_URL>/process-email" \
-            --http-method=GET \
-            --time-zone="Etc/UTC" \
-            --description="Trigger CFO Ledger email processing every minute" 
-            # Add --oidc-service-account-email="<YOUR_SERVICE_ACCOUNT_EMAIL>" if your service requires authentication
-        ```
-
-## Testing
-
-Pester tests are located in the `/tests` directory. Run them using:
-
-```powershell
-Invoke-Pester -Path ./tests
-```
-
-Tests should be run as part of the CI/CD pipeline (see commented section in `cloudbuild.yaml`).
-
-## Cloud Build Requirements
-
-**Important**: Cloud Build must be run in the global region (or a supported multi-regional US region) due to quota restrictions. However, Cloud Run deployments should still use the `us-east4` region.
-
-When running Cloud Build commands, do not specify a region flag:
-
-```bash
-# Correct way to build
-gcloud builds submit --project=ledger-457022 --tag us-east4-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:latest .
-```
-
-If a region flag is necessary, use the global region:
-
-```bash
-# Alternative with explicit global region
-gcloud builds submit --region=global --project=ledger-457022 --tag us-east4-docker.pkg.dev/ledger-457022/cfo-agent-repo/ledger:latest .
-```
-
-## IAM Updates
-
-The following service accounts require specific roles to successfully build and deploy the application:
-
-- **Compute Engine default service account**: `{PROJECT_NUMBER}-compute@developer.gserviceaccount.com`
-  - Needs `roles/artifactregistry.writer` to push images to Artifact Registry
-  - Needs `roles/logging.logWriter` to write logs to Cloud Logging
-
-- **Cloud Build service account**: `{PROJECT_NUMBER}@cloudbuild.gserviceaccount.com`
-  - Needs `roles/artifactregistry.writer` to push images to Artifact Registry
-  - Needs `roles/logging.logWriter` to write logs to Cloud Logging
-
-To automatically grant these permissions, run the appropriate script for your platform:
-
-```bash
-# For Linux/Mac
-bash scripts/grant_iam_permissions.sh
-
-# For Windows using Bash
-bash scripts/grant_iam_permissions.sh
-# or
-sh scripts/grant_iam_permissions.sh
-
-# For Windows using PowerShell
-./scripts/grant_iam_permissions.ps1
-```
-
-After running this script, the build and deployment process should work without permission errors.
-
-Last updated: [Current Timestamp] 
+The system will correctly extract: Customer name, Invoice/PO number, Materials description, Amount, Activity type (if specified). 

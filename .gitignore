@@ -38,6 +38,9 @@ tests/TestResults.xml
 .DS_Store
 Thumbs.db
 
+# Node modules
+node_modules/
+
 .env
 __pycache__/
 logs/
