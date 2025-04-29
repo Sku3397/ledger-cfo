@@ -36,7 +36,8 @@ tests/TestResults.xml
 
 # OS generated files
 .DS_Store
-Thumbs.db credentials.json
-token.pickle
-credentials.json
-token.pickle
+Thumbs.db
+
+.env
+__pycache__/
+logs/
