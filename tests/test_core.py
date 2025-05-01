@@ -1,7 +1,6 @@
 import pytest
-from ledger_cfo import core # Adjust import as needed
+import ledger_cfo # Keep the import correction
 
-
-def test_placeholder():
-    """Placeholder test."""
-    assert True 
+def test_package_import():
+    """Test that the main package can be imported."""
+    assert ledger_cfo is not None 
