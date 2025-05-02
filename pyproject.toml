@@ -18,6 +18,7 @@ dependencies = [
     # "requests",
     "click", # For the CLI test
     "pytest", # For tests
+    "flask", # Added: For the Flask app in __main__
     # "google-ads", # If used by the google_ads_agent
 ]
 
