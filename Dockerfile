@@ -1,26 +1,27 @@
-# Use the official PowerShell Core image
-FROM mcr.microsoft.com/powershell:latest
+# Use an official Python runtime as a parent image
+FROM python:3.11-slim
 
-# Set working directory
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy the application source and service modules
-COPY src/EmailFunction.ps1 /app/src/
-COPY Services /app/Services/
+# Install system dependencies if needed
+# RUN apt-get update && apt-get install -y --no-install-recommends some-package && rm -rf /var/lib/apt/lists/*
 
-# Ensure logs directory exists (though stdout/stderr is preferred for Cloud Run)
-RUN pwsh -Command "New-Item -ItemType Directory -Path /app/logs -Force"
+# Copy project definition and source code
+COPY pyproject.toml /app/
+COPY src/ /app/src/
+COPY tests/ /app/tests/
 
-# Expose the port the app runs on (default 8080 for Cloud Run)
+# Install the package defined in pyproject.toml including dev dependencies
+RUN pip install --no-cache-dir .[dev]
+
+# Expose port 8080 for Cloud Run or other services
 EXPOSE 8080
 
-# Define environment variables if needed (though Cloud Run should inject them)
-# ENV GMAIL_CLIENT_ID="your_id"
-# ENV GMAIL_CLIENT_SECRET="your_secret"
-# ENV GMAIL_REFRESH_TOKEN="your_token"
-# ENV QUICKBOOKS_CLIENT_ID="your_qb_id"
-# ... etc ...
-# ENV AUTHORIZED_EMAIL_SENDERS="sender1@example.com,sender2@example.com"
-
-# Start the PowerShell script that runs the HTTP listener
-CMD ["pwsh", "/app/src/EmailFunction.ps1"] 
+# Command to run the application using the module entry point
+# This relies on the package being installed correctly
+CMD ["python", "-m", "ledger_cfo"] 
