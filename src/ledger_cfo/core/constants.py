@@ -1,0 +1,10 @@
+from enum import Enum
+
+class Intent(Enum):
+    CREATE_INVOICE = "CREATE_INVOICE"
+    SEND_INVOICE = "SEND_INVOICE"
+    FIND_CUSTOMER = "FIND_CUSTOMER"
+    RECORD_EXPENSE = "RECORD_EXPENSE"
+    GET_REPORT_PNL = "GET_REPORT_PNL"
+    HANDLE_CONFIRMATION = "HANDLE_CONFIRMATION" # Internal intent for confirmations
+    UNKNOWN = "UNKNOWN" 
