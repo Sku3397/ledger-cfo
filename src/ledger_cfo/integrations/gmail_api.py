@@ -1,5 +1,5 @@
-import base64
 import logging
+import base64
 import re
 from email import message_from_bytes
 from email.header import decode_header
@@ -8,11 +8,13 @@ from typing import Optional, List, Dict, Any
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
+from google.auth.transport.requests import Request
+from google.oauth2 import service_account
 
 # Assuming get_secret is correctly defined in core.config
 from ..core.config import get_secret
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly', 'https://www.googleapis.com/auth/gmail.modify']
 
@@ -29,9 +31,9 @@ def get_gmail_service() -> Optional[Any]:
     creds = None
     try:
         # Fetch credentials from Secret Manager
-        client_id = get_secret("gmail_client_id")
-        client_secret = get_secret("gmail_client_secret")
-        refresh_token = get_secret("gmail_refresh_token")
+        client_id = get_secret("ledger-cfo-gmail-client-id")
+        client_secret = get_secret("ledger-cfo-gmail-client-secret")
+        refresh_token = get_secret("ledger-cfo-gmail-refresh-token")
 
         if not all([client_id, client_secret, refresh_token]):
             logging.error("Missing one or more Gmail credentials from Secret Manager.")
@@ -177,4 +179,35 @@ def mark_email_as_read(service: Any, msg_id: str, user_id='me') -> None:
     except Exception as e:
         logging.error(f'An unexpected error occurred marking email {msg_id} as read: {e}')
 
-# Add other Gmail functions as needed (e.g., sending emails, managing labels) 
+# Add other Gmail functions as needed (e.g., sending emails, managing labels)
+
+from email.mime.text import MIMEText
+
+async def send_email(service: Any, to: str, sender: str, subject: str, body: str, user_id='me') -> Optional[Dict]:
+    """Creates and sends an email message asynchronously."""
+    try:
+        message = MIMEText(body)
+        message['to'] = to
+        message['from'] = sender
+        message['subject'] = subject
+
+        encoded_message = base64.urlsafe_b64encode(message.as_bytes()).decode()
+        create_message = {'raw': encoded_message}
+
+        # Properly await each step in the AsyncMock chain
+        users_service = await service.users()
+        messages_service = await users_service.messages()
+        # The send() method on the real API client typically returns a request object,
+        # which then has an execute() method. Or send() might directly execute.
+        # Assuming send() returns the request that needs execute():
+        send_request = await messages_service.send(userId=user_id, body=create_message)
+        send_message_result = await send_request.execute()
+        
+        logger.info(f"Sent email successfully. Message ID: {send_message_result.get('id')}")
+        return send_message_result
+    except HttpError as error:
+        logger.error(f'An HTTP error occurred while sending email: {error}')
+        return None
+    except Exception as e:
+        logger.error(f'An unexpected error occurred while sending email: {e}', exc_info=True)
+        return None 

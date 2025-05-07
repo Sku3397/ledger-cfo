@@ -18,9 +18,19 @@ async function askClaudeSDK(query) {
     return; // Allow process to exit naturally
   }
 
-  const anthropic = new Anthropic({
-    apiKey: apiKey,
-  });
+  console.log("API Key found. Attempting to initialize Anthropic client..."); // Added log
+
+  let anthropic;
+  try {
+      anthropic = new Anthropic({ // Wrapped in try/catch
+          apiKey: apiKey,
+      });
+      console.log("Anthropic client initialized successfully."); // Added log
+  } catch (initError) {
+      console.error("Error initializing Anthropic client:", initError); // Log specific init error
+      process.exitCode = 3; // Use a distinct exit code for init failure
+      return; // Exit if client fails to initialize
+  }
 
   console.log(`Attempting to send query to Claude SDK: "${query}"`); // Added log
 

@@ -3,10 +3,12 @@ from sqlalchemy import select, update, delete, and_
 import logging
 from datetime import datetime, timedelta
 
-from ..models.customer_cache import CustomerCache
+# Corrected import: Rely on models/__init__.py to provide CustomerCache
+from ..models import CustomerCache
 from ..models.pending_action import PendingAction
 from ..models.vendor_cache import VendorCache
 from ..models.account_cache import AccountCache
+from ..models.conversation_history import ConversationHistory
 
 logger = logging.getLogger(__name__)
 
@@ -314,4 +316,54 @@ def bulk_update_or_create_account_cache(db: Session, accounts_data: list[dict]):
         db.flush()
         logger.info(f"Bulk account cache update complete. Updated: {updated_count}, Created: {created_count}.")
     else:
-        logger.info("No changes needed in bulk account cache update.") 
+        logger.info("No changes needed in bulk account cache update.")
+
+# --- Conversation History CRUD --- #
+
+def get_conversation_history(db: Session, conversation_id: str) -> list[dict]:
+    """Fetches the conversation history for a given ID, ordered by sequence."""
+    logger.debug(f"Querying conversation history for ID: {conversation_id}")
+    statement = select(ConversationHistory).\
+        where(ConversationHistory.conversation_id == conversation_id).\
+        order_by(ConversationHistory.sequence)
+    results = db.execute(statement).scalars().all()
+    history = [turn.to_dict() for turn in results]
+    logger.debug(f"Found {len(history)} turns for conversation {conversation_id}")
+    return history
+
+def save_conversation_turn(db: Session, conversation_id: str, turn_data: dict):
+    """Saves a single turn to the conversation history."""
+    logger.debug(f"Saving turn for conversation ID: {conversation_id}, Role: {turn_data.get('role')}")
+    # Determine the next sequence number
+    current_history = get_conversation_history(db, conversation_id)
+    next_sequence = len(current_history)
+
+    role = turn_data.get('role')
+    content = turn_data.get('content')
+    content_json = None
+
+    if not role:
+        raise ValueError("Turn data must include a 'role'.")
+
+    # Store structured content in JSON if it's dict/list, else store in text
+    if isinstance(content, (dict, list)):
+        content_json = content
+        content_text = None
+        logger.debug("Storing turn content as JSON.")
+    else:
+        content_text = str(content) if content is not None else None
+        logger.debug("Storing turn content as Text.")
+
+
+    new_turn = ConversationHistory(
+        conversation_id=conversation_id,
+        sequence=next_sequence,
+        role=role,
+        content=content_text,
+        content_json=content_json
+    )
+    db.add(new_turn)
+    # Flush may be needed here if commit happens later
+    # db.flush()
+    logger.debug(f"Added turn {next_sequence} for conversation {conversation_id} to session.")
+    # The commit should happen within the main loop after successful processing of the turn 

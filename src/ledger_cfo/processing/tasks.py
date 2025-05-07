@@ -245,8 +245,8 @@ def dispatch_task(nlu_result: dict, qbo_client, gmail_service, db_session: Sessi
 
             # Send confirmation email
             confirmation_body = _format_confirmation_email_body(action_details_to_store, pending_id)
-            sender_email = get_secret("SENDER_EMAIL")
-            recipient_email = get_secret("ALLOWED_SENDER_EMAIL")
+            sender_email = get_secret("ledger-cfo-sender-email")
+            recipient_email = get_secret("ledger-cfo-allowed-sender")
             subject = f"Confirmation Required: {intent.value} Request ({pending_id[:8]})"
 
             gmail_api.send_email(
@@ -340,3 +340,9 @@ def execute_confirmed_action(action_details: dict, qbo_client, gmail_service, db
 
     logger.info(f"Confirmed action execution result: {execution_result}")
     return execution_result
+
+async def send_summary_email(subject: str, body: str):
+    """Sends a summary email."""
+    sender_email = get_secret("ledger-cfo-sender-email")
+    recipient_email = get_secret("ledger-cfo-allowed-sender")
+    # Assuming SENDGRID_API_KEY is loaded elsewhere or implicitly by sendgrid lib

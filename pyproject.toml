@@ -14,12 +14,24 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    # Add core dependencies here later, e.g.:
-    # "requests",
-    "click", # For the CLI test
+    # Core dependencies identified
+    "click", # For CLI
     "pytest", # For tests
-    "flask", # Added: For the Flask app in __main__
-    # "google-ads", # If used by the google_ads_agent
+    "flask", # For web server in __main__
+    "sqlalchemy", # For database interactions (CRUD)
+    "psycopg2-binary", # Assuming PostgreSQL, adjust if different DB used
+    "python-quickbooks", # For QBO API
+    "cachetools", # For caching
+    "google-api-python-client", # For Gmail API
+    "google-auth-httplib2", # For Google Auth
+    "google-auth-oauthlib", # For Google Auth
+    "openai", # For LLM interaction
+    "anthropic", # For Claude fallback
+    "python-dotenv", # For loading .env files
+    "tenacity", # For retries
+    "google-cloud-secret-manager", # For accessing secrets
+    "cloud-sql-python-connector[psycopg2]", # For Cloud SQL connection
+    # Add google-ads if confirmed needed
 ]
 
 [project.optional-dependencies]

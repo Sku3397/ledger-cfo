@@ -1,0 +1,177 @@
+**Compiled Report**
+
+*   **Actions:**
+    *   Confirmed new refresh token (`RT1-218-...`, version 5, generated with minimal scopes) was enabled in Secret Manager.
+    *   Executed `pytest tests/integration/test_scenario_1_live.py::test_final_invoice_live_mr_test -v -s --cache-clear --asyncio-mode=auto`.
+    *   Analyzed output: Test failed again with `401 invalid_client`.
+    *   Verified diagnostic prints confirmed the correct credentials (including the new refresh token RT1-218-...) were loaded.
+    *   Concluded the issue is almost certainly external (Intuit platform/key status) and recommended contacting Intuit Developer Support.
+*   **Terminal Output:**
+    ```
+    C:\Users\Matt\CFO_Agent\.venv\Lib\site-packages\pytest_asyncio\plugin.py:217: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+    The event loop scope for asynchronous fixtures will default to the fixture caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to function scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session"
+
+      warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+    =========================================== test session starts ===========================================
+    platform win32 -- Python 3.12.4, pytest-8.3.5, pluggy-1.5.0 -- C:\Users\Matt\CFO_Agent\.venv\Scripts\python.exe
+    cachedir: .pytest_cache
+    rootdir: C:\Users\Matt\CFO_Agent
+    configfile: pytest.ini
+    plugins: anyio-4.9.0, asyncio-0.26.0, cov-6.1.1, dotenv-0.5.2
+    asyncio: mode=Mode.AUTO, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+    collecting ... DEBUG: Attempting Secret Manager client init for project ledger-457022
+    DEBUG: GOOGLE_APPLICATION_CREDENTIALS env var: None
+    DEBUG: CLOUDSDK_CONFIG env var: None
+    DEBUG: google.auth.default() found credentials for project: ledger-457022
+    DEBUG: Credentials type: User (ADC)
+    Attempting to initialize SecretManagerServiceClient...
+    Secret Manager client initialized successfully.
+    {"\u0007sctime": null, "severity": "INFO", "name": "root", "message": "JSON logging configured.", "pathname": "C:\\Users\\Matt\\CFO_Agent\\src\\ledger_cfo\\core\\logging_config.py", "lineno": 36, "funcName": "configure_logging", "email_id": null, "intent": null, "task_id": null}
+    collected 1 item
+
+    tests/integration/test_scenario_1_live.py::test_final_invoice_live_mr_test {"\u0007sctime": null, "severity": "INFO", "name": "test_scenario_1_live", "message": "QBO_ENVIRONMENT detected: production", "pathname": "C:\\Users\\Matt\\CFO_Agent\\tests\\integration\\test_scenario_1_live.py", "lineno": 68, "funcName": "live_qbo_client_and_cleanup", "email_id": null, "intent": null, "task_id": null}
+    {"\u0007sctime": null, "severity": "INFO", "name": "test_scenario_1_live", "message": "Initializing live PRODUCTION QBO client via get_qbo_client...", "pathname": "C:\\Users\\Matt\\CFO_Agent\\tests\\integration\\test_scenario_1_live.py", "lineno": 75, "funcName": "live_qbo_client_and_cleanup", "email_id": null, "intent": null, "task_id": null}
+    {"\u0007sctime": null, "severity": "INFO", "name": "ledger_cfo.integrations.qbo_api", "message": "Attempting to initialize new QBO client instance...", "pathname": "C:\\Users\\Matt\\CFO_Agent\\src\\ledger_cfo\\integrations\\qbo_api.py", "lineno": 134, "funcName": "get_qbo_client", "email_id": null, "intent": null, "task_id": null}
+    {"\u0007sctime": null, "severity": "INFO", "name": "root", "message": "Attempting to access secret version: projects/ledger-457022/secrets/ledger-cfo-qbo-client-id/versions/latest", "pathname": "C:\\Users\\Matt\\CFO_Agent\\src\\ledger_cfo\\core\\config.py", "lineno": 119, "funcName": "get_secret", "email_id": null, "intent": null, "task_id": null}
+    {"\u0007sctime": null, "severity": "INFO", "name": "root", "message": "Successfully retrieved secret for key: ledger-cfo-qbo-client-id (ID: ledger-cfo-qbo-client-id)", "pathname": "C:\\Users\\Matt\\CFO_Agent\\src\\ledger_cfo\\core\\config.py", "lineno": 119, "funcName": "get_secret", "email_id": null, "intent": null, "task_id": null}
+    {"\u0007sctime": null, "severity": "INFO", "name": "root", "message": "Attempting to access secret version: projects/ledger-457022/secrets/ledger-cfo-qbo-client-secret/versions/latest", "pathname": "C:\\Users\\Matt\\CFO_Agent\\src\\ledger_cfo\\core\\config.py", "lineno": 116, "funcName": "get_secret", "email_id": null, "intent": null, "task_id": null}
+    {"\u0007sctime": null, "severity": "INFO", "name": "root", "message": "Successfully retrieved secret for key: ledger-cfo-qbo-client-secret (ID: ledger-cfo-qbo-client-secret)", "pathname": "C:\\Users\\Matt\\CFO_Agent\\src\\ledger_cfo\\core\\config.py", "lineno": 119, "funcName": "get_secret", "email_id": null, "intent": null, "task_id": null}
+    {"\u0007sctime": null, "severity": "INFO", "name": "root", "message": "Attempting to access secret version: projects/ledger-457022/secrets/ledger-cfo-qbo-refresh-token/versions/latest", "pathname": "C:\\Users\\Matt\\CFO_Agent\\src\\ledger_cfo\\core\\config.py", "lineno": 116, "funcName": "get_secret", "email_id": null, "intent": null, "task_id": null}
+    {"\u0007sctime": null, "severity": "INFO", "name": "root", "message": "Successfully retrieved secret for key: ledger-cfo-qbo-refresh-token (ID: ledger-cfo-qbo-refresh-token)", "pathname": "C:\\Users\\Matt\\CFO_Agent\\src\\ledger_cfo\\core\\config.py", "lineno": 119, "funcName": "get_secret", "email_id": null, "intent": null, "task_id": null}
+    {"\u0007sctime": null, "severity": "INFO", "name": "root", "message": "Attempting to access secret version: projects/ledger-457022/secrets/ledger-cfo-qbo-realm-id/versions/latest", "pathname": "C:\\Users\\Matt\\CFO_Agent\\src\\ledger_cfo\\core\\config.py", "lineno": 116, "funcName": "get_secret", "email_id": null, "intent": null, "task_id": null}
+    {"\u0007sctime": null, "severity": "INFO", "name": "root", "message": "Successfully retrieved secret for key: ledger-cfo-qbo-realm-id (ID: ledger-cfo-qbo-realm-id)", "pathname": "C:\\Users\\Matt\\CFO_Agent\\src\\ledger_cfo\\core\\config.py", "lineno": 119, "funcName": "get_secret", "email_id": null, "intent": null, "task_id": null}
+    DEBUG QBO INIT: Using Client ID starting with: AB0SA2Sx...
+    DEBUG QBO INIT: Using Client Secret starting with: AHm7R4bR...
+    DEBUG QBO INIT: Using Refresh Token starting with: RT1-218-...
+    DEBUG QBO INIT: Using Realm ID: 9130354335874546
+
+    DEBUG QBO INIT: Using Environment: production
+    {"\u0007sctime": null, "severity": "INFO", "name": "ledger_cfo.integrations.qbo_api", "message": "Initializing QBO AuthClient for environment: production, Realm ID: 9130354335874546\r\n", "pathname": "C:\\Users\\Matt\\CFO_Agent\\src\\ledger_cfo\\integrations\\qbo_api.py", "lineno": 162, "funcName": "get_qbo_client", "email_id": null, "intent": null, "task_id": null}
+    {"\u0007sctime": null, "severity": "INFO", "name": "ledger_cfo.integrations.qbo_api", "message": "AuthClient initialized.", "pathname": "C:\\Users\\Matt\\CFO_Agent\\src\\ledger_cfo\\integrations\\qbo_api.py", "lineno": 172, "funcName": "get_qbo_client", "email_id": null, "intent": null, "task_id": null}
+    {"\u0007sctime": null, "severity": "ERROR", "name": "ledger_cfo.integrations.qbo_api", "message": "An unexpected error occurred during QBO client initialization: HTTP status 401, error message: b'{\\"error\\":\\"invalid_client\\"}', intuit_tid 1-681968ce-1ac0f23a1e45e952297aaca6 at time Tue, 06 May 2025 01:41:34 GMT", "pathname": "C:\\Users\\Matt\\CFO_Agent\\src\\ledger_cfo\\integrations\\qbo_api.py", "lineno": 209, "funcName": "get_qbo_client", "email_id": null, "intent": null, "task_id": null, "exc_info": "Traceback (most recent call last):\n  File \"C:\\Users\\Matt\\CFO_Agent\\src\\ledger_cfo\\integrations\\qbo_api.py\", line 175, in get_qbo_client\n    qbo_client_instance = QuickBooks(\n                          ^^^^^^^^^^^\n  File \"C:\\Users\\Matt\\CFO_Agent\\.venv\\Lib\\site-packages\\quickbooks\\client.py\", line 73, in __new__\n    refresh_token = instance._start_session()\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Matt\\CFO_Agent\\.venv\\Lib\\site-packages\\quickbooks\\client.py\", line 105, in _start_session\n    self.auth_client.refresh(refresh_token=self.refresh_token)\n  File \"C:\\Users\\Matt\\CFO_Agent\\.venv\\Lib\\site-packages\\intuitlib\\client.py\", line 157, in refresh\n    send_request('POST', self.token_endpoint, headers, self, body=urlencode(body), session=self)\n  File \"C:\\Users\\Matt\\CFO_Agent\\.venv\\Lib\\site-packages\\intuitlib\\utils.py\", line 95, in send_request\n    raise AuthClientError(response)\nintuitlib.exceptions.AuthClientError: HTTP status 401, error message: b'{\\"error\\":\\"invalid_client\\"}', intuit_tid 1-681968ce-1ac0f23a1e45e952297aaca6 at time Tue, 06 May 2025 01:41:34 GMT"}
+    {"\u0007sctime": null, "severity": "ERROR", "name": "test_scenario_1_live", "message": "Failed to initialize live PRODUCTION QBO client using get_qbo_client.", "pathname": "C:\\Users\\Matt\\CFO_Agent\\tests\\integration\\test_scenario_1_live.py", "lineno": 79, "funcName": "live_qbo_client_and_cleanup", "email_id": null, "intent": null, "task_id": null}
+    {"\u0007sctime": null, "severity": "INFO", "name": "test_scenario_1_live", "message": "--- CLEANUP: Checking for invoice ID: None ---", "pathname": "C:\\Users\\Matt\\CFO_Agent\\tests\\integration\\test_scenario_1_live.py", "lineno": 89, "funcName": "live_qbo_client_and_cleanup", "email_id": null, "intent": null, "task_id": null}
+    {"\u0007sctime": null, "severity": "WARNING", "name": "test_scenario_1_live", "message": "--- CLEANUP: QBO client was not initialized, skipping void. ---", "pathname": "C:\\Users\\Matt\\CFO_Agent\\tests\\integration\\test_scenario_1_live.py", "lineno": 108, "funcName": "live_qbo_client_and_cleanup", "email_id": null, "intent": null, "task_id": null}
+    ERROR
+
+    ================================================= ERRORS ==================================================
+    ____________________________ ERROR at setup of test_final_invoice_live_mr_test ____________________________
+
+        @pytest.fixture(scope="function") # Use function scope for cleanup per test
+        async def live_qbo_client_and_cleanup() -> QBOFixtureReturnType: # Made async and added return type hint
+            """Provides a live QBO client and handles invoice cleanup."""
+            # --- .ENV Loading Removed - Rely on load_dotenv at module level or pytest-dotenv plugin ---
+
+            # print(f"Attempting to load .env file from: {dotenv_path}") # Removed
+            # loaded = load_dotenv(dotenv_path=dotenv_path, override=True) # Removed
+            # if not loaded:
+            #    pytest.fail(...) # Removed
+            # else:
+            #    print(".env file loaded successfully.") # Removed
+
+            qbo_client = None
+            created_invoice_id = None # Variable to store the ID of the invoice created by the test
+
+            # Callback function for the test to store the invoice ID
+            def record_invoice_id_for_cleanup(invoice_id: str):
+                nonlocal created_invoice_id
+                created_invoice_id = invoice_id
+                logger.info(f"Invoice ID {created_invoice_id} registered for cleanup.")
+
+            try:
+                # Check environment setting (ensure it expects 'production')
+                qbo_env = os.getenv('QBO_ENVIRONMENT', 'Sandbox').lower() # Default to Sandbox if not set
+
+                logger.info(f"QBO_ENVIRONMENT detected: {qbo_env}") # Use logger
+                if qbo_env != 'production':
+                    pytest.skip("Skipping live test: QBO_ENVIRONMENT is not set to 'production'")
+
+                # --- Direct Secret Manager Init Debug Block REMOVED ---
+
+                # Restore the actual QBO client init call
+                logger.info("Initializing live PRODUCTION QBO client via get_qbo_client...") # Use logger
+
+                from ledger_cfo.integrations.qbo_api import get_qbo_client
+                qbo_client = get_qbo_client() # This should now find the env vars correctly
+                if qbo_client is None:
+                    logger.error("Failed to initialize live PRODUCTION QBO client using get_qbo_client.") # Use logger
+                    # Add more details from config/qbo_api logs if possible
+    >               pytest.fail("Failed to initialize live PRODUCTION QBO client. Check config/logs.")
+    E               Failed: Failed to initialize live PRODUCTION QBO client. Check config/logs.
+
+    tests\integration\test_scenario_1_live.py:81: Failed
+    ------------------------------------------- Captured log setup --------------------------------------------
+    INFO     test_scenario_1_live:test_scenario_1_live.py:68 QBO_ENVIRONMENT detected: production
+    INFO     test_scenario_1_live:test_scenario_1_live.py:75 Initializing live PRODUCTION QBO client via get_qbo_client...
+    INFO     ledger_cfo.integrations.qbo_api:qbo_api.py:134 Attempting to initialize new QBO client instance...
+    INFO     root:config.py:116 Attempting to access secret version: projects/ledger-457022/secrets/ledger-cfo-qbo-client-id/versions/latest
+    INFO     root:config.py:119 Successfully retrieved secret for key: ledger-cfo-qbo-client-id (ID: ledger-cfo-qbo-client-id)
+    INFO     root:config.py:116 Attempting to access secret version: projects/ledger-457022/secrets/ledger-cfo-qbo-client-secret/versions/latest
+    INFO     root:config.py:119 Successfully retrieved secret for key: ledger-cfo-qbo-client-secret (ID: ledger-cfo-qbo-client-secret)
+    INFO     root:config.py:116 Attempting to access secret version: projects/ledger-457022/secrets/ledger-cfo-qbo-refresh-token/versions/latest
+    INFO     root:config.py:119 Successfully retrieved secret for key: ledger-cfo-qbo-refresh-token (ID: ledger-cfo-qbo-refresh-token)
+    INFO     root:config.py:116 Attempting to access secret version: projects/ledger-457022/secrets/ledger-cfo-qbo-realm-id/versions/latest
+    INFO     root:config.py:119 Successfully retrieved secret for key: ledger-cfo-qbo-realm-id (ID: ledger-cfo-qbo-realm-id)
+    INFO     ledger_cfo.integrations.qbo_api:qbo_api.py:162 Initializing QBO AuthClient for environment: production, Realm ID: 9130354335874546
+
+    INFO     ledger_cfo.integrations.qbo_api:qbo_api.py:172 AuthClient initialized.
+    ERROR    ledger_cfo.integrations.qbo_api:qbo_api.py:209 An unexpected error occurred during QBO client initialization: HTTP status 401, error message: b'{\"error\":\"invalid_client\"}', intuit_tid 1-681968ce-1ac0f23a1e45e952297aaca6 at time Tue, 06 May 2025 01:41:34 GMT
+    Traceback (most recent call last):
+      File "C:\\Users\\Matt\\CFO_Agent\\src\\ledger_cfo\\integrations\\qbo_api.py", line 175, in get_qbo_client
+        qbo_client_instance = QuickBooks(
+                              ^^^^^^^^^^^
+      File "C:\\Users\\Matt\\CFO_Agent\\.venv\\Lib\\site-packages\\quickbooks\\client.py", line 73, in __new__
+        refresh_token = instance._start_session()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "C:\\Users\\Matt\\CFO_Agent\\.venv\\Lib\\site-packages\\quickbooks\\client.py", line 105, in _start_session
+        self.auth_client.refresh(refresh_token=self.refresh_token)
+      File "C:\\Users\\Matt\\CFO_Agent\\.venv\\Lib\\site-packages\\intuitlib\\client.py", line 157, in refresh
+        send_request('POST', self.token_endpoint, headers, self, body=urlencode(body), session=self)
+      File "C:\\Users\\Matt\\CFO_Agent\\.venv\\Lib\\site-packages\\intuitlib\\utils.py", line 95, in send_request
+        raise AuthClientError(response)
+    intuitlib.exceptions.AuthClientError: HTTP status 401, error message: b'{\"error\":\"invalid_client\"}', intuit_tid 1-681968ce-1ac0f23a1e45e952297aaca6 at time Tue, 06 May 2025 01:41:34 GMT
+    ERROR    test_scenario_1_live:test_scenario_1_live.py:79 Failed to initialize live PRODUCTION QBO client using get_qbo_client.
+    INFO     test_scenario_1_live:test_scenario_1_live.py:89 --- CLEANUP: Checking for invoice ID: None ---
+    WARNING  test_scenario_1_live:test_scenario_1_live.py:108 --- CLEANUP: QBO client was not initialized, skipping void. ---
+    ============================================ warnings summary =============================================
+    .venv\Lib\site-packages\pythonjsonlogger\jsonlogger.py:11
+      C:\Users\Matt\CFO_Agent\.venv\Lib\site-packages\pythonjsonlogger\jsonlogger.py:11: DeprecationWarning: pythonjsonlogger.jsonlogger has been moved to pythonjsonlogger.json
+        warnings.warn(
+
+    .venv\Lib\site-packages\werkzeug\routing.py:1010: 11 warnings
+      C:\Users\Matt\CFO_Agent\.venv\Lib\site-packages\werkzeug\routing.py:1010: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+        parts = parts or [ast.Str("")]
+
+    .venv\Lib\site-packages\werkzeug\routing.py:1007: 22 warnings
+      C:\Users\Matt\CFO_Agent\.venv\Lib\site-packages\werkzeug\routing.py:1007: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+        _convert(elem) if is_dynamic else ast.Str(s=elem)
+
+    F:\Program Files\PYTHON\Lib\ast.py:587: 22 warnings
+      F:\Program Files\PYTHON\Lib\ast.py:587: DeprecationWarning: Attribute s is deprecated and will be removed in Python 3.14; use value instead
+        return Constant(*args, **kwargs)
+
+    .venv\Lib\site-packages\werkzeug\routing.py:1014: 26 warnings
+      C:\Users\Matt\CFO_Agent\.venv\Lib\site-packages\werkzeug\routing.py:1014: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+        if isinstance(p, ast.Str) and isinstance(ret[-1], ast.Str):
+
+    .venv\Lib\site-packages\werkzeug\routing.py:1015: 24 warnings
+      C:\Users\Matt\CFO_Agent\.venv\Lib\site-packages\werkzeug\routing.py:1015: DeprecationWarning: Attribute s is deprecated and will be removed in Python 3.14; use value instead
+        ret[-1] = ast.Str(ret[-1].s + p.s)
+
+    .venv\Lib\site-packages\werkzeug\routing.py:1015: 12 warnings
+      C:\Users\Matt\CFO_Agent\.venv\Lib\site-packages\werkzeug\routing.py:1015: DeprecationWarning: ast.Str is deprecated and will be removed in Python 3.14; use ast.Constant instead
+        ret[-1] = ast.Str(ret[-1].s + p.s)
+
+    tests\integration\test_scenario_1_live.py:115
+      C:\Users\Matt\CFO_Agent\tests\integration\test_scenario_1_live.py:115: PytestUnknownMarkWarning: Unknown pytest.mark.live - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+        @pytest.mark.live # Add a custom marker for live tests
+
+    -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+    ========================================= short test summary info =========================================
+    ERROR tests/integration/test_scenario_1_live.py::test_final_invoice_live_mr_test - Failed: Failed to initialize live PRODUCTION QBO client. Check config/logs.
+    ===================================== 119 warnings, 1 error in 10.95s =====================================
+    ```
+*   **File Changes:** None.
+*   **Errors:** `pytest` exited with code 1. Test error during setup: `Failed: Failed to initialize live PRODUCTION QBO client. Check config/logs.` Root cause: `intuitlib.exceptions.AuthClientError: HTTP status 401, error message: b'{"error":"invalid_client"}'`.
+*   **Conversational Text:** My previous message summarizing the failure and recommending contact with Intuit Developer Support.
+*   **Timestamp:** 2025-05-06 01:48:00 UTC (Example timestamp) 
